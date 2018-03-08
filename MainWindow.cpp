@@ -15,6 +15,7 @@ MainWindow::~MainWindow()
 int MainWindow::length(QString str)
 {
     int counter = str.length();
+    
     if(ui->checkSpaces->isChecked())
     {
         for (int i = 0; i < str.length(); i++)
