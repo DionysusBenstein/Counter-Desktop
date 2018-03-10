@@ -14,10 +14,16 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
     int length(QString str);
+
+    int lineCounter(QString str);
+
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_checkLines_clicked();
 
 private:
     Ui::MainWindow *ui;

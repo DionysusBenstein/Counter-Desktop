@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>446</width>
     <height>311</height>
    </rect>
   </property>
@@ -17,31 +17,19 @@
    <iconset resource="resources.qrc">
     <normaloff>:/img/icons/icon24.ico</normaloff>:/img/icons/icon24.ico</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="1">
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">QLabel {
-	font-size: 15px;
-}</string>
-      </property>
+    <item row="1" column="2" colspan="2">
+     <widget class="QCheckBox" name="checkLines">
       <property name="text">
-       <string>                      Счётчик:</string>
+       <string>Посчитать количество строк</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Посчитать</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
+    <item row="2" column="3">
      <widget class="QLabel" name="label">
       <property name="styleSheet">
        <string notr="true">QLabel {
@@ -50,6 +38,13 @@
       </property>
       <property name="text">
        <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Посчитать</string>
       </property>
      </widget>
     </item>
@@ -66,6 +61,21 @@
        <string>Не считать знаки</string>
       </property>
      </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	font-size: 15px;
+}</string>
+      </property>
+      <property name="text">
+       <string>          Счётчик:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="4">
+     <widget class="QPlainTextEdit" name="plainTextEdit"/>
     </item>
    </layout>
   </widget>

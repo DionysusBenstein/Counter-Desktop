@@ -54,8 +54,45 @@ int MainWindow::length(QString str)
     return counter;
 }
 
+int MainWindow::lineCounter(QString str)
+{
+    int counter = 1;
+
+    for (int i = 0; i < str.length(); ++i)
+    {
+        if (str[i] == '\n')
+        {
+            counter++;
+        }
+    }
+
+    return counter;
+}
+
 void MainWindow::on_pushButton_clicked()
 {
-    QString text = ui->textEdit->toPlainText();
-    ui->label->setText(QString::number(length(text)));
+    QString text = ui->plainTextEdit->toPlainText();
+
+    if (ui->checkLines->isChecked())
+    {
+         ui->label->setText(QString::number(lineCounter(text)));
+    }
+    else
+    {
+        ui->label->setText(QString::number(length(text)));
+    }
+}
+
+void MainWindow::on_checkLines_clicked()
+{
+    if(ui->checkLines->isChecked())
+    {
+        ui->checkSpaces->setEnabled(false);
+        ui->checkSym->setEnabled(false);
+    }
+    else
+    {
+        ui->checkSpaces->setEnabled(true);
+        ui->checkSym->setEnabled(true);
+    }
 }
