@@ -25,6 +25,12 @@ private slots:
 
     void on_checkLines_clicked();
 
+    void on_checkSym_clicked();
+
+    void on_checkSpaces_clicked();
+
+    void on_plainTextEdit_textChanged();
+
 private:
     Ui::MainWindow *ui;
 };

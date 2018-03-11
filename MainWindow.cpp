@@ -22,7 +22,7 @@ int MainWindow::length(QString str)
         {
             if (str[i] == ' ')
             {
-                counter -= 1;
+                counter--;
             }
         }
     }
@@ -37,7 +37,7 @@ int MainWindow::length(QString str)
             {
                 if (str[i] == sym[j])
                 {
-                    counter -= 1;
+                    counter--;
                 }
             }
         }
@@ -47,7 +47,7 @@ int MainWindow::length(QString str)
     {
         if (str[i] == '\n')
         {
-            counter -= 1;
+            counter--;
         }
     }
 
@@ -71,15 +71,13 @@ int MainWindow::lineCounter(QString str)
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString text = ui->plainTextEdit->toPlainText();
-
     if (ui->checkLines->isChecked())
     {
-         ui->label->setText(QString::number(lineCounter(text)));
+         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
     }
     else
     {
-        ui->label->setText(QString::number(length(text)));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
 
@@ -89,10 +87,58 @@ void MainWindow::on_checkLines_clicked()
     {
         ui->checkSpaces->setEnabled(false);
         ui->checkSym->setEnabled(false);
+
+        ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
     }
     else
     {
         ui->checkSpaces->setEnabled(true);
         ui->checkSym->setEnabled(true);
+
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+}
+
+void MainWindow::on_checkSym_clicked()
+{
+    if (ui->checkSym->isChecked())
+    {
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+    else if (ui->checkSpaces->isChecked())
+    {
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+    else
+    {
+        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+    }
+}
+
+void MainWindow::on_checkSpaces_clicked()
+{
+    if (ui->checkSpaces->isChecked())
+    {
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+    else if (ui->checkSym->isChecked())
+    {
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+    else
+    {
+        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+    }
+}
+
+void MainWindow::on_plainTextEdit_textChanged()
+{
+    if (ui->checkLines->isChecked())
+    {
+         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
+    }
+    else
+    {
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
