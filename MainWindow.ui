@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Counter</string>
+   <string>Counter v1.3</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -38,13 +38,6 @@
       </property>
       <property name="text">
        <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Посчитать</string>
       </property>
      </widget>
     </item>
@@ -76,6 +69,13 @@
     </item>
     <item row="0" column="0" colspan="4">
      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QCheckBox" name="checkWords">
+      <property name="text">
+       <string>Посчитать количество слов</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

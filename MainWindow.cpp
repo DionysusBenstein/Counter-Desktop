@@ -4,7 +4,6 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->pushButton->setDefault(true);
 }
 
 MainWindow::~MainWindow()
@@ -12,14 +11,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//Метод подсчёта символов
 int MainWindow::length(QString str)
 {
     int counter = str.length();
     
+    //Отслеживание пробелов
     if(ui->checkSpaces->isChecked())
     {
+        //Посимвольное прохождение по введённой строке
         for (int i = 0; i < str.length(); i++)
         {
+            //Если встречается пробел, то счётчик уменьшается на единицу
             if (str[i] == ' ')
             {
                 counter--;
@@ -27,15 +30,17 @@ int MainWindow::length(QString str)
         }
     }
 
+    //Отслеживание знаков
     if(ui->checkSym->isChecked())
     {
-        QString sym = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
-
+        //Посимвольное прохождение по введённой строке
         for (int i = 0; i < str.length(); i++)
         {
-            for (int j = 0; j < sym.length(); j++)
+            //Посимвольное прохождение по строке со знаками
+            for (int j = 0; j < signs.length(); j++)
             {
-                if (str[i] == sym[j])
+                //Если встречается символ, то счётчик уменьшается на единицу
+                if (str[i] == signs[j])
                 {
                     counter--;
                 }
@@ -43,8 +48,10 @@ int MainWindow::length(QString str)
         }
     }
 
+    //Посимвольное прохождение по введённой строке
     for (int i = 0; i < str.length(); i++)
     {
+        //Если встречается перенос на следующую строку, то счётчик уменьшается на единицу
         if (str[i] == '\n')
         {
             counter--;
@@ -54,12 +61,15 @@ int MainWindow::length(QString str)
     return counter;
 }
 
+//Метод считающий строки
 int MainWindow::lineCounter(QString str)
 {
     int counter = 1;
 
+    //Посимвольное прохождение по введённой строке
     for (int i = 0; i < str.length(); ++i)
     {
+        //Если встречается перенос на следующую строку, то к счётчику прибавляется единица
         if (str[i] == '\n')
         {
             counter++;
@@ -69,52 +79,112 @@ int MainWindow::lineCounter(QString str)
     return counter;
 }
 
-void MainWindow::on_pushButton_clicked()
+//Метод подсчёта слов
+int MainWindow::wordsCounter(QString str)
 {
-    if (ui->checkLines->isChecked())
+    int counter = 0;
+
+    int j = 0;
+    while (j < signs.length())
     {
-         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
+        j++;
     }
+
+    //Если строка не пустая и знаков нет, то присваиваем счётчику еденицу
+    if (!str.isEmpty() && str[j] != signs[j])
+    {
+        counter = 1;
+    }
+    //Иначе присваиваем 0
     else
     {
-        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+        counter = 0;
     }
+
+    //Посимвольное прохождение по введённой строке
+    for (int i = 0; i < str.length(); ++i)
+    {
+        //Посимвольное прохождение по строке с алфавитом
+        for (int j = 0; j < alph.length(); ++j)
+        {
+            //Если встречается пробел, а за ним слдует буква, то увеличиваем счётчик на еденицу
+            if (str[i] == ' ' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+            //Если встречается перенос строки, а за ним слдует буква, то увеличиваем счётчик на еденицу
+            else if (str[i] == '\n' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+            //Если встречается табуляция, а за ней слдует буква, то увеличиваем счётчик на еденицу
+            else if (str[i] == '\t' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+
+            //Посимвольное прохождение по строке со знаками
+            for (int k = 0; k < signs.length(); ++k)
+            {
+                if (str[i] == signs[k] && str[i + 1] !=  alph[j])
+                {
+                    continue;
+                }
+            }
+        }
+    }
+
+    return counter;
 }
 
+//Слот клика на флажок "Посчитать количество строк"
 void MainWindow::on_checkLines_clicked()
 {
+    //Если выбран флажок "Посчитать количество строк", то все остальные флажки, становятся недоступны
     if(ui->checkLines->isChecked())
     {
         ui->checkSpaces->setEnabled(false);
         ui->checkSym->setEnabled(false);
+        ui->checkWords->setEnabled(false);
 
+        //и вызывается метод подсчёта строк
         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
     }
     else
     {
+        //иначе флажки становятся доступными
         ui->checkSpaces->setEnabled(true);
         ui->checkSym->setEnabled(true);
+        ui->checkWords->setEnabled(true);
 
+        //и вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
 
+//Слот клика на флажок "Не считать знаки"
 void MainWindow::on_checkSym_clicked()
 {
+    //Проверка состояния флажка "Не считать знаки"
     if (ui->checkSym->isChecked())
     {
+        //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
+    //Проверка состояния флажка "Не считать пробелы"
     else if (ui->checkSpaces->isChecked())
     {
+        //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
     else
     {
+        //Вызывается стандартный метод подсчёта символов
         ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
     }
 }
 
+//Слот клика на CheckBox "Не считать пробелы"
 void MainWindow::on_checkSpaces_clicked()
 {
     if (ui->checkSpaces->isChecked())
@@ -131,14 +201,47 @@ void MainWindow::on_checkSpaces_clicked()
     }
 }
 
-void MainWindow::on_plainTextEdit_textChanged()
+//Слот клика на CheckBox "Посчитать количество слов"
+void MainWindow::on_checkWords_clicked()
 {
-    if (ui->checkLines->isChecked())
+    if(ui->checkWords->isChecked())
     {
-         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
+        ui->checkSpaces->setEnabled(false);
+        ui->checkSym->setEnabled(false);
+        ui->checkLines->setEnabled(false);
+
+        //Вызывется метод подсчёта слов
+        ui->label->setText(QString::number(wordsCounter(ui->plainTextEdit->toPlainText())));
     }
     else
     {
+        ui->checkSpaces->setEnabled(true);
+        ui->checkSym->setEnabled(true);
+        ui->checkLines->setEnabled(true);
+
+        //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+    }
+}
+
+//Слот клика изменения текста в TextEdit
+void MainWindow::on_plainTextEdit_textChanged()
+{
+    //Если выбран флажок "Посчитать количество строк"
+    if (ui->checkLines->isChecked())
+    {
+        //Вызывается метод подсчёта строк
+         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
+    }
+    //Если выбран флажок "Посчитать количество слов"
+    else if (ui->checkWords->isChecked())
+    {
+        //Вызывается метод подсчёта слов
+        ui->label->setText(QString::number(wordsCounter(ui->plainTextEdit->toPlainText())));
+    }
+    else
+    {
+        //Вызывается метод подсчёта символов
+        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
     }
 }
