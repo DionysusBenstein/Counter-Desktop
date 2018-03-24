@@ -225,15 +225,14 @@ void MainWindow::on_plainTextEdit_textChanged()
         //Вызывается метод подсчёта строк
          ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
     }
-    //Если выбран флажок "Посчитать количество слов"
-    else if (ui->checkWords->isChecked())
+    //Если выбран флажок "Не считать пробелы"
+    else if (ui->checkSpaces->isChecked())
     {
-        //Вызывается метод подсчёта слов
-        ui->label->setText(QString::number(wordsCounter(ui->plainTextEdit->toPlainText())));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
     else
     {
         //Вызывается метод подсчёта символов
-        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
