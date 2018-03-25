@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Counter v1.5</string>
+   <string>Counter v1.6</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">

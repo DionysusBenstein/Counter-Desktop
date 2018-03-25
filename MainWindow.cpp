@@ -230,9 +230,15 @@ void MainWindow::on_plainTextEdit_textChanged()
     {
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
+    //Если выбран флажок "Посчитать количество слов"
+    else if (ui->checkWords->isChecked())
+    {
+        //Вызывается метод подсчёта слов
+        ui->label->setText(QString::number(wordsCounter(ui->plainTextEdit->toPlainText())));
+    }
     else
     {
         //Вызывается метод подсчёта символов
-        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
+        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
     }
 }
