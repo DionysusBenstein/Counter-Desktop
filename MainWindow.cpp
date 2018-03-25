@@ -86,7 +86,7 @@ int MainWindow::wordsCounter(QString str)
 
     for (int i = 0; i < alph.length(); ++i)
     {
-        //Если строка не пустая и знаков нет, то присваиваем счётчику единицу
+        //Если нулевой элемент равен букве из алфавита, счётчику присваивается единица
         if (str[0] == alph[i])
         {
             counter = 1;
@@ -118,9 +118,15 @@ int MainWindow::wordsCounter(QString str)
             //Посимвольное прохождение по строке со знаками
             for (int k = 0; k < signs.length(); ++k)
             {
+                //Если после знака в строке нет букв, то счётчик не прибавляется
                 if (str[i] == signs[k] && str[i + 1] !=  alph[j])
                 {
                     continue;
+                }
+                //Иначе если после знака в строке есть буквы, то счётчик увеличивается на единицу
+                else if (str[i] == signs[k] && str[i + 1] ==  alph[j])
+                {
+                    counter++;
                 }
             }
         }
