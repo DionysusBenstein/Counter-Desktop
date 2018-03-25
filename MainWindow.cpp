@@ -222,7 +222,7 @@ void MainWindow::on_checkWords_clicked()
     }
 }
 
-//Слот клика изменения текста в TextEdit
+//Слот изменения текста в TextEdit
 void MainWindow::on_plainTextEdit_textChanged()
 {
     //Если выбран флажок "Посчитать количество строк"
