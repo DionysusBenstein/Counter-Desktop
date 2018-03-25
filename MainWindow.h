@@ -37,7 +37,7 @@ private slots:
     //Слот клика на CheckBox "Посчитать количество слов"
     void on_checkWords_clicked();
 
-    //Слот клика изменения текста в TextEdit
+    //Слот изменения текста в TextEdit
     void on_plainTextEdit_textChanged();
 
 private:
