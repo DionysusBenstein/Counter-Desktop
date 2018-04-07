@@ -192,7 +192,7 @@ void MainWindow::on_checkSym_clicked()
     else
     {
         //Вызывается стандартный метод подсчёта символов
-        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
 
@@ -209,7 +209,7 @@ void MainWindow::on_checkSpaces_clicked()
     }
     else
     {
-        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
 
@@ -259,6 +259,6 @@ void MainWindow::on_plainTextEdit_textChanged()
     else
     {
         //Вызывается метод подсчёта символов
-        ui->label->setText(QString::number(ui->plainTextEdit->toPlainText().length()));
+        ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
