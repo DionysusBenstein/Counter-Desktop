@@ -155,6 +155,7 @@ void MainWindow::on_checkLines_clicked()
     //Если выбран флажок "Посчитать количество строк", то все остальные флажки, становятся недоступны
     if(ui->checkLines->isChecked())
     {
+        //то все остальные флажки, становятся недоступны
         ui->checkSpaces->setEnabled(false);
         ui->checkSym->setEnabled(false);
         ui->checkWords->setEnabled(false);
@@ -180,6 +181,9 @@ void MainWindow::on_checkSym_clicked()
     //Проверка состояния флажка "Не считать знаки"
     if (ui->checkSym->isChecked())
     {
+        ui->checkWords->setEnabled(false);
+        ui->checkLines->setEnabled(false);
+
         //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
@@ -191,6 +195,9 @@ void MainWindow::on_checkSym_clicked()
     }
     else
     {
+        ui->checkWords->setEnabled(true);
+        ui->checkLines->setEnabled(true);
+
         //Вызывается стандартный метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
@@ -201,6 +208,9 @@ void MainWindow::on_checkSpaces_clicked()
 {
     if (ui->checkSpaces->isChecked())
     {
+        ui->checkWords->setEnabled(false);
+        ui->checkLines->setEnabled(false);
+
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
     else if (ui->checkSym->isChecked())
@@ -209,6 +219,9 @@ void MainWindow::on_checkSpaces_clicked()
     }
     else
     {
+        ui->checkWords->setEnabled(true);
+        ui->checkLines->setEnabled(true);
+
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
 }
