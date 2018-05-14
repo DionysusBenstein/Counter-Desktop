@@ -30,13 +30,13 @@ public:
     ~MainWindow();
 
     //Метод подсчёта символов
-    int length(const QString str);
+    int length(const QString str) const;
 
     //Метод считающий строки
-    int lineCounter(const QString str);
+    int lineCounter(const QString str) const;
 
     //Метод подсчёта слов
-    int wordsCounter(const QString str);
+    int wordsCounter(const QString str) const;
 
 private slots:
     //Слот клика на флажок "Посчитать количество строк"

@@ -26,7 +26,7 @@ MainWindow::~MainWindow()
 }
 
 //Метод подсчёта символов
-int MainWindow::length(const QString str)
+int MainWindow::length(const QString str) const
 {
     int counter = str.length();
     
@@ -76,7 +76,7 @@ int MainWindow::length(const QString str)
 }
 
 //Метод считающий строки
-int MainWindow::lineCounter(const QString str)
+int MainWindow::lineCounter(const QString str) const
 {
     int counter = 1;
 
@@ -94,7 +94,7 @@ int MainWindow::lineCounter(const QString str)
 }
 
 //Метод подсчёта слов
-int MainWindow::wordsCounter(const QString str)
+int MainWindow::wordsCounter(const QString str) const
 {
     int counter = 0;
 
