@@ -18,6 +18,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    MainWindow::setWindowTitle("Counter v1.9");
 }
 
 MainWindow::~MainWindow()
@@ -156,9 +157,9 @@ void MainWindow::on_checkLines_clicked()
     if(ui->checkLines->isChecked())
     {
         //то все остальные флажки, становятся недоступны
-        ui->checkSpaces->setEnabled(false);
-        ui->checkSym->setEnabled(false);
-        ui->checkWords->setEnabled(false);
+        ui->checkSpaces->setChecked(false);
+        ui->checkSym->setChecked(false);
+        ui->checkWords->setChecked(false);
 
         //и вызывается метод подсчёта строк
         ui->label->setText(QString::number(lineCounter(ui->plainTextEdit->toPlainText())));
@@ -166,9 +167,9 @@ void MainWindow::on_checkLines_clicked()
     else
     {
         //иначе флажки становятся доступными
-        ui->checkSpaces->setEnabled(true);
-        ui->checkSym->setEnabled(true);
-        ui->checkWords->setEnabled(true);
+//        ui->checkSpaces->setEnabled(true);
+//        ui->checkSym->setEnabled(true);
+//        ui->checkWords->setEnabled(true);
 
         //и вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
@@ -181,8 +182,8 @@ void MainWindow::on_checkSym_clicked()
     //Проверка состояния флажка "Не считать знаки"
     if (ui->checkSym->isChecked())
     {
-        ui->checkWords->setEnabled(false);
-        ui->checkLines->setEnabled(false);
+        ui->checkWords->setChecked(false);
+        ui->checkLines->setChecked(false);
 
         //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
@@ -195,8 +196,8 @@ void MainWindow::on_checkSym_clicked()
     }
     else
     {
-        ui->checkWords->setEnabled(true);
-        ui->checkLines->setEnabled(true);
+//        ui->checkWords->setEnabled(true);
+//        ui->checkLines->setEnabled(true);
 
         //Вызывается стандартный метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
@@ -208,8 +209,8 @@ void MainWindow::on_checkSpaces_clicked()
 {
     if (ui->checkSpaces->isChecked())
     {
-        ui->checkWords->setEnabled(false);
-        ui->checkLines->setEnabled(false);
+        ui->checkWords->setChecked(false);
+        ui->checkLines->setChecked(false);
 
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
@@ -219,8 +220,8 @@ void MainWindow::on_checkSpaces_clicked()
     }
     else
     {
-        ui->checkWords->setEnabled(true);
-        ui->checkLines->setEnabled(true);
+//        ui->checkWords->setEnabled(true);
+//        ui->checkLines->setEnabled(true);
 
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
     }
@@ -231,18 +232,18 @@ void MainWindow::on_checkWords_clicked()
 {
     if(ui->checkWords->isChecked())
     {
-        ui->checkSpaces->setEnabled(false);
-        ui->checkSym->setEnabled(false);
-        ui->checkLines->setEnabled(false);
+        ui->checkSpaces->setChecked(false);
+        ui->checkSym->setChecked(false);
+        ui->checkLines->setChecked(false);
 
         //Вызывется метод подсчёта слов
         ui->label->setText(QString::number(wordsCounter(ui->plainTextEdit->toPlainText())));
     }
     else
     {
-        ui->checkSpaces->setEnabled(true);
-        ui->checkSym->setEnabled(true);
-        ui->checkLines->setEnabled(true);
+//        ui->checkSpaces->setEnabled(true);
+//        ui->checkSym->setEnabled(true);
+//        ui->checkLines->setEnabled(true);
 
         //Вызывается метод подсчёта символов
         ui->label->setText(QString::number(length(ui->plainTextEdit->toPlainText())));
