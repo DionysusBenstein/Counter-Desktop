@@ -18,7 +18,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    MainWindow::setWindowTitle("Counter v1.9");
+    MainWindow::setWindowTitle("Counter v1.9.0-beta");
 }
 
 MainWindow::~MainWindow()
