@@ -57,7 +57,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    //Строки с алфавитом и знаками
     QString signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
     QString alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                    "abcdefghijklmnopqrstuvwxyz"
