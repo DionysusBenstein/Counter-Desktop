@@ -30,14 +30,11 @@ MainWindow::~MainWindow()
 int MainWindow::length(const QString str) const
 {
     int counter = str.length();
-    
-    //Отслеживание пробелов
+
     if(ui->checkSpaces->isChecked())
     {
-        //Посимвольное прохождение по введённой строке
         for (int i = 0; i < str.length(); i++)
         {
-            //Если встречается пробел, то счётчик уменьшается на единицу
             if (str[i] == ' ')
             {
                 counter--;
@@ -45,16 +42,12 @@ int MainWindow::length(const QString str) const
         }
     }
 
-    //Отслеживание знаков
     if(ui->checkSym->isChecked())
     {
-        //Посимвольное прохождение по введённой строке
         for (int i = 0; i < str.length(); i++)
         {
-            //Посимвольное прохождение по строке со знаками
             for (int j = 0; j < signs.length(); j++)
             {
-                //Если встречается символ, то счётчик уменьшается на единицу
                 if (str[i] == signs[j])
                 {
                     counter--;
@@ -63,7 +56,6 @@ int MainWindow::length(const QString str) const
         }
     }
 
-    //Посимвольное прохождение по введённой строке
     for (int i = 0; i < str.length(); i++)
     {
         if (str[i] == '\n')
@@ -80,7 +72,6 @@ int MainWindow::lineCounter(const QString str) const
 {
     int counter = 1;
 
-    //Посимвольное прохождение по введённой строке
     for (int i = 0; i < str.length(); ++i)
     {
         if (str[i] == '\n')
@@ -105,10 +96,8 @@ int MainWindow::wordsCounter(const QString str) const
         }
     }
 
-    //Посимвольное прохождение по введённой строке
     for (int i = 0; i < str.length(); ++i)
     {
-        //Посимвольное прохождение по строке с алфавитом
         for (int j = 0; j < alph.length(); ++j)
         {
             if (str[i] == ' ' && str[i + 1] == alph[j])
@@ -124,7 +113,6 @@ int MainWindow::wordsCounter(const QString str) const
                 counter++;
             }
 
-            //Посимвольное прохождение по строке со знаками
             for (int k = 0; k < signs.length(); ++k)
             {
                 if (str[i] == signs[k] && str[i + 1] !=  alph[j])
