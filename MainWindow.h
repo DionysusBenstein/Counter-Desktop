@@ -57,11 +57,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    QString signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
-    QString alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                   "abcdefghijklmnopqrstuvwxyz"
-                   "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-                   "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    QString signs;
+    QString alph;
 };
 
 #endif // MAINWINDOW_H

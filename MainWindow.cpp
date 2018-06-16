@@ -18,7 +18,13 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    MainWindow::setWindowTitle("Counter v1.9.0");
+    MainWindow::setWindowTitle("Counter v1.9.1");
+
+    signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
+    alph  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "abcdefghijklmnopqrstuvwxyz"
+            "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+            "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 }
 
 MainWindow::~MainWindow()
