@@ -23,6 +23,7 @@ Counter::Counter(QObject *parent) : QObject(parent)
             "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 }
 
+//Метод подсчёта символов
 int Counter::length(const QString str) const
 {
     int counter = str.length();
@@ -73,6 +74,53 @@ int Counter::lineCounter(const QString str) const
         if (str[i] == '\n')
         {
             counter++;
+        }
+    }
+
+    return counter;
+}
+
+//Метод подсчёта слов
+int Counter::wordsCounter(const QString str) const
+{
+    int counter = 0;
+
+    for (int i = 0; i < alph.length(); ++i)
+    {
+        if (str[0] == alph[i])
+        {
+            counter = 1;
+        }
+    }
+
+    for (int i = 0; i < str.length(); ++i)
+    {
+        for (int j = 0; j < alph.length(); ++j)
+        {
+            if (str[i] == ' ' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+            else if (str[i] == '\n' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+            else if (str[i] == '\t' && str[i + 1] == alph[j])
+            {
+                counter++;
+            }
+
+            for (int k = 0; k < signs.length(); ++k)
+            {
+                if (str[i] == signs[k] && str[i + 1] !=  alph[j])
+                {
+                    continue;
+                }
+                else if (str[i] == signs[k] && str[i + 1] ==  alph[j])
+                {
+                    counter++;
+                }
+            }
         }
     }
 
