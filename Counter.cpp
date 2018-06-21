@@ -47,23 +47,23 @@ int Counter::spacesCounter(const QString str) const
     return counter;
 }
 
-//Метод считающий строки
-//int Counter::linesCounter(const QString str) const
-//{
-//    int counter = 1;
+Метод считающий строки
+int Counter::linesCounter(const QString str) const
+{
+    int counter = 1;
 
-//    for (int i = 0; i < str.length(); ++i)
-//    {
-//        if (str[i] == '\n')
-//        {
-//            counter++;
-//        }
-//    }
+    for (int i = 0; i < str.length(); ++i)
+    {
+        if (str[i] == '\n')
+        {
+            counter++;
+        }
+    }
 
-//    return counter;
-//}
+    return counter;
+}
 
-////Метод подсчёта слов
+//Метод подсчёта слов
 //int Counter::wordsCounter(const QString str) const
 //{
 //    int counter = 0;

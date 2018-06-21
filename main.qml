@@ -81,8 +81,8 @@ ApplicationWindow {
             text: {
                 if (spacesCounter.checked) {
                     counterBackEnd.spacesCounter(input.text)
-                } else {
-                    0
+                } else if (signsCounter.checked) {
+                    //
                 }
             }
 
