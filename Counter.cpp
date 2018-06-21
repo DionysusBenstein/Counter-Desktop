@@ -24,32 +24,15 @@ Counter::Counter(QObject *parent) : QObject(parent)
 }
 
 //Метод подсчёта символов
-int Counter::length(const QString str) const
+int Counter::spacesCounter(const QString str) const
 {
     int counter = str.length();
 
-    if(ui->checkSpaces->isChecked())
+    for (int i = 0; i < str.length(); i++)
     {
-        for (int i = 0; i < str.length(); i++)
+        if (str[i] == ' ')
         {
-            if (str[i] == ' ')
-            {
-                counter--;
-            }
-        }
-    }
-
-    if(ui->checkSym->isChecked())
-    {
-        for (int i = 0; i < str.length(); i++)
-        {
-            for (int j = 0; j < signs.length(); j++)
-            {
-                if (str[i] == signs[j])
-                {
-                    counter--;
-                }
-            }
+            counter--;
         }
     }
 
@@ -65,64 +48,64 @@ int Counter::length(const QString str) const
 }
 
 //Метод считающий строки
-int Counter::lineCounter(const QString str) const
-{
-    int counter = 1;
+//int Counter::linesCounter(const QString str) const
+//{
+//    int counter = 1;
 
-    for (int i = 0; i < str.length(); ++i)
-    {
-        if (str[i] == '\n')
-        {
-            counter++;
-        }
-    }
+//    for (int i = 0; i < str.length(); ++i)
+//    {
+//        if (str[i] == '\n')
+//        {
+//            counter++;
+//        }
+//    }
 
-    return counter;
-}
+//    return counter;
+//}
 
-//Метод подсчёта слов
-int Counter::wordsCounter(const QString str) const
-{
-    int counter = 0;
+////Метод подсчёта слов
+//int Counter::wordsCounter(const QString str) const
+//{
+//    int counter = 0;
 
-    for (int i = 0; i < alph.length(); ++i)
-    {
-        if (str[0] == alph[i])
-        {
-            counter = 1;
-        }
-    }
+//    for (int i = 0; i < alph.length(); ++i)
+//    {
+//        if (str[0] == alph[i])
+//        {
+//            counter = 1;
+//        }
+//    }
 
-    for (int i = 0; i < str.length(); ++i)
-    {
-        for (int j = 0; j < alph.length(); ++j)
-        {
-            if (str[i] == ' ' && str[i + 1] == alph[j])
-            {
-                counter++;
-            }
-            else if (str[i] == '\n' && str[i + 1] == alph[j])
-            {
-                counter++;
-            }
-            else if (str[i] == '\t' && str[i + 1] == alph[j])
-            {
-                counter++;
-            }
+//    for (int i = 0; i < str.length(); ++i)
+//    {
+//        for (int j = 0; j < alph.length(); ++j)
+//        {
+//            if (str[i] == ' ' && str[i + 1] == alph[j])
+//            {
+//                counter++;
+//            }
+//            else if (str[i] == '\n' && str[i + 1] == alph[j])
+//            {
+//                counter++;
+//            }
+//            else if (str[i] == '\t' && str[i + 1] == alph[j])
+//            {
+//                counter++;
+//            }
 
-            for (int k = 0; k < signs.length(); ++k)
-            {
-                if (str[i] == signs[k] && str[i + 1] !=  alph[j])
-                {
-                    continue;
-                }
-                else if (str[i] == signs[k] && str[i + 1] ==  alph[j])
-                {
-                    counter++;
-                }
-            }
-        }
-    }
+//            for (int k = 0; k < signs.length(); ++k)
+//            {
+//                if (str[i] == signs[k] && str[i + 1] !=  alph[j])
+//                {
+//                    continue;
+//                }
+//                else if (str[i] == signs[k] && str[i + 1] ==  alph[j])
+//                {
+//                    counter++;
+//                }
+//            }
+//        }
+//    }
 
-    return counter;
-}
+//    return counter;
+//}

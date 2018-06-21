@@ -4,6 +4,8 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
+import com.benstein.counter 1.0
+
 //Main:  #e91e63
 //Dark:  #b0003a
 //Light: #ff6090
@@ -39,6 +41,8 @@ ApplicationWindow {
         }
     }
 
+    Counter { id: counterBackEnd }
+
     TextField {
         id: input
         anchors.left: parent.left
@@ -49,8 +53,6 @@ ApplicationWindow {
         wrapMode: Text.WrapAnywhere
     }
 
-
-
     Grid {
         id: cbGrid
         anchors.bottom: parent.bottom
@@ -60,10 +62,10 @@ ApplicationWindow {
         rows: 2
         columns: 2
 
-        CheckBox { text: "Не считать пробелы"         }
-        CheckBox { text: "Не считать знаки"           }
-        CheckBox { text: "Посчитать количество строк" }
-        CheckBox { text: "Посчитать количество слов"  }
+        CheckBox { id: spacesCounter; text: "Не считать пробелы"        }
+        CheckBox { id: signsCounter; text: "Не считать знаки"           }
+        CheckBox { id: linesCounter; text: "Посчитать количество строк" }
+        CheckBox { id: wordsCounter; text: "Посчитать количество слов"  }
     }
 
     Item {
@@ -76,7 +78,14 @@ ApplicationWindow {
         Text {
             anchors.centerIn: parent
 
-            text: "0"
+            text: {
+                if (spacesCounter.checked) {
+                    counterBackEnd.spacesCounter(input.text)
+                } else {
+                    0
+                }
+            }
+
             font.pixelSize: 40
         }
     }
