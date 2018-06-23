@@ -19,6 +19,8 @@ ApplicationWindow {
 
     title: "Scrambler v2.0.0"
 
+    color: "#eeeeee"
+
     Material.accent: "#e91e63"
 
     header: ToolBar {
@@ -45,14 +47,15 @@ ApplicationWindow {
 
     Counter { id: counterBackEnd }
 
-    TextField {
+    BTextEdit {
         id: input
+
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: appBar.bottom
         anchors.bottom: cbGrid.top
         anchors.margins: 19
-        wrapMode: Text.WrapAnywhere
+        //wrapMode: Text.WrapAnywhere
     }
 
     Grid {
