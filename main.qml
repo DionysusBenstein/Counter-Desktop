@@ -294,10 +294,10 @@ ApplicationWindow {
     }
 
     Item {
-        anchors.right: parent.right
+        anchors.right: rightArea.left
         anchors.left: cbGrid.right
         anchors.top: input.bottom
-        anchors.bottom: parent.bottom
+        anchors.bottom: bottomArea.top
         anchors.margins: 19
 
         Text {
@@ -307,6 +307,10 @@ ApplicationWindow {
                 if (spacesCounter.checked) {
                     counterBackEnd.spacesCounter(input.text)
                 } else if (signsCounter.checked) {
+                    //
+                } else if (linesCounter.checked) {
+                    //
+                } else if (wordsCounter.checked) {
                     //
                 } else {
                     input.text.length
