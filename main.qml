@@ -47,7 +47,7 @@ ApplicationWindow {
 
     Counter { id: counterBackEnd }
 
-    BTextEdit {
+    TextArea {
         id: input
 
         anchors.left: parent.left
@@ -55,7 +55,8 @@ ApplicationWindow {
         anchors.top: appBar.bottom
         anchors.bottom: cbGrid.top
         anchors.margins: 19
-        //wrapMode: Text.WrapAnywhere
+        placeholderText: "Введите текст..."
+        wrapMode: Text.WrapAnywhere
     }
 
     Grid {
