@@ -44,16 +44,18 @@ ApplicationWindow {
 
     Counter { id: counterBackEnd }
 
-    TextArea {
-        id: input
-
+    ScrollView {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: appBar.bottom
         anchors.bottom: cbGrid.top
         anchors.margins: 19
-        //placeholderText: "Введите текст..."
-        //wrapMode: Text.WrapAnywhere
+
+        TextArea {
+            id: input
+            wrapMode: Text.WrapAnywhere
+            placeholderText: "Введите текст..."
+        }
     }
 
     Grid {
