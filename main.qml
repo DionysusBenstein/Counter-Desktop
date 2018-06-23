@@ -15,8 +15,10 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: "Counter v2.0.0"
+    title: "Counter v2.1.0"
     color: "#eeeeee"
+
+    flags: Qt.FramelessWindowHint
 
     Material.accent: "#e91e63"
 
@@ -34,7 +36,7 @@ ApplicationWindow {
             anchors.right: parent.right
             width: 24
             height: 24
-            color: parent.color
+            color: actionBar.color
 
             Rectangle {
                 anchors.centerIn: parent
@@ -51,6 +53,15 @@ ApplicationWindow {
                 rotation: 135
                 antialiasing: true
             }
+
+            MouseArea {
+                id: closeButtonMoseArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = "#e81123"
+                onExited: parent.color = actionBar.color
+                onClicked: close()
+            }
         }
 
         //maximaze
@@ -62,14 +73,13 @@ ApplicationWindow {
             color: parent.color
 
             Rectangle {
-                id: major
                 anchors.centerIn: parent
                 width: 10
                 height: 9
             }
 
             Rectangle {
-                anchors.centerIn: major
+                anchors.centerIn: parent
                 width: 6
                 height: 5
                 color: parent.color
