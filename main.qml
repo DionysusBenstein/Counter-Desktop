@@ -308,6 +308,8 @@ ApplicationWindow {
                     counterBackEnd.spacesCounter(input.text)
                 } else if (signsCounter.checked) {
                     //
+                } else {
+                    input.text.length
                 }
             }
 
