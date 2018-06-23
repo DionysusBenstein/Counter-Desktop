@@ -47,7 +47,7 @@ int Counter::spacesCounter(const QString str) const
     return counter;
 }
 
-Метод считающий строки
+//Метод считающий строки
 int Counter::linesCounter(const QString str) const
 {
     int counter = 1;
