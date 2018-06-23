@@ -15,10 +15,123 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: "Counter v2.1.0"
+    title: "Counter v2.1.3-beta1"
     color: "#eeeeee"
 
     flags: Qt.FramelessWindowHint
+
+    // Объявляем свойства, которые будут хранить позицию зажатия курсора мыши
+    property int previousX
+    property int previousY
+
+    MouseArea {
+        id: topArea
+        height: 5
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+        // Устанавливаем форму курсора, чтобы было понятно, что это изменение размера
+        cursorShape: Qt.SizeVerCursor
+
+        onPressed: {
+            // Запоминаем позицию по оси Y
+            previousY = mouseY
+        }
+
+        // При изменении позиции делаем пересчёт позиции окна, и его высоты
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setY(mainWindow.y + dy)
+            mainWindow.setHeight(mainWindow.height - dy)
+        }
+    }
+
+    MouseArea {
+        id: bottomArea
+        height: 5
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+        }
+        cursorShape: Qt.SizeVerCursor
+
+        onPressed: {
+            previousY = mouseY
+        }
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setHeight(mainWindow.height + dy)
+        }
+    }
+
+    MouseArea {
+        id: leftArea
+        width: 5
+        anchors {
+            top: topArea.bottom
+            bottom: bottomArea.top
+            left: parent.left
+        }
+        cursorShape: Qt.SizeHorCursor
+
+        onPressed: {
+            previousX = mouseX
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+            mainWindow.setWidth(mainWindow.width - dx)
+        }
+    }
+
+    MouseArea {
+        id: rightArea
+        width: 5
+        anchors {
+            top: topArea.bottom
+            bottom: bottomArea.top
+            right: parent.right
+        }
+        cursorShape:  Qt.SizeHorCursor
+
+        onPressed: {
+            previousX = mouseX
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setWidth(mainWindow.width + dx)
+        }
+    }
+
+    MouseArea {
+        anchors {
+            top: topArea.bottom
+            bottom: bottomArea.top
+            left: leftArea.right
+            right: rightArea.left
+        }
+
+        onPressed: {
+            previousX = mouseX
+            previousY = mouseY
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+        }
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setY(mainWindow.y + dy)
+        }
+    }
 
     Material.accent: "#e91e63"
 
@@ -84,6 +197,16 @@ ApplicationWindow {
                 height: 5
                 color: parent.color
             }
+
+            MouseArea {
+                id: maxButtonMoseArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = "#ff6090"
+                onExited: parent.color = "#b0003a"
+                onClicked: mainWindow.showFullScreen()
+
+            }
         }
 
         //to curtail
@@ -100,10 +223,21 @@ ApplicationWindow {
                 width: 10
                 height: 2
             }
+
+            MouseArea {
+                id: curButtonMoseArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = "#ff6090"
+                onExited: parent.color = "#b0003a"
+                onClicked: {
+                    mainWindow.FullScreen
+                }
+            }
         }
     }
 
-     ToolBar {
+    ToolBar {
         id: appBar
         anchors.top: actionBar.bottom
         anchors.left: parent.left
