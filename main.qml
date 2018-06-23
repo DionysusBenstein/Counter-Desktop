@@ -136,7 +136,7 @@ ApplicationWindow {
     Material.accent: "#e91e63"
 
     Header { id: header }
-    AppBar { id: appbar }
+    AppBar { id: appBar }
 
     Counter { id: counterBackEnd }
 
