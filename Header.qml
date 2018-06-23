@@ -44,43 +44,11 @@ Rectangle {
 
     //maximaze
     Rectangle {
-        id: maxButton
+        id: minMaxButton
         anchors.right: closeButton.left
         width: 24
         height: 24
         color: parent.color
-
-        Rectangle {
-            anchors.centerIn: parent
-            width: 10
-            height: 9
-        }
-
-        Rectangle {
-            anchors.centerIn: parent
-            width: 6
-            height: 5
-            color: parent.color
-        }
-
-        MouseArea {
-            id: maxButtonMoseArea
-            anchors.fill: parent
-            hoverEnabled: true
-            onEntered: parent.color = "#ff6090"
-            onExited: parent.color = "#b0003a"
-            onClicked: mainWindow.showFullScreen()
-
-        }
-    }
-
-    //minimize
-//    Rectangle {
-//        id: minButton
-//        anchors.right: closeButton.left
-//        width: 24
-//        height: 24
-//        color: parent.color
 
 //        Rectangle {
 //            anchors.centerIn: parent
@@ -95,20 +63,26 @@ Rectangle {
 //            color: parent.color
 //        }
 
-//        MouseArea {
-//            id: maxButtonMoseArea
-//            anchors.fill: parent
-//            hoverEnabled: true
-//            onEntered: parent.color = "#ff6090"
-//            onExited: parent.color = "#b0003a"
-//            onClicked: mainWindow.showFullScreen()
+        Image {
+            anchors.centerIn: parent
+            source: "img/minimizeWindow.png"
+        }
 
-//        }
-//    }
+
+        MouseArea {
+            id: minMaxButtonMoseArea
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = "#ff6090"
+            onExited: parent.color = "#b0003a"
+            onClicked: mainWindow.showFullScreen()
+
+        }
+    }
 
     //to curtail
     Rectangle {
-        anchors.right: maxButton.left
+        anchors.right: minMaxButton.left
         width: 24
         height: 24
         color: parent.color
