@@ -17,7 +17,7 @@ ApplicationWindow {
     width: 640
     height: 480
 
-    title: "Scrambler v2.0.0"
+    title: "Counter v2.0.0"
 
     color: "#eeeeee"
 
@@ -68,7 +68,7 @@ ApplicationWindow {
         rows: 2
         columns: 2
 
-        CheckBox { id: spacesCounter; text: "Не считать пробелы"        }
+        CheckBox { id: spacesCounter; text: "Не считать пробелы"         }
         CheckBox { id: signsCounter; text:  "Не считать знаки"           }
         CheckBox { id: linesCounter; text:  "Посчитать количество строк" }
         CheckBox { id: wordsCounter; text:  "Посчитать количество слов"  }
