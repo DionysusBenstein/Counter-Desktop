@@ -28,6 +28,7 @@ ApplicationWindow {
         anchors.top: parent.top
         color: "#b0003a"
 
+        //close
         Rectangle {
             id: closeButton
             anchors.right: parent.right
@@ -52,6 +53,7 @@ ApplicationWindow {
             }
         }
 
+        //maximaze
         Rectangle {
             id: maxButton
             anchors.right: closeButton.left
@@ -74,6 +76,7 @@ ApplicationWindow {
             }
         }
 
+        //to curtail
         Rectangle {
             anchors.right: maxButton.left
             width: 24
@@ -81,7 +84,9 @@ ApplicationWindow {
             color: parent.color
 
             Rectangle {
-                anchors.centerIn: parent
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 8
                 width: 10
                 height: 2
             }
