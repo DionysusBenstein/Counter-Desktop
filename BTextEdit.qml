@@ -6,6 +6,10 @@ Item {
         id: focusScope
         anchors.fill: parent
 
+        MouseArea {
+            anchors.fill: parent
+        }
+
         Rectangle {
             anchors.fill: parent
             //color: "#ffb7b7"

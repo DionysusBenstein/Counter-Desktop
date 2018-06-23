@@ -13,12 +13,9 @@ import com.benstein.counter 1.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-
     width: 640
     height: 480
-
     title: "Counter v2.0.0"
-
     color: "#eeeeee"
 
     Material.accent: "#e91e63"
@@ -55,8 +52,8 @@ ApplicationWindow {
         anchors.top: appBar.bottom
         anchors.bottom: cbGrid.top
         anchors.margins: 19
-        placeholderText: "Введите текст..."
-        wrapMode: Text.WrapAnywhere
+        //placeholderText: "Введите текст..."
+        //wrapMode: Text.WrapAnywhere
     }
 
     Grid {
