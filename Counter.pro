@@ -31,3 +31,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Counter.h
+
+RC_FILE = icons/icon.rc

@@ -75,6 +75,66 @@ ApplicationWindow {
     }
 
     MouseArea {
+        id: bottomLeftArea
+        width: 5
+        height: 5
+
+        Rectangle {
+            anchors.fill: parent
+            color: "red"
+        }
+
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+        }
+
+        cursorShape: Qt.SizeHorCursor | Qt.SizeVerCursor
+        onPressed: previousY = mouseY
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setHeight(mainWindow.height + dy)
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+            mainWindow.setWidth(mainWindow.width - dx)
+        }
+    }
+
+    MouseArea {
+        id: bottomRightArea
+        width: 5
+        height: 5
+
+        Rectangle {
+            anchors.fill: parent
+            color: "red"
+        }
+
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+        }
+
+        cursorShape: Qt.SizeVerCursor | Qt.SizeHorCursor
+        onPressed: previousY = mouseY
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setHeight(mainWindow.height + dy)
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+            mainWindow.setWidth(mainWindow.width - dx)
+        }
+    }
+
+    MouseArea {
         id: leftArea
         width: 5
         anchors {
