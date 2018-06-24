@@ -68,22 +68,7 @@ Rectangle {
         height: 24
         color: parent.color
 
-//        Rectangle {
-//            anchors.centerIn: parent
-//            width: 10
-//            height: 9
-//        }
-
-//        Rectangle {
-//            anchors.centerIn: parent
-//            width: 6
-//            height: 5
-//            color: parent.color
-//        }
-
         Image {
-            //source: "img/minimizeWindow.png"
-
             source: windowSizeCheck % 2 === 0 ? "img/maximizeWindow.png" : "img/minimizeWindow.png"
             anchors.centerIn: parent
         }
@@ -96,11 +81,7 @@ Rectangle {
             onExited: parent.color = "#b0003a"
             onClicked: {
                 windowSizeCheck++
-                if (windowSizeCheck % 2 === 0) {
-                    mainWindow.showNormal()
-                } else {
-                    mainWindow.showMaximized()
-                }
+                windowSizeCheck % 2 === 0 ? mainWindow.showNormal() : mainWindow.showMaximized()
             }
         }
     }
