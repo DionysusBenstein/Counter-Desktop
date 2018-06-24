@@ -16,7 +16,7 @@ import QtQuick 2.10
 
 Rectangle {
     id: appBar
-    anchors.top: header.bottom
+    anchors.top: titleBar.bottom
     anchors.left: parent.left
     anchors.right: parent.right
     height: 56

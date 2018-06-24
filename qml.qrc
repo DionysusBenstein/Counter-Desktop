@@ -2,7 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>Header.qml</file>
         <file>AppBar.qml</file>
+        <file>TitleBar.qml</file>
     </qresource>
 </RCC>

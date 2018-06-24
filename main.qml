@@ -29,7 +29,7 @@ ApplicationWindow {
     visible: true
     minimumWidth: 640
     minimumHeight: 480
-    title: "Counter v2.1.4-beta1"
+    title: "Counter v2.1.6-beta1"
     color: "#eeeeee"
 
     flags: Qt.FramelessWindowHint
@@ -196,7 +196,7 @@ ApplicationWindow {
 
     Material.accent: "#e91e63"
 
-    Header { id: header }
+    TitleBar { id: titleBar }
     AppBar { id: appBar }
 
     Counter { id: counterBackEnd }
