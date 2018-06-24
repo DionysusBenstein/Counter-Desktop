@@ -129,8 +129,7 @@ ApplicationWindow {
 
         onMouseXChanged: {
             var dx = mouseX - previousX
-            mainWindow.setX(mainWindow.x + dx)
-            mainWindow.setWidth(mainWindow.width - dx)
+            mainWindow.setWidth(mainWindow.width + dx)
         }
     }
 
