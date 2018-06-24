@@ -50,23 +50,23 @@ Rectangle {
         height: 24
         color: parent.color
 
-//        Rectangle {
-//            anchors.centerIn: parent
-//            width: 10
-//            height: 9
-//        }
-
-//        Rectangle {
-//            anchors.centerIn: parent
-//            width: 6
-//            height: 5
-//            color: parent.color
-//        }
-
-        Image {
+        Rectangle {
             anchors.centerIn: parent
-            source: "img/minimizeWindow.png"
+            width: 10
+            height: 9
         }
+
+        Rectangle {
+            anchors.centerIn: parent
+            width: 6
+            height: 5
+            color: parent.color
+        }
+
+//        Image {
+//            source: "img/minimizeWindow.png"
+//            anchors.centerIn: parent
+//        }
 
 
         MouseArea {

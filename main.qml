@@ -13,9 +13,9 @@ import com.benstein.counter 1.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-    width: 640
-    height: 480
-    title: "Counter v2.1.3-beta1"
+    minimumWidth: 640
+    minimumHeight: 480
+    title: "Counter v2.1.4-beta1"
     color: "#eeeeee"
 
     flags: Qt.FramelessWindowHint
@@ -32,15 +32,10 @@ ApplicationWindow {
             left: parent.left
             right: parent.right
         }
-        // Устанавливаем форму курсора, чтобы было понятно, что это изменение размера
+
         cursorShape: Qt.SizeVerCursor
+        onPressed: previousY = mouseY
 
-        onPressed: {
-            // Запоминаем позицию по оси Y
-            previousY = mouseY
-        }
-
-        // При изменении позиции делаем пересчёт позиции окна, и его высоты
         onMouseYChanged: {
             var dy = mouseY - previousY
             mainWindow.setY(mainWindow.y + dy)
@@ -56,11 +51,9 @@ ApplicationWindow {
             left: parent.left
             right: parent.right
         }
-        cursorShape: Qt.SizeVerCursor
 
-        onPressed: {
-            previousY = mouseY
-        }
+        cursorShape: Qt.SizeVerCursor
+        onPressed: previousY = mouseY
 
         onMouseYChanged: {
             var dy = mouseY - previousY
@@ -76,11 +69,9 @@ ApplicationWindow {
             bottom: bottomArea.top
             left: parent.left
         }
-        cursorShape: Qt.SizeHorCursor
 
-        onPressed: {
-            previousX = mouseX
-        }
+        cursorShape: Qt.SizeHorCursor
+        onPressed: previousX = mouseX
 
         onMouseXChanged: {
             var dx = mouseX - previousX
@@ -97,11 +88,9 @@ ApplicationWindow {
             bottom: bottomArea.top
             right: parent.right
         }
-        cursorShape:  Qt.SizeHorCursor
 
-        onPressed: {
-            previousX = mouseX
-        }
+        cursorShape:  Qt.SizeHorCursor
+        onPressed: previousX = mouseX
 
         onMouseXChanged: {
             var dx = mouseX - previousX
