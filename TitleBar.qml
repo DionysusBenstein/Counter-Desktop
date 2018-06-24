@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Header.qml                                  */
+/* Original File Name: TitleBar.qml                                */
 
 /* Date: 23-06-2018                                                */
 
