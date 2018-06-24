@@ -96,7 +96,7 @@ Rectangle {
 
                 windowSizeCheck++
                 if (windowSizeCheck % 2 === 0) {
-                    mainWindow.showMinimized()
+                    mainWindow.showNormal()
                 } else {
                     mainWindow.showMaximized()
                 }

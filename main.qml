@@ -32,7 +32,9 @@ ApplicationWindow {
     title: "Counter v2.1.6-beta1"
     color: "#eeeeee"
 
-    flags: Qt.FramelessWindowHint
+    //flags: Qt.FramelessWindowHint
+
+    flags: Qt.Window | Qt.CustomizeWindowHint | Qt.WindowTitleHint | Qt.WindowCloseButtonHint | Qt.WindowSystemMenuHint
 
     property int previousX
     property int previousY
