@@ -60,7 +60,7 @@ Rectangle {
         }
     }
 
-    //maximaze
+    //min max
     Rectangle {
         id: minMaxButton
         anchors.right: closeButton.left
@@ -107,9 +107,7 @@ Rectangle {
             hoverEnabled: true
             onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
-            onClicked: {
-                mainWindow.FullScreen
-            }
+            onClicked:  mainWindow.showMinimized()
         }
     }
 }
