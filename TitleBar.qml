@@ -24,6 +24,8 @@ Rectangle {
     anchors.top: parent.top
     color: "#b0003a"
 
+    property int windowSizeCheck: 0
+
     //close
     Rectangle {
         id: closeButton
@@ -84,15 +86,21 @@ Rectangle {
 //            anchors.centerIn: parent
 //        }
 
-
         MouseArea {
             id: minMaxButtonMoseArea
             anchors.fill: parent
             hoverEnabled: true
             onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
-            onClicked: mainWindow.showFullScreen()
+            onClicked: {
 
+                windowSizeCheck++
+                if (windowSizeCheck % 2 === 0) {
+                    mainWindow.showMinimized()
+                } else {
+                    mainWindow.showMaximized()
+                }
+            }
         }
     }
 
