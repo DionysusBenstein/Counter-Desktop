@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Counte.cpp                                  */
+/* Original File Name: Counter.cpp                                  */
 
 /* Date: 21-06-2018                                                */
 

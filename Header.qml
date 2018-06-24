@@ -1,3 +1,19 @@
+/*******************************************************************/
+
+/* Original File Name: Header.qml                                  */
+
+/* Date: 23-06-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Замена системной шапке с основными кнопками
+                управления.                                        */
+
+
+/*******************************************************************/
+
 import QtQuick 2.10
 
 Rectangle {

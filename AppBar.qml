@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: AppBar.qml                                  */
+
+/* Date: 23-06-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Реализация AppBar.                                 */
+
+/*******************************************************************/
+
 import QtQuick 2.10
 
 Rectangle {

@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: main.qml                                    */
+
+/* Date: 21-06-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Основное окно программы.                           */
+
+/*******************************************************************/
+
 import QtQuick 2.10
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
@@ -20,7 +34,6 @@ ApplicationWindow {
 
     flags: Qt.FramelessWindowHint
 
-    // Объявляем свойства, которые будут хранить позицию зажатия курсора мыши
     property int previousX
     property int previousY
 
