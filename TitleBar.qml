@@ -15,6 +15,8 @@
 /*******************************************************************/
 
 import QtQuick 2.10
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.3
 
 Rectangle {
     id: actionBar
@@ -24,7 +26,9 @@ Rectangle {
     anchors.top: parent.top
     color: "#b0003a"
 
-    property int windowSizeCheck: 0
+    function isMaximize() {
+        return mainWindow.visibility === ApplicationWindow.Maximized
+    }
 
     //close
     Rectangle {
@@ -69,7 +73,7 @@ Rectangle {
         color: parent.color
 
         Image {
-            source: windowSizeCheck % 2 === 0 ? "img/maximizeWindow.png" : "img/minimizeWindow.png"
+            source: isMaximize() ? "img/minimizeWindow.png" : "img/maximizeWindow.png"
             anchors.centerIn: parent
         }
 
@@ -80,8 +84,7 @@ Rectangle {
             onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
             onClicked: {
-                windowSizeCheck++
-                windowSizeCheck % 2 === 0 ? mainWindow.showNormal() : mainWindow.showMaximized()
+                isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
             }
         }
     }
