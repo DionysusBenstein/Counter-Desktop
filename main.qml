@@ -29,12 +29,12 @@ ApplicationWindow {
     visible: true
     minimumWidth: 640
     minimumHeight: 480
-    title: "Counter v2.1.6-beta1"
+    title: "Counter v2.3.4-beta1"
     color: "#eeeeee"
 
-    //flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint
 
-    flags: Qt.Window | Qt.CustomizeWindowHint | Qt.WindowTitleHint | Qt.WindowCloseButtonHint | Qt.WindowSystemMenuHint
+    Material.accent: "#e91e63"
 
     property int previousX
     property int previousY
@@ -196,8 +196,6 @@ ApplicationWindow {
         }
     }
 
-    Material.accent: "#e91e63"
-
     TitleBar { id: titleBar }
     AppBar { id: appBar }
 
@@ -232,12 +230,14 @@ ApplicationWindow {
         CheckBox { id: wordsCounter; text:  "Посчитать количество слов"  }
     }
 
-    Item {
-        anchors.right: rightArea.left
-        anchors.left: cbGrid.right
-        anchors.top: input.bottom
-        anchors.bottom: bottomArea.top
-        anchors.margins: 19
+    Rectangle {
+        anchors {
+            left: cbGrid.right
+            right: rightArea.left
+            top: input.bottom
+            bottom: bottomArea.top
+            margins: 19
+        }
 
         Text {
             anchors.centerIn: parent

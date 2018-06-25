@@ -86,8 +86,9 @@ Rectangle {
         }
     }
 
-    //to curtail
+    //hide
     Rectangle {
+        id: hideButton
         anchors.right: minMaxButton.left
         width: 24
         height: 24
@@ -107,7 +108,7 @@ Rectangle {
             hoverEnabled: true
             onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
-            onClicked:  mainWindow.showMinimized()
+            onClicked: mainWindow.showMinimized()
         }
     }
 }
