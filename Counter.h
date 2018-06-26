@@ -30,7 +30,7 @@ public:
     Q_INVOKABLE int linesCounter(const QString str) const;
 
     //Метод подсчёта слов
-    //Q_INVOKABLE int wordsCounter(const QString str) const;
+    Q_INVOKABLE int wordsCounter(const QString str) const;
 
 private:
     QString signs;

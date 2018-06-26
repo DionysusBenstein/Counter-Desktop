@@ -121,7 +121,7 @@ ApplicationWindow {
             right: parent.right
         }
 
-        cursorShape: Qt.SizeVerCursor | Qt.SizeHorCursor
+        cursorShape: Qt.SizeVerCursor
         onPressed: previousY = mouseY
 
         onMouseYChanged: {
@@ -248,9 +248,9 @@ ApplicationWindow {
                 } else if (signsCounter.checked) {
                     //
                 } else if (linesCounter.checked) {
-                    //
+                    counterBackEnd.linesCounter(input.text)
                 } else if (wordsCounter.checked) {
-                    //
+                    counterBackEnd.wordsCounter(input.text)
                 } else {
                     input.text.length
                 }
