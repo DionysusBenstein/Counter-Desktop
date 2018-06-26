@@ -224,10 +224,45 @@ ApplicationWindow {
         rows: 2
         columns: 2
 
-        CheckBox { id: spacesCounter; text: "Не считать пробелы"         }
-        CheckBox { id: signsCounter; text:  "Не считать знаки"           }
-        CheckBox { id: linesCounter; text:  "Посчитать количество строк" }
-        CheckBox { id: wordsCounter; text:  "Посчитать количество слов"  }
+        CheckBox {
+            id: spacesCounter
+            text: "Не считать пробелы"
+            checked: {
+                if (linesCounter.checked || wordsCounter.checked) {
+                    false
+                }
+            }
+        }
+
+        CheckBox {
+            id: signsCounter
+            text:  "Не считать знаки"
+            checked: {
+                if (linesCounter.checked || wordsCounter.checked) {
+                    false
+                }
+            }
+        }
+
+        CheckBox {
+            id: linesCounter;
+            text:  "Посчитать количество строк"
+            checked: {
+                if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
+                    false
+                }
+            }
+        }
+
+        CheckBox {
+            id: wordsCounter;
+            text:  "Посчитать количество слов"
+            checked: {
+                if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
+                    false
+                }
+            }
+        }
     }
 
     Rectangle {
