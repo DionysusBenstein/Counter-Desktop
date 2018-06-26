@@ -81,7 +81,7 @@ Rectangle {
             id: minMaxButtonMoseArea
             anchors.fill: parent
             hoverEnabled: true
-            onEntered: parent.color = "#790015"
+            onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
             onClicked: {
                 isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
@@ -109,7 +109,7 @@ Rectangle {
             id: curButtonMoseArea
             anchors.fill: parent
             hoverEnabled: true
-            onEntered: parent.color = "#790015"
+            onEntered: parent.color = "#ff6090"
             onExited: parent.color = "#b0003a"
             onClicked: mainWindow.showMinimized()
         }
