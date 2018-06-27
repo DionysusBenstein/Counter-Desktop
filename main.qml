@@ -43,6 +43,7 @@ ApplicationWindow {
     property int borderSize: 3
     property int cornerSize: 5
 
+
     MouseArea {
         id: topArea
         height: borderSize
@@ -301,7 +302,6 @@ ApplicationWindow {
 
     TitleBar { id: titleBar }
     AppBar { id: appBar }
-
     Counter { id: counterBackEnd }
 
     ScrollView {
@@ -318,7 +318,7 @@ ApplicationWindow {
         }
     }
 
-    Grid {
+    GridLayout {
         id: cbGrid
         anchors.bottom: parent.bottom
         anchors.left: parent.left
