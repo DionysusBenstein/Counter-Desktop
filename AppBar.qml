@@ -47,9 +47,7 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
 
-        onDoubleClicked: {
-            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-        }
+        onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
 
         onPressed: {
             previousX = mouseX
