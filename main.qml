@@ -32,7 +32,8 @@ ApplicationWindow {
     title: "Counter v2.3.4-beta1"
     color: "#eeeeee"
 
-    flags: Qt.FramelessWindowHint
+    //flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.Window
 
     Material.accent: "#e91e63"
 
