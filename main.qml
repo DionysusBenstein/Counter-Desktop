@@ -227,55 +227,76 @@ ApplicationWindow {
         CheckBox {
             id: spacesCounter
             text: "Не считать пробелы"
-            checked: !(linesCounter.checked || wordsCounter.checked)
+            checkState: {
+                if (linesCounter.checked || wordsCounter.checked) {
+                    Qt.Unchecked
+                }
+            }
         }
 
         CheckBox {
             id: signsCounter
             text:  "Не считать знаки"
-            checked: !(linesCounter.checked || wordsCounter.checked)
+            checkState: {
+                if (linesCounter.checked || wordsCounter.checked) {
+                    Qt.Unchecked
+                }
+            }
         }
 
         CheckBox {
             id: linesCounter;
             text:  "Посчитать количество строк"
-            checked: !(wordsCounter.checked || signsCounter.checked || spacesCounter.checked)
+            checkState: {
+                if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
+                    Qt.Unchecked
+                }
+            }
         }
 
         CheckBox {
             id: wordsCounter;
             text:  "Посчитать количество слов"
-            checked: !(linesCounter.checked || signsCounter.checked || spacesCounter.checked)
-        }
-    }
-
-    Rectangle {
-        anchors {
-            left: cbGrid.right
-            right: rightArea.left
-            top: input.bottom
-            bottom: bottomArea.top
-            margins: 19
-        }
-
-        Text {
-            anchors.centerIn: parent
-
-            text: {
-                if (spacesCounter.checked) {
-                    counterBackEnd.spacesCounter(input.text)
-                } else if (signsCounter.checked) {
-                    //
-                } else if (linesCounter.checked) {
-                    counterBackEnd.linesCounter(input.text)
-                } else if (wordsCounter.checked) {
-                    counterBackEnd.wordsCounter(input.text)
-                } else {
-                    input.text.length
+            checkState: {
+                if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
+                    Qt.Unchecked
                 }
             }
+        }
 
-            font.pixelSize: 40
+
+        Rectangle {
+            anchors {
+                left: cbGrid.right
+                right: rightArea.left
+                top: input.bottom
+                bottom: bottomArea.top
+                margins: 19
+            }
+
+            //width: 50
+            //height: 50
+            color: "red"
+
+//            Text {
+//                anchors.centerIn: parent
+
+//                text: {
+//                    if (spacesCounter.checked) {
+//                        counterBackEnd.spacesCounter(input.text)
+//                    } else if (signsCounter.checked) {
+//                        //
+//                    } else if (linesCounter.checked) {
+//                        counterBackEnd.linesCounter(input.text)
+//                    } else if (wordsCounter.checked) {
+//                        counterBackEnd.wordsCounter(input.text)
+//                    } else {
+//                        input.text.length
+//                    }
+//                }
+
+//                font.pixelSize: 40
+//            }
         }
     }
 }
