@@ -27,8 +27,10 @@ import com.benstein.counter 1.3
 ApplicationWindow {
     id: mainWindow
     visible: true
-    minimumWidth: 640
-    minimumHeight: 480
+    width: 640
+    height: 480
+    minimumWidth: 550
+    minimumHeight: 350
     title: "Counter v2.3.4-beta1"
     color: "#eeeeee"
 
