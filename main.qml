@@ -43,7 +43,6 @@ ApplicationWindow {
     property int borderSize: 3
     property int cornerSize: 5
 
-
     MouseArea {
         id: topArea
         height: borderSize
@@ -300,9 +299,9 @@ ApplicationWindow {
         }
     }
 
-    TitleBar { id: titleBar }
-    AppBar { id: appBar }
-    Counter { id: counterBackEnd }
+    TitleBar { id: titleBar       }
+    AppBar   { id: appBar         }
+    Counter  { id: counterBackEnd }
 
     ScrollView {
         anchors.left: parent.left
@@ -397,7 +396,6 @@ ApplicationWindow {
                         input.text.length
                     }
                 }
-
                 font.pixelSize: 40
             }
         }

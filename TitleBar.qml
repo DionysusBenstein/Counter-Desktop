@@ -167,6 +167,4 @@ Rectangle {
             mainWindow.setY(mainWindow.y + dy)
         }
     }
-
-    if ()
 }
