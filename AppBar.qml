@@ -13,6 +13,8 @@
 /*******************************************************************/
 
 import QtQuick 2.10
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.3
 
 Rectangle {
     id: appBar
@@ -20,6 +22,10 @@ Rectangle {
     anchors.left: parent.left
     anchors.right: parent.right
     height: 56
+
+    function isMaximize() {
+        return mainWindow.visibility === ApplicationWindow.Maximized
+    }
 
     Rectangle {
         id: appBarRect
@@ -35,6 +41,29 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.margins: 19
+        }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+
+        onDoubleClicked: {
+            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
+        }
+
+        onPressed: {
+            previousX = mouseX
+            previousY = mouseY
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+        }
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setY(mainWindow.y + dy)
         }
     }
 }
