@@ -62,6 +62,30 @@ Rectangle {
             onExited: parent.color = actionBar.color
             onClicked: close()
         }
+
+        MouseArea {
+            anchors {
+                top: topArea.bottom
+                bottom: bottomArea.top
+                left: leftArea.right
+                right: rightArea.left
+            }
+
+            onPressed: {
+                previousX = mouseX
+                previousY = mouseY
+            }
+
+            onMouseXChanged: {
+                var dx = mouseX - previousX
+                mainWindow.setX(mainWindow.x + dx)
+            }
+
+            onMouseYChanged: {
+                var dy = mouseY - previousY
+                mainWindow.setY(mainWindow.y + dy)
+            }
+        }
     }
 
     //min max
@@ -125,6 +149,21 @@ Rectangle {
 
         onDoubleClicked: {
             isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
+        }
+
+        onPressed: {
+            previousX = mouseX
+            previousY = mouseY
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            mainWindow.setX(mainWindow.x + dx)
+        }
+
+        onMouseYChanged: {
+            var dy = mouseY - previousY
+            mainWindow.setY(mainWindow.y + dy)
         }
     }
 }
