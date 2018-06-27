@@ -278,25 +278,25 @@ ApplicationWindow {
             //height: 50
             color: "red"
 
-//            Text {
-//                anchors.centerIn: parent
+            Text {
+                anchors.centerIn: parent
 
-//                text: {
-//                    if (spacesCounter.checked) {
-//                        counterBackEnd.spacesCounter(input.text)
-//                    } else if (signsCounter.checked) {
-//                        //
-//                    } else if (linesCounter.checked) {
-//                        counterBackEnd.linesCounter(input.text)
-//                    } else if (wordsCounter.checked) {
-//                        counterBackEnd.wordsCounter(input.text)
-//                    } else {
-//                        input.text.length
-//                    }
-//                }
+                text: {
+                    if (spacesCounter.checked) {
+                        counterBackEnd.spacesCounter(input.text)
+                    } else if (signsCounter.checked) {
+                        //
+                    } else if (linesCounter.checked) {
+                        counterBackEnd.linesCounter(input.text)
+                    } else if (wordsCounter.checked) {
+                        counterBackEnd.wordsCounter(input.text)
+                    } else {
+                        input.text.length
+                    }
+                }
 
-//                font.pixelSize: 40
-//            }
+                font.pixelSize: 40
+            }
         }
     }
 }
