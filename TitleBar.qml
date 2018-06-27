@@ -114,4 +114,17 @@ Rectangle {
             onClicked: mainWindow.showMinimized()
         }
     }
+
+    MouseArea {
+        anchors {
+            left: parent.left
+            top: parent.top
+            bottom: parent.bottom
+            right: hideButton.left
+        }
+
+        onDoubleClicked: {
+            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
+        }
+    }
 }
