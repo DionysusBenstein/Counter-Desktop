@@ -17,7 +17,6 @@ import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
-import QtGraphicalEffects 1.0
 
 import com.benstein.counter 1.3
 
@@ -39,6 +38,8 @@ ApplicationWindow {
 
     property int previousX
     property int previousY
+    property int borderSize: 3
+    property int cornerSize: 5
 
     MouseArea {
         id: topArea
@@ -294,18 +295,6 @@ ApplicationWindow {
             var dy = mouseY - previousY
             mainWindow.setY(mainWindow.y + dy)
         }
-    }
-
-    DropShadow {
-        id: shadow
-        visible: true
-        anchors.fill: mainWindow
-        horizontalOffset: 3
-        verticalOffset: 3
-        radius: 4
-        samples: 7
-        source: mainWindow
-        color: "darkgray"
     }
 
     TitleBar { id: titleBar }
