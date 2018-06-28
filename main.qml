@@ -189,7 +189,7 @@ ApplicationWindow {
     MouseArea {
         id: posChangedMouseArea
         anchors {
-            top: topArea.bottom
+            top: appBar.bottom
             bottom: bottomArea.top
             left: leftArea.right
             right: rightArea.left
