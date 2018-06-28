@@ -370,7 +370,6 @@ ApplicationWindow {
         }
     }
 
-    //Debug
     Rectangle {
         anchors {
             right: rightArea.left
