@@ -160,11 +160,19 @@ Rectangle {
         onMouseXChanged: {
             var dx = mouseX - previousX
             mainWindow.setX(mainWindow.x + dx)
+
+//            if (isMaximize()) {
+//                mainWindow.showNormal()
+//            }
         }
 
         onMouseYChanged: {
             var dy = mouseY - previousY
             mainWindow.setY(mainWindow.y + dy)
+
+//            if (isMaximize()) {
+//                mainWindow.showNormal()
+//            }
         }
     }
 }
