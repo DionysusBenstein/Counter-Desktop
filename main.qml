@@ -278,7 +278,7 @@ ApplicationWindow {
 
             onClicked: {
                 if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    linesCounter.checked = false
+                    wordsCounter.checked = false
                     signsCounter.checked = false
                     spacesCounter.checked = false
                     linesCounter.checked = true
@@ -292,7 +292,7 @@ ApplicationWindow {
 
             onClicked: {
                 if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    wordsCounter.checked = false
+                    linesCounter.checked = false
                     signsCounter.checked = false
                     spacesCounter.checked = false
                     wordsCounter.checked = true
