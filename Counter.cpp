@@ -23,8 +23,8 @@ Counter::Counter(QObject *parent) : QObject(parent)
             "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 }
 
-//Метод подсчёта символов
-int Counter::spacesCounter(const QString str) const
+//Метод подсчёта символов без пробелов
+int Counter::lengthWithoutSpaces(const QString str) const
 {
     int counter = str.length();
 
@@ -45,6 +45,12 @@ int Counter::spacesCounter(const QString str) const
     }
 
     return counter;
+}
+
+//Метод подсчёта символов без знаков
+int Counter::lengthWithoutSigns(const QString str) const
+{
+
 }
 
 //Метод считающий строки

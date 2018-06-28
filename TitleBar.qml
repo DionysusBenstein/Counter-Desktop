@@ -140,6 +140,7 @@ Rectangle {
         }
     }
 
+    //position change area
     MouseArea {
         id: posChangedMouseArea
         anchors {

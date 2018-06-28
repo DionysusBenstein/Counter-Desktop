@@ -24,7 +24,10 @@ public:
     explicit Counter(QObject *parent = nullptr);
 
     //Метод подсчёта символов
-    Q_INVOKABLE int spacesCounter(const QString str) const;
+    Q_INVOKABLE int lengthWithoutSpaces(const QString str) const;
+
+    //Метод подсчёта символов без знаков
+    Q_INVOKABLE int lengthWithoutSigns(const QString str) const;
 
     //Метод считающий строки
     Q_INVOKABLE int linesCounter(const QString str) const;
