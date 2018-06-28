@@ -365,39 +365,31 @@ ApplicationWindow {
                 }
             }
         }
+    }
 
+    Label {
+        anchors {
+            right: leftArea.left
+            left: cbGrid.right
+            top: input.bottom
+            bottom: bottomArea.top
+        }
 
-        Rectangle {
-            anchors {
-                left: cbGrid.right
-                right: rightArea.left
-                top: input.bottom
-                bottom: bottomArea.top
-                margins: 19
-            }
-
-            //width: 50
-            //height: 50
-            color: "red"
-
-            Text {
-                anchors.centerIn: parent
-
-                text: {
-                    if (spacesCounter.checked) {
-                        counterBackEnd.spacesCounter(input.text)
-                    } else if (signsCounter.checked) {
-                        //
-                    } else if (linesCounter.checked) {
-                        counterBackEnd.linesCounter(input.text)
-                    } else if (wordsCounter.checked) {
-                        counterBackEnd.wordsCounter(input.text)
-                    } else {
-                        input.text.length
-                    }
+        Text {
+            text: {
+                if (spacesCounter.checked) {
+                    counterBackEnd.spacesCounter(input.text)
+                } else if (signsCounter.checked) {
+                    //
+                } else if (linesCounter.checked) {
+                    counterBackEnd.linesCounter(input.text)
+                } else if (wordsCounter.checked) {
+                    counterBackEnd.wordsCounter(input.text)
+                } else {
+                    input.text.length
                 }
-                font.pixelSize: 40
             }
+            font.pixelSize: 40
         }
     }
 }
