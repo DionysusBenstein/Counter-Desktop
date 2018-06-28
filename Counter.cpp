@@ -50,7 +50,28 @@ int Counter::lengthWithoutSpaces(const QString str) const
 //Метод подсчёта символов без знаков
 int Counter::lengthWithoutSigns(const QString str) const
 {
+    int counter = str.length();
 
+    for (int i = 0; i < str.length(); i++)
+    {
+        for (int j = 0; j < signs.length(); j++)
+        {
+            if (str[i] == signs[j])
+            {
+                counter--;
+            }
+        }
+    }
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (str[i] == '\n')
+        {
+            counter--;
+        }
+    }
+
+    return counter;
 }
 
 //Метод считающий строки

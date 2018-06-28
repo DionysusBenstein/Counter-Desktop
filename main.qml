@@ -273,7 +273,7 @@ ApplicationWindow {
         }
 
         CheckBox {
-            id: linesCounter;
+            id: linesCounter
             text:  "Посчитать количество строк"
 
             onClicked: {
