@@ -31,8 +31,7 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-    title: "Counter v2.3.4-beta1"
-    color: "#eeeeee"
+    title: "Counter v2.3.5-beta1"
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
@@ -304,11 +303,13 @@ ApplicationWindow {
     Counter  { id: counterBackEnd }
 
     ScrollView {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: appBar.bottom
-        anchors.bottom: cbGrid.top
-        anchors.margins: 19
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: appBar.bottom
+            bottom: cbGrid.top
+            margins: 19
+        }
 
         TextArea {
             id: input
@@ -319,9 +320,11 @@ ApplicationWindow {
 
     GridLayout {
         id: cbGrid
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.margins: 19
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            margins: 19
+        }
 
         rows: 2
         columns: 2
@@ -367,15 +370,21 @@ ApplicationWindow {
         }
     }
 
-    Label {
+    //Debug
+    Rectangle {
         anchors {
-            right: leftArea.left
+            right: rightArea.left
             left: cbGrid.right
             top: input.bottom
             bottom: bottomArea.top
+            margins: 19
         }
 
+        width: 100
+        height: 100
+
         Text {
+            anchors.centerIn: parent
             text: {
                 if (spacesCounter.checked) {
                     counterBackEnd.spacesCounter(input.text)
@@ -392,4 +401,31 @@ ApplicationWindow {
             font.pixelSize: 40
         }
     }
+
+    //    Label {
+    //        anchors {
+    //            right: rightArea.left
+    //            left: cbGrid.right
+    //            top: input.bottom
+    //            bottom: bottomArea.top
+    //            margins: 19
+    //        }
+
+    //        Text {
+    //            text: {
+    //                if (spacesCounter.checked) {
+    //                    counterBackEnd.spacesCounter(input.text)
+    //                } else if (signsCounter.checked) {
+    //                    //
+    //                } else if (linesCounter.checked) {
+    //                    counterBackEnd.linesCounter(input.text)
+    //                } else if (wordsCounter.checked) {
+    //                    counterBackEnd.wordsCounter(input.text)
+    //                } else {
+    //                    input.text.length
+    //                }
+    //            }
+    //            font.pixelSize: 40
+    //        }
+    //    }
 }
