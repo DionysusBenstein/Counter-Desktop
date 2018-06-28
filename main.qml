@@ -317,9 +317,9 @@ ApplicationWindow {
             anchors.centerIn: parent
             text: {
                 if (spacesCounter.checked) {
-                    counterBackEnd.spacesCounter(input.text)
+                    counterBackEnd.lengthWithoutSpaces(input.text)
                 } else if (signsCounter.checked) {
-                    //
+                    counterBackEnd.lengthWithoutSpaces(input.text)
                 } else if (linesCounter.checked) {
                     counterBackEnd.linesCounter(input.text)
                 } else if (wordsCounter.checked) {
