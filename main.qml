@@ -47,33 +47,6 @@ ApplicationWindow {
     }
 
     MouseArea {
-        id: topArea
-        height: borderSize
-
-        anchors {
-            top: parent.top
-            left: parent.left
-            leftMargin: cornerSize
-            right: parent.right
-            rightMargin: cornerSize
-        }
-
-        cursorShape: Qt.SizeVerCursor
-
-        onPressed: {
-            previousY = mouseY
-        }
-
-        onMouseYChanged: {
-            var dy = mouseY - previousY
-            if ((mainWindow.height - dy) >= mainWindow.minimumHeight) {
-                mainWindow.setY(mainWindow.y + dy)
-                mainWindow.setHeight(mainWindow.height - dy)
-            }
-        }
-    }
-
-    MouseArea {
         id: bottomArea
         height: borderSize
 
@@ -104,7 +77,7 @@ ApplicationWindow {
         width: borderSize
         anchors {
             left: parent.left
-            top: topArea.bottom
+            top: appBar.bottom
             topMargin: cornerSize
             bottom: bottomArea.top
             bottomMargin: cornerSize
@@ -129,7 +102,7 @@ ApplicationWindow {
         width: borderSize
         anchors {
             right: parent.right
-            top: topArea.bottom
+            top: appBar.bottom
             topMargin: cornerSize
             bottom: bottomArea.top
             bottomMargin: cornerSize
@@ -144,71 +117,6 @@ ApplicationWindow {
             var dx = mouseX - previousX
             if ((mainWindow.width + dx) >= mainWindow.minimumWidth) {
                 mainWindow.setWidth(mainWindow.width + dx)
-            }
-        }
-    }
-
-    MouseArea {
-        id: topLeftArea
-        height: cornerSize
-        width: cornerSize
-        anchors {
-            top: parent.top
-            left: parent.left
-        }
-
-        cursorShape:  Qt.SizeFDiagCursor
-
-        onPressed: {
-            previousX = mouseX
-            previousY = mouseY
-        }
-
-        onMouseXChanged: {
-            var dx = mouseX - previousX
-            if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
-                mainWindow.setX(mainWindow.x + dx)
-                mainWindow.setWidth(mainWindow.width - dx)
-            }
-        }
-
-        onMouseYChanged: {
-            var dy = mouseY - previousY
-            if ((mainWindow.height - dy) >= mainWindow.minimumHeight) {
-                mainWindow.setY(mainWindow.y + dy)
-                mainWindow.setHeight(mainWindow.height - dy)
-            }
-        }
-    }
-
-    MouseArea {
-        id: topRightArea
-        height: cornerSize
-        width: cornerSize
-        anchors {
-            top: parent.top
-            right: parent.right
-        }
-
-        cursorShape:  Qt.SizeBDiagCursor
-
-        onPressed: {
-            previousX = mouseX
-            previousY = mouseY
-        }
-
-        onMouseXChanged: {
-            var dx = mouseX - previousX
-            if ((mainWindow.width + dx) >= mainWindow.minimumWidth) {
-                mainWindow.setWidth(mainWindow.width + dx)
-            }
-        }
-
-        onMouseYChanged: {
-            var dy = mouseY - previousY
-            if ((mainWindow.height - dy) >= mainWindow.minimumHeight) {
-                mainWindow.setY(mainWindow.y + dy)
-                mainWindow.setHeight(mainWindow.height - dy)
             }
         }
     }

@@ -64,4 +64,53 @@ Rectangle {
             mainWindow.setY(mainWindow.y + dy)
         }
     }
+
+    MouseArea {
+        id: leftArea
+        width: borderSize
+        anchors {
+            left: parent.left
+            top: parent.top
+            topMargin: cornerSize
+            bottom: parent.bottom
+            bottomMargin: cornerSize
+        }
+        cursorShape: Qt.SizeHorCursor
+
+        onPressed: {
+            previousX = mouseX
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
+                mainWindow.setX(mainWindow.x + dx)
+                mainWindow.setWidth(mainWindow.width - dx)
+            }
+        }
+    }
+
+    MouseArea {
+        id: rightArea
+        width: borderSize
+        anchors {
+            right: parent.right
+            top: parent.top
+            topMargin: cornerSize
+            bottom: parent.bottom
+            bottomMargin: cornerSize
+        }
+        cursorShape:  Qt.SizeHorCursor
+
+        onPressed: {
+            previousX = mouseX
+        }
+
+        onMouseXChanged: {
+            var dx = mouseX - previousX
+            if ((mainWindow.width + dx) >= mainWindow.minimumWidth) {
+                mainWindow.setWidth(mainWindow.width + dx)
+            }
+        }
+    }
 }
