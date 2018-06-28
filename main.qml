@@ -42,6 +42,10 @@ ApplicationWindow {
     property int borderSize: 3
     property int cornerSize: 5
 
+    function isMaximize() {
+        return mainWindow.visibility === ApplicationWindow.Maximized
+    }
+
     MouseArea {
         id: topArea
         height: borderSize
@@ -275,11 +279,16 @@ ApplicationWindow {
     }
 
     MouseArea {
+        id: posChangedMouseArea
         anchors {
             top: topArea.bottom
             bottom: bottomArea.top
             left: leftArea.right
             right: rightArea.left
+        }
+
+        onDoubleClicked: {
+            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
         }
 
         onPressed: {
@@ -378,7 +387,7 @@ ApplicationWindow {
             bottom: bottomArea.top
             margins: 19
         }
-
+        color: parent.color
         width: 100
         height: 100
 
