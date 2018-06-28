@@ -31,7 +31,7 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-    title: "Counter v2.3.7-beta1"
+    title: "Counter v2.3.8-beta1"
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
@@ -249,9 +249,12 @@ ApplicationWindow {
         CheckBox {
             id: spacesCounter
             text: "Не считать пробелы"
-            checkState: {
+
+            onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
-                    Qt.Unchecked
+                    wordsCounter.checked = false
+                    linesCounter.checked = false
+                    spacesCounter.checked = true
                 }
             }
         }
@@ -259,9 +262,12 @@ ApplicationWindow {
         CheckBox {
             id: signsCounter
             text:  "Не считать знаки"
-            checkState: {
+
+            onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
-                    Qt.Unchecked
+                    wordsCounter.checked = false
+                    linesCounter.checked = false
+                    signsCounter.checked = true
                 }
             }
         }
@@ -269,9 +275,13 @@ ApplicationWindow {
         CheckBox {
             id: linesCounter;
             text:  "Посчитать количество строк"
-            checkState: {
+
+            onClicked: {
                 if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    Qt.Unchecked
+                    linesCounter.checked = false
+                    signsCounter.checked = false
+                    spacesCounter.checked = false
+                    linesCounter.checked = true
                 }
             }
         }
@@ -279,9 +289,13 @@ ApplicationWindow {
         CheckBox {
             id: wordsCounter;
             text:  "Посчитать количество слов"
-            checkState: {
+
+            onClicked: {
                 if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    Qt.Unchecked
+                    wordsCounter.checked = false
+                    signsCounter.checked = false
+                    spacesCounter.checked = false
+                    wordsCounter.checked = true
                 }
             }
         }
