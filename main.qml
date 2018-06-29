@@ -15,7 +15,7 @@
 import QtQuick 2.11
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.3
+import QtQuick.Controls 2.4
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
@@ -198,7 +198,13 @@ ApplicationWindow {
 
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
 
-        onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
+        onDoubleClicked: {
+
+            previousX = mouseX
+            previousY = mouseY
+            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
+
+        }
 
         onPressed: {
             previousX = mouseX
@@ -316,6 +322,7 @@ ApplicationWindow {
         height: 100
 
         Text {
+            id: counter
             anchors.centerIn: parent
             text: {
                 if (spacesCounter.checked) {
@@ -331,6 +338,32 @@ ApplicationWindow {
                 }
             }
             font.pixelSize: 40
+            onTextChanged:  {
+                textOpacityAnim.running = true
+                textScaleAnim.running = true
+            }
         }
+    }
+
+    PropertyAnimation {
+        id: textOpacityAnim
+        easing.type: Easing.OutCubic
+        property: "opacity"
+        target: counter
+        running: false
+        duration: 100
+        from: 0
+        to: 1
+    }
+
+    PropertyAnimation {
+        id: textScaleAnim
+        easing.type: Easing.OutCubic
+        property: "scale"
+        running: false
+        target: counter
+        duration: 100
+        from: 0
+        to: 1
     }
 }
