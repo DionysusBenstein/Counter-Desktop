@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<Counter>("com.benstein.counter", 1, 3, "Counter");
+    qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
