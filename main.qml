@@ -28,7 +28,7 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-    title: "Counter v2.3.8-beta1"
+    title: "Counter v2.4.0-beta1"
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
