@@ -150,9 +150,9 @@ Rectangle {
             right: hideButton.left
         }
 
-        onDoubleClicked: {
-            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-        }
+        onPositionChanged: if (isMaximize()) mainWindow.showNormal()
+
+        onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
 
         onPressed: {
             previousX = mouseX

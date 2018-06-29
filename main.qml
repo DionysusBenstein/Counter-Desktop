@@ -16,6 +16,7 @@ import QtQuick 2.11
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
+import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
@@ -195,9 +196,9 @@ ApplicationWindow {
             right: rightArea.left
         }
 
-        onDoubleClicked: {
-            isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-        }
+        onPositionChanged: if (isMaximize()) mainWindow.showNormal()
+
+        onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
 
         onPressed: {
             previousX = mouseX
@@ -309,6 +310,7 @@ ApplicationWindow {
             bottom: bottomArea.top
             margins: 19
         }
+
         color: parent.color
         width: 100
         height: 100

@@ -30,7 +30,7 @@ Rectangle {
     Rectangle {
         id: appBarRect
         anchors.fill: parent
-        color: "#e91e63"
+        color: primaryColor
 
         Text {
             id: headerText
@@ -46,6 +46,8 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
+
+        onPositionChanged: if (isMaximize()) mainWindow.showNormal()
 
         onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
 
