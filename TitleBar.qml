@@ -19,12 +19,12 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
 
 Rectangle {
-    id: actionBar
+    id: titleBar
     height: 24
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: parent.top
-    color: "#b0003a"
+    color: darkColor
 
     function isMaximize() {
         return mainWindow.visibility === ApplicationWindow.Maximized
@@ -36,7 +36,7 @@ Rectangle {
         anchors.right: parent.right
         width: 24
         height: 24
-        color: actionBar.color
+        color: titleBar.color
 
         Rectangle {
             anchors.centerIn: parent
@@ -58,8 +58,8 @@ Rectangle {
             id: closeButtonMoseArea
             anchors.fill: parent
             hoverEnabled: true
-            onEntered: parent.color = "#e81123"
-            onExited: parent.color = actionBar.color
+            onEntered: parent.color = closeButtonColor
+            onExited: parent.color = titleBar.color
             onClicked: close()
         }
 
