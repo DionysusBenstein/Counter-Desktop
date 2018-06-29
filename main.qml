@@ -20,10 +20,6 @@ import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.3
 
-//Primary: #e91e63
-//Dark:    #b0003a
-//Light:   #ff6090
-
 ApplicationWindow {
     id: mainWindow
     visible: true
@@ -37,14 +33,14 @@ ApplicationWindow {
 
     Material.accent: primaryColor
 
-    property int previousX
-    property int previousY
+    property color closeButtonColor: "#e81123"
+    property color primaryColor: "#e91e63"
+    property color lightColor: "#ff6090"
+    property color darkColor: "#b0003a"
     property int borderSize: 3
     property int cornerSize: 5
-    property color primaryColor:     "#e91e63"
-    property color darkColor:        "#b0003a"
-    property color lightColor:       "#ff6090"
-    property color closeButtonColor: "#e81123"
+    property int previousX
+    property int previousY
 
     function isMaximize() {
         return mainWindow.visibility === ApplicationWindow.Maximized
