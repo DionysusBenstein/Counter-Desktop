@@ -319,13 +319,13 @@ ApplicationWindow {
                 if (spacesCounter.checked) {
                     counterBackEnd.lengthWithoutSpaces(input.text)
                 } else if (signsCounter.checked) {
-                    counterBackEnd.lengthWithoutSpaces(input.text)
+                    counterBackEnd.lengthWithoutSigns(input.text)
                 } else if (linesCounter.checked) {
                     counterBackEnd.linesCounter(input.text)
                 } else if (wordsCounter.checked) {
                     counterBackEnd.wordsCounter(input.text)
                 } else {
-                    input.text.length
+                    input.text.length.toString()
                 }
             }
             font.pixelSize: 40
