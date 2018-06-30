@@ -151,7 +151,6 @@ Rectangle {
         }
 
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
-
         onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
     }
 
@@ -168,7 +167,6 @@ Rectangle {
         }
 
         cursorShape: Qt.SizeVerCursor
-
         onPressed: {
             previousY = mouseY
         }
@@ -192,7 +190,6 @@ Rectangle {
         }
 
         cursorShape:  Qt.SizeFDiagCursor
-
         onPressed: {
             previousX = mouseX
             previousY = mouseY
@@ -225,7 +222,6 @@ Rectangle {
         }
 
         cursorShape:  Qt.SizeBDiagCursor
-
         onPressed: {
             previousX = mouseX
             previousY = mouseY
@@ -257,8 +253,8 @@ Rectangle {
             bottom: parent.bottom
             bottomMargin: cornerSize
         }
-        cursorShape: Qt.SizeHorCursor
 
+        cursorShape: Qt.SizeHorCursor
         onPressed: {
             previousX = mouseX
         }
@@ -282,8 +278,8 @@ Rectangle {
             bottom: parent.bottom
             bottomMargin: cornerSize
         }
-        cursorShape:  Qt.SizeHorCursor
 
+        cursorShape:  Qt.SizeHorCursor
         onPressed: {
             previousX = mouseX
         }
