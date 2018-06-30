@@ -28,7 +28,7 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-    title: "Counter v2.4.0-beta1"
+    title: qsTr("Counter v2.4.0-beta1")
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
@@ -243,7 +243,7 @@ ApplicationWindow {
         TextArea {
             id: input
             wrapMode: Text.WrapAnywhere
-            placeholderText: "Введите текст..."
+            placeholderText: qsTr("Введите текст...")
         }
     }
 
@@ -260,8 +260,7 @@ ApplicationWindow {
 
         CheckBox {
             id: spacesCounter
-            text: "Не считать пробелы"
-
+            text: qsTr("Не считать пробелы")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
@@ -273,8 +272,7 @@ ApplicationWindow {
 
         CheckBox {
             id: signsCounter
-            text:  "Не считать знаки"
-
+            text: qsTr("Не считать знаки")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
@@ -286,8 +284,7 @@ ApplicationWindow {
 
         CheckBox {
             id: linesCounter
-            text:  "Посчитать количество строк"
-
+            text: qsTr("Посчитать количество строк")
             onClicked: {
                 if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
                     wordsCounter.checked = false
@@ -300,8 +297,7 @@ ApplicationWindow {
 
         CheckBox {
             id: wordsCounter;
-            text:  "Посчитать количество слов"
-
+            text: qsTr("Посчитать количество слов")
             onClicked: {
                 if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
                     linesCounter.checked = false
