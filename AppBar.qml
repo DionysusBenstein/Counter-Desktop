@@ -35,7 +35,7 @@ Rectangle {
         Text {
             id: headerText
             text: qsTr("Counter")
-            font.family: "Roboto Medium"
+            font.family: robotoMediumFont.name
             font.pointSize: 15
             color: "white"
             anchors.verticalCenter: parent.verticalCenter
