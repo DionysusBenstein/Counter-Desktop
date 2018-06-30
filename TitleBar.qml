@@ -98,7 +98,7 @@ Rectangle {
 
         Image {
             id: minMaxButtonIcon
-            source: isMaximize() ? "img/minimizeWindow.png" : "img/maximizeWindow.png"
+            source: isMaximize() ? "images/minimizeWindow.png" : "images/maximizeWindow.png"
             anchors.centerIn: parent
         }
 

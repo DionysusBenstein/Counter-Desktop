@@ -16,8 +16,8 @@ SOURCES += main.cpp \
     Counter.cpp
 
 RESOURCES += qml.qrc \
-    img.qrc \
-    fonts.qrc
+    fonts.qrc \
+    images.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -33,4 +33,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Counter.h
 
-RC_FILE = img/icons/icon.rc
+RC_FILE = images/icons/icon.rc
