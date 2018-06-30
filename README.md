@@ -1,6 +1,5 @@
 # Counter
 [![License](https://img.shields.io/github/license/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/releases)
 
 💻<b>Counter</b> is desktop application that counts the number of characters and words in the text.
 
