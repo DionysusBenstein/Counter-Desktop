@@ -350,10 +350,9 @@ ApplicationWindow {
         }
     }
 
-    NumberAnimation on opacity {
-        id: textOpacityAnim
+    ScaleAnimator {
+        id: textScaleAnim
         easing.type: Easing.OutCubic
-        //property: "opacity"
         target: counter
         running: false
         duration: 100
@@ -361,12 +360,11 @@ ApplicationWindow {
         to: 1
     }
 
-    NumberAnimation {
-        id: textScaleAnim
+    OpacityAnimator {
+        id: textOpacityAnim
         easing.type: Easing.OutCubic
-        property: "scale"
-        running: false
         target: counter
+        running: false
         duration: 100
         from: 0
         to: 1
