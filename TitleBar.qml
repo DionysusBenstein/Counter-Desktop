@@ -153,21 +153,6 @@ Rectangle {
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
 
         onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-
-        onPressed: {
-            previousX = mouseX
-            previousY = mouseY
-        }
-
-        onMouseXChanged: {
-            var dx = mouseX - previousX
-            mainWindow.setX(mainWindow.x + dx)
-        }
-
-        onMouseYChanged: {
-            var dy = mouseY - previousY
-            mainWindow.setY(mainWindow.y + dy)
-        }
     }
 
     MouseArea {
