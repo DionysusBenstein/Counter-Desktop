@@ -23,10 +23,6 @@ Rectangle {
     anchors.right: parent.right
     height: 56
 
-    function isMaximize() {
-        return mainWindow.visibility === ApplicationWindow.Maximized
-    }
-
     Rectangle {
         id: appBarRect
         anchors.fill: parent
