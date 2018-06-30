@@ -28,7 +28,6 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-    title: qsTr("Counter v2.4.0-beta1")
 
     flags: Qt.FramelessWindowHint | Qt.Window
 
@@ -84,9 +83,7 @@ ApplicationWindow {
         anchors {
             left: parent.left
             top: appBar.bottom
-            topMargin: cornerSize
             bottom: bottomArea.top
-            bottomMargin: cornerSize
         }
         cursorShape: Qt.SizeHorCursor
 
@@ -109,9 +106,7 @@ ApplicationWindow {
         anchors {
             right: parent.right
             top: appBar.bottom
-            topMargin: cornerSize
             bottom: bottomArea.top
-            bottomMargin: cornerSize
         }
         cursorShape:  Qt.SizeHorCursor
 

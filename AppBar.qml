@@ -34,7 +34,7 @@ Rectangle {
 
         Text {
             id: headerText
-            text: qsTr("Counter")
+            text: "Counter v2.4.2-beta1"
             font.family: robotoMediumFont.name
             font.pointSize: 15
             color: "white"
