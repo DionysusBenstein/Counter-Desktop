@@ -1,7 +1,7 @@
 # Counter
 [![License](https://img.shields.io/github/license/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/releases)
-[![GitHub (pre-)release](https://img.shields.io/github/release/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/releases)
+[![GitHub (pre-)release](https://img.shields.io/github/(pre-)release/DionysusBenstein/Counter.svg)](https://github.com/DionysusBenstein/Counter/releases)
 
 
 
