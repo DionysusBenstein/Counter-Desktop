@@ -3,7 +3,7 @@
 
 💻<b>Counter</b> is desktop application that counts the number of characters and words in the text.
 
-![Screenshot](https://github.com/DionysusBenstein/Counter/raw/master/img/Screenshot.png) 
+![Screenshot](https://github.com/DionysusBenstein/Counter/raw/master/images/Screenshot.png) 
 
 ## Dependencies
 
