@@ -6,5 +6,6 @@
         <file>images/settings-24dp.png</file>
         <file>images/palette-24.png</file>
         <file>images/language-24dp.png</file>
+        <file>images/aboutProjectIconBlack-24dp.png</file>
     </qresource>
 </RCC>
