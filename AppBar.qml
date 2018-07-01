@@ -14,7 +14,7 @@
 
 import QtQuick 2.11
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4
+import QtQuick.Controls 2.3
 
 ToolBar {
     id: appBar
@@ -142,18 +142,44 @@ ToolBar {
             verticalCenter: parent.verticalCenter
         }
 
+        onClicked: state = settingsButton.hovered === true ? "notHovered" : "hovered"
+
         Image {
             id: settingsButtonIcon
             anchors.centerIn: parent
             source: "images/settings-24dp.png"
         }
 
-        RotationAnimator {
-            id: settingsButtonAnim
-            target: settingsButtonIcon
-            to: 45
-            running: false
+        states: State {
+            name: "notHovered"
+            when: settingsButton.hovered
+
+            PropertyChanges {
+                target: settingsButtonIcon
+                rotation: 45
+            }
         }
+
+        State {
+            name: "hovered"
+
+            PropertyChanges {
+                target: settingsButtonIcon
+                rotation: 45
+            }
+        }
+
+        transitions: [
+            Transition {
+                from: "notHovered"; to: "hovered"
+
+                RotationAnimator {
+                    id: settingsButtonAnim
+                    target: settingsButton
+                    duration: 500
+                }
+            }
+        ]
     }
 
     ToolButton {
