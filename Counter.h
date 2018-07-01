@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Counte.h                                    */
+/* Original File Name: Counter.h                                   */
 
 /* Date: 21-06-2018                                                */
 
