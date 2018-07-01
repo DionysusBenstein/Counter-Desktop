@@ -108,9 +108,7 @@ Rectangle {
             hoverEnabled: true
             onEntered: parent.color = lightColor
             onExited: parent.color = darkColor
-            onClicked: {
-                isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-            }
+            onClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
         }
     }
 

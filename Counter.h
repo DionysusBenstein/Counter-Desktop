@@ -40,4 +40,4 @@ private:
     QString alph;
 };
 
-#endif // COUNTER_H
+#endif //COUNTER_H

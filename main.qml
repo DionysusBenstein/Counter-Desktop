@@ -333,8 +333,9 @@ ApplicationWindow {
                     input.text.length.toString()
                 }
             }
+
             font.pixelSize: 40
-            onTextChanged:  {
+            onTextChanged: {
                 textOpacityAnim.running = true
                 textScaleAnim.running = true
             }
