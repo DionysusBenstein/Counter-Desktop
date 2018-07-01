@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>images/maximizeWindow.png</file>
         <file>images/minimizeWindow.png</file>
+        <file>images/more_vert-24dp.png</file>
+        <file>images/settings-24dp.png</file>
+        <file>images/palette-24.png</file>
     </qresource>
 </RCC>

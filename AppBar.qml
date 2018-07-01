@@ -16,7 +16,7 @@ import QtQuick 2.11
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4
 
-Rectangle {
+ToolBar {
     id: appBar
     anchors.top: titleBar.bottom
     anchors.left: parent.left
@@ -108,4 +108,49 @@ Rectangle {
             }
         }
     }
+
+    ToolButton {
+        id: moreButton
+        anchors.right: parent.right
+        anchors.verticalCenter: parent.verticalCenter
+
+        Image {
+            id: moreButtonIcon
+            anchors.centerIn: parent
+            source: "images/more_vert-24dp.png"
+        }
+
+        Menu {
+            id: moreButtonContextMenu
+            Action { text: qsTr("О программе"); }
+        }
+
+        onClicked: contextMenu.open()
+    }
+
+    ToolButton {
+        id: settingsButton
+        anchors.right: moreButton.left
+        anchors.verticalCenter: parent.verticalCenter
+
+        Image {
+            id: settingsButtonIcon
+            anchors.centerIn: parent
+            source: "images/settings-24dp.png"
+        }
+    }
+
+    ToolButton {
+        id: paletteButton
+        anchors.right: settingsButton.left
+        anchors.verticalCenter: parent.verticalCenter
+
+        Image {
+            id: paletteButtonIcon
+            anchors.centerIn: parent
+            source: "images/palette-24.png"
+        }
+    }
+
 }
+

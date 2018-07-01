@@ -21,7 +21,7 @@ Item {
         anchors.fill: parent
         acceptedButtons: Qt.RightButton
         cursorShape: Qt.IBeamCursor
-        onPressed: {
+        onClicked: {
             if (mouse.button === Qt.RightButton) {
                 contextMenu.popup()
             }
