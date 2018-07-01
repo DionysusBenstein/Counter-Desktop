@@ -18,10 +18,12 @@ import QtQuick.Controls 2.4
 
 ToolBar {
     id: appBar
-    anchors.top: titleBar.bottom
-    anchors.left: parent.left
-    anchors.right: parent.right
     height: 56
+    anchors {
+        top: titleBar.bottom
+        left: parent.left
+        right: parent.right
+    }
 
     Rectangle {
         id: appBarRect
@@ -31,12 +33,17 @@ ToolBar {
         Text {
             id: headerText
             text: "Counter v2.5.1"
-            font.family: robotoMediumFont.name
-            font.pointSize: 15
             color: "white"
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.left: parent.left
-            anchors.margins: 19
+            font {
+                family: robotoMediumFont.name
+                pointSize: 15
+            }
+
+            anchors {
+                verticalCenter: parent.verticalCenter
+                left: parent.left
+                margins: 19
+            }
         }
     }
 
@@ -71,7 +78,6 @@ ToolBar {
             bottomMargin: cornerSize
         }
         cursorShape: Qt.SizeHorCursor
-
         onPressed: {
             previousX = mouseX
         }
@@ -96,7 +102,6 @@ ToolBar {
             bottomMargin: cornerSize
         }
         cursorShape:  Qt.SizeHorCursor
-
         onPressed: {
             previousX = mouseX
         }
@@ -111,8 +116,12 @@ ToolBar {
 
     ToolButton {
         id: moreButton
-        anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {
+            right: parent.right
+            verticalCenter: parent.verticalCenter
+        }
+
+        onClicked: moreButtonContextMenu.open()
 
         Image {
             id: moreButtonIcon
@@ -124,26 +133,35 @@ ToolBar {
             id: moreButtonContextMenu
             Action { text: qsTr("О программе"); }
         }
-
-        onClicked: contextMenu.open()
     }
 
     ToolButton {
         id: settingsButton
-        anchors.right: moreButton.left
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {
+            right: moreButton.left
+            verticalCenter: parent.verticalCenter
+        }
 
         Image {
             id: settingsButtonIcon
             anchors.centerIn: parent
             source: "images/settings-24dp.png"
         }
+
+        RotationAnimator {
+            id: settingsButtonAnim
+            target: settingsButtonIcon
+            to: 45
+            running: false
+        }
     }
 
     ToolButton {
         id: paletteButton
-        anchors.right: settingsButton.left
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {
+            right: settingsButton.left
+            verticalCenter: parent.verticalCenter
+        }
 
         Image {
             id: paletteButtonIcon
