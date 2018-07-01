@@ -239,6 +239,7 @@ ApplicationWindow {
             id: input
             wrapMode: Text.WrapAnywhere
             placeholderText: qsTr("Введите текст...")
+            selectByMouse: true
         }
     }
 
