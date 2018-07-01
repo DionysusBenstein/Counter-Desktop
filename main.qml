@@ -218,7 +218,7 @@ ApplicationWindow {
 
     TitleBar { id: titleBar       }
     AppBar   { id: appBar         }
-    Counter  { id: counterBackEnd }
+    Counter  { id: backEnd        }
 
     ScrollView {
         anchors {
@@ -320,11 +320,11 @@ ApplicationWindow {
             anchors.centerIn: parent
             text: {
                 if (spacesCounter.checked) {
-                    counterBackEnd.lengthWithoutSpaces(input.text)
+                    backEnd.lengthWithoutSpaces(input.text)
                 } else if (signsCounter.checked) {
-                    counterBackEnd.lengthWithoutSigns(input.text)
+                    backEnd.lengthWithoutSigns(input.text)
                 } else if (wordsCounter.checked) {
-                    counterBackEnd.wordsCounter(input.text)
+                    backEnd.wordsCounter(input.text)
                 } else if (linesCounter.checked) {
                     input.lineCount.toString()
                 } else {
