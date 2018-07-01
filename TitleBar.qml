@@ -9,7 +9,7 @@
 /* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
 
 /* Description: Замена системной шапке с основными кнопками
-                управления.                                        */
+                управления окном.                                  */
 
 
 /*******************************************************************/
@@ -208,7 +208,7 @@ Rectangle {
         }
 
         onMouseXChanged: {
-            var dx = mouseX - previousX
+            var dx = ЧmouseX - previousX
             if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
                 mainWindow.setX(mainWindow.x + dx)
                 mainWindow.setWidth(mainWindow.width - dx)

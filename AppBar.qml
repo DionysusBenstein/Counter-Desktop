@@ -30,7 +30,7 @@ Rectangle {
 
         Text {
             id: headerText
-            text: "Counter v2.5.0"
+            text: "Counter v2.5.1"
             font.family: robotoMediumFont.name
             font.pointSize: 15
             color: "white"
@@ -42,11 +42,8 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
-
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
-
         onDoubleClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
-
         onPressed: {
             previousX = mouseX
             previousY = mouseY

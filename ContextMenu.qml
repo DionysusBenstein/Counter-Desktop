@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: ContextMenu.qml                             */
+
+/* Date: 01-07-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Реализация контекстного меню для Text Area.        */
+
+/*******************************************************************/
+
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 
