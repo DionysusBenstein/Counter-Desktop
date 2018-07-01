@@ -28,9 +28,7 @@ ApplicationWindow {
     height: 480
     minimumWidth: 550
     minimumHeight: 350
-
     flags: Qt.FramelessWindowHint | Qt.Window
-
     Material.accent: primaryColor
 
     property color closeButtonColor: "#e81123"
@@ -64,7 +62,6 @@ ApplicationWindow {
         }
 
         cursorShape: Qt.SizeVerCursor
-
         onPressed: {
             previousY = mouseY
         }
@@ -85,8 +82,8 @@ ApplicationWindow {
             top: appBar.bottom
             bottom: bottomArea.top
         }
-        cursorShape: Qt.SizeHorCursor
 
+        cursorShape: Qt.SizeHorCursor
         onPressed: {
             previousX = mouseX
         }
@@ -108,8 +105,8 @@ ApplicationWindow {
             top: appBar.bottom
             bottom: bottomArea.top
         }
-        cursorShape:  Qt.SizeHorCursor
 
+        cursorShape:  Qt.SizeHorCursor
         onPressed: {
             previousX = mouseX
         }
@@ -133,7 +130,6 @@ ApplicationWindow {
         }
 
         cursorShape:  Qt.SizeBDiagCursor
-
         onPressed: {
             previousX = mouseX
             previousY = mouseY
@@ -166,7 +162,6 @@ ApplicationWindow {
         }
 
         cursorShape:  Qt.SizeFDiagCursor
-
         onPressed: {
             previousX = mouseX
             previousY = mouseY
@@ -197,7 +192,6 @@ ApplicationWindow {
         }
 
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
-
         onDoubleClicked: {
 
             previousX = mouseX
@@ -245,22 +239,21 @@ ApplicationWindow {
             MouseArea {
                 id: inputMouseArea
                 anchors.fill: parent
-                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                acceptedButtons: Qt.RightButton
+                cursorShape: Qt.IBeamCursor
                 onPressed: {
                     if (mouse.button === Qt.RightButton) {
                         firstContextMenu.popup()
-                    } else {
-                        input.forceActiveFocus()
                     }
                 }
             }
 
             Menu {
                 id: firstContextMenu
-                Action { text: qsTr("Cut"); onTriggered: input.cut() }
-                Action { text: qsTr("Copy"); onTriggered: input.copy() }
-                Action { text: qsTr("Paste"); onTriggered: input.paste() }
-                Action { text: qsTr("Delete"); onTriggered: input.deleteLater() }
+                Action { text: qsTr("Вырезать"/*"Cut"*/); onTriggered: input.cut() }
+                Action { text: qsTr("Копировать"/*"Copy"*/); onTriggered: input.copy() }
+                Action { text: qsTr("Вставить"/*"Paste"*/); onTriggered: input.paste() }
+                Action { text: qsTr("Удалить"/*"Delete"*/); onTriggered: input.deleteLater() }
             }
         }
     }
