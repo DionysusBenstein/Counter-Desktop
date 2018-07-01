@@ -16,7 +16,7 @@ import QtQuick 2.11
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4
-import QtGraphicalEffects 1.0
+//import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
@@ -62,10 +62,7 @@ ApplicationWindow {
         }
 
         cursorShape: Qt.SizeVerCursor
-        onPressed: {
-            previousY = mouseY
-        }
-
+        onPressed: previousY = mouseY
         onMouseYChanged: {
             var dy = mouseY - previousY
             if ((mainWindow.height + dy) >= mainWindow.minimumHeight) {
@@ -84,10 +81,7 @@ ApplicationWindow {
         }
 
         cursorShape: Qt.SizeHorCursor
-        onPressed: {
-            previousX = mouseX
-        }
-
+        onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
@@ -106,11 +100,8 @@ ApplicationWindow {
             bottom: bottomArea.top
         }
 
-        cursorShape:  Qt.SizeHorCursor
-        onPressed: {
-            previousX = mouseX
-        }
-
+        cursorShape: Qt.SizeHorCursor
+        onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if ((mainWindow.width + dx) >= mainWindow.minimumWidth) {
@@ -216,9 +207,9 @@ ApplicationWindow {
         }
     }
 
-    TitleBar { id: titleBar       }
-    AppBar   { id: appBar         }
-    Counter  { id: backEnd        }
+    TitleBar { id: titleBar }
+    AppBar   { id: appBar   }
+    Counter  { id: backEnd  }
 
     ScrollView {
         anchors {
