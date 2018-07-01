@@ -30,7 +30,7 @@ Item {
 
     Menu {
         id: contextMenu
-        Action { text: qsTr("Вырезать"/*"Cut"*/); onTriggered: input.cut() }
+        Action { text: qsTr("Вырезать"/*"Cut"*/); onTriggered: input.cut()     }
         Action { text: qsTr("Копировать"/*"Copy"*/); onTriggered: input.copy() }
         Action { text: qsTr("Вставить"/*"Paste"*/); onTriggered: input.paste() }
     }
