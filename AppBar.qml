@@ -151,6 +151,5 @@ ToolBar {
             source: "images/palette-24.png"
         }
     }
-
 }
 
