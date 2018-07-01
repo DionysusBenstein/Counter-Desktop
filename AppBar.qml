@@ -142,7 +142,8 @@ ToolBar {
             verticalCenter: parent.verticalCenter
         }
 
-        onClicked: state = settingsButton.hovered === true ? "notHovered" : "hovered"
+        state: "hovered"
+        onClicked: state = (state === "hovered") ? "notHovered" : "hovered"
 
         Image {
             id: settingsButtonIcon
@@ -152,7 +153,6 @@ ToolBar {
 
         states: State {
             name: "notHovered"
-            when: settingsButton.hovered
 
             PropertyChanges {
                 target: settingsButtonIcon
@@ -165,7 +165,7 @@ ToolBar {
 
             PropertyChanges {
                 target: settingsButtonIcon
-                rotation: 45
+                rotation: -45
             }
         }
 
@@ -174,9 +174,17 @@ ToolBar {
                 from: "notHovered"; to: "hovered"
 
                 RotationAnimator {
-                    id: settingsButtonAnim
                     target: settingsButton
-                    duration: 500
+                    duration: 100
+                }
+            },
+
+            Transition {
+                from: "hovered"; to: "notHovered"
+
+                RotationAnimator {
+                    target: settingsButton
+                    duration: 100
                 }
             }
         ]
