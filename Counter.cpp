@@ -16,7 +16,8 @@
 
 Counter::Counter(QObject *parent) : QObject(parent)
 {
-    signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
+    //signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}";
+    signs = "!\"#$%^&*()+=_'?.,|/~№:;@[]{}";
     alph  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz"
             "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
@@ -106,11 +107,11 @@ int Counter::wordsCounter(const QString str) const
 
             for (int k = 0; k < signs.length(); ++k)
             {
-                if (str[i] == signs[k] && str[i + 1] !=  alph[j])
+                if (str[i] == signs[k] && str[i + 1] != alph[j])
                 {
                     continue;
                 }
-                else if (str[i] == signs[k] && str[i + 1] ==  alph[j])
+                else if (str[i] == signs[k] && str[i + 1] == alph[j])
                 {
                     counter++;
                 }
