@@ -4,5 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>AppBar.qml</file>
         <file>TitleBar.qml</file>
+        <file>ContextMenu.qml</file>
     </qresource>
 </RCC>

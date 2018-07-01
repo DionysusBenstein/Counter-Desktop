@@ -236,25 +236,7 @@ ApplicationWindow {
             wrapMode: Text.WrapAnywhere
             placeholderText: qsTr("Введите текст...")
 
-            MouseArea {
-                id: inputMouseArea
-                anchors.fill: parent
-                acceptedButtons: Qt.RightButton
-                cursorShape: Qt.IBeamCursor
-                onPressed: {
-                    if (mouse.button === Qt.RightButton) {
-                        firstContextMenu.popup()
-                    }
-                }
-            }
-
-            Menu {
-                id: firstContextMenu
-                Action { text: qsTr("Вырезать"/*"Cut"*/); onTriggered: input.cut() }
-                Action { text: qsTr("Копировать"/*"Copy"*/); onTriggered: input.copy() }
-                Action { text: qsTr("Вставить"/*"Paste"*/); onTriggered: input.paste() }
-                Action { text: qsTr("Удалить"/*"Delete"*/); onTriggered: input.deleteLater() }
-            }
+            ContextMenu { id: contextMenu; anchors.fill: parent }
         }
     }
 
