@@ -32,7 +32,7 @@ ToolBar {
 
         Text {
             id: headerText
-            text: "Counter v2.5.1"
+            text: "Counter"/*+" v2.5.1"*/
             color: "white"
             font {
                 family: robotoMediumFont.name
@@ -131,7 +131,8 @@ ToolBar {
 
         Menu {
             id: moreButtonContextMenu
-            Action { text: qsTr("О программе"); }
+            Action { text: qsTr("Язык"); icon.source: "images/language-24dp.png"; }
+            Action { text: qsTr("О программе") }
         }
     }
 
