@@ -30,7 +30,7 @@ Rectangle {
 
         Text {
             id: headerText
-            text: "Counter v2.4.3"
+            text: "Counter v2.4.4"
             font.family: robotoMediumFont.name
             font.pointSize: 15
             color: "white"

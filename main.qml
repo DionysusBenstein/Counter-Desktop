@@ -325,10 +325,10 @@ ApplicationWindow {
                     counterBackEnd.lengthWithoutSpaces(input.text)
                 } else if (signsCounter.checked) {
                     counterBackEnd.lengthWithoutSigns(input.text)
-                } else if (linesCounter.checked) {
-                    counterBackEnd.linesCounter(input.text)
                 } else if (wordsCounter.checked) {
                     counterBackEnd.wordsCounter(input.text)
+                } else if (linesCounter.checked) {
+                    input.lineCount.toString()
                 } else {
                     input.text.length.toString()
                 }
