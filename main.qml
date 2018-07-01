@@ -240,6 +240,44 @@ ApplicationWindow {
             wrapMode: Text.WrapAnywhere
             placeholderText: qsTr("Введите текст...")
             selectByMouse: true
+            anchors.fill: input
+
+            MouseArea {
+                anchors.fill: parent
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                onPressed: mouse.button === Qt.RightButton ? firstContextMenu.popup() : input.forceActiveFocus()
+            }
+
+            Menu {
+                id: firstContextMenu
+                Action {
+                    text: qsTr("Cut")
+                    onTriggered: {
+                        input.cut()
+                    }
+                }
+
+                Action {
+                    text: qsTr("Copy")
+                    onTriggered: {
+                        input.copy()
+                    }
+                }
+
+                Action {
+                    text: qsTr("Paste")
+                    onTriggered: {
+                        input.paste()
+                    }
+                }
+
+                Action {
+                    text: qsTr("Delete")
+                    onTriggered: {
+                        input.deleteLater()
+                    }
+                }
+            }
         }
     }
 
