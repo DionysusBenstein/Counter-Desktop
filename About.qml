@@ -30,18 +30,4 @@ Popup {
         Material.foreground: primaryColor
         onClicked: popup.close()
     }
-
-    Button {
-        id: cancelButton
-        text: qsTr("Отмена"/*"Cancel"*/)
-        anchors {
-            right: doneButton.left
-            bottom: parent.bottom
-            rightMargin: 8
-        }
-
-        flat: true
-        Material.foreground: primaryColor
-        onClicked: popup.close()
-    }
 }
