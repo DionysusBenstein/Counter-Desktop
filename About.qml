@@ -131,7 +131,7 @@ Popup {
 
     Text {
         id: about
-        text: qsTr("<b>Counter</b> — настольное приложение, которое подсчитывает количество символов и слов в тексте.")
+        text: qsTr("<b>Counter</b> — бесплатное настольное кроссплатформенное приложение, которое подсчитывает количество символов и слов в тексте.")
         color: darkFontColor
         wrapMode: Text.WordWrap
         font {
@@ -149,10 +149,16 @@ Popup {
         }
     }
 
+    MouseArea {
+        anchors.fill: copyright
+        cursorShape: Qt.PointingHandCursor
+    }
+
     Text {
         id: copyright
         color: darkFontColor
-        text: qsTr("Copyright © 2018 Dionysus Benstein. Все права защищены.")
+        onLinkActivated: Qt.openUrlExternally("https://github.com/DionysusBenstein")
+        text: qsTr("<a href=\"https://github.com/DionysusBenstein\">Copyright © 2018 Dionysus Benstein. Все права защищены.</a>")
         wrapMode: Text.WordWrap
         font {
             pixelSize: 15
@@ -163,7 +169,7 @@ Popup {
             right: parent.right
             left: aboutWndRect.right
             top: about.bottom
-            topMargin: 10
+            topMargin: 25
             leftMargin: 19
             rightMargin: 19
         }

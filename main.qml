@@ -44,8 +44,6 @@ ApplicationWindow {
     property int previousX
     property int previousY
 
-
-
     function isMaximize() {
         return mainWindow.visibility === ApplicationWindow.Maximized
     }
