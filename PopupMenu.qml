@@ -17,6 +17,7 @@ Popup {
     bottomPadding: 0
     topPadding: 25
     leftPadding: 25
+    rightPadding: 0
 
     Text {
         id: popupTitle
@@ -212,6 +213,8 @@ Popup {
         anchors {
             right: parent.right
             bottom: parent.bottom
+            bottomMargin: 2
+            rightMargin: 8
         }
 
         flat: true
@@ -226,6 +229,7 @@ Popup {
             right: doneButton.left
             bottom: parent.bottom
             rightMargin: 8
+            bottomMargin: 2
         }
 
         flat: true

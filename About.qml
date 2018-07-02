@@ -9,14 +9,35 @@ Popup {
     x: Math.round((parent.width - width) / 2)
     y: Math.round((parent.height - height) / 2)
     parent: Overlay.overlay
-    width: 300
-    height: 300
+    width: 426
+    height: 320
     modal: true
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     bottomPadding: 0
     topPadding: 25
     leftPadding: 25
+    rightPadding: 0
+
+//    Rectangle {
+//        anchors.fill: parent
+//        color: primaryColor
+//    }
+
+    Text {
+        id: aboutWndTitle
+        anchors {
+            left: parent.left
+            top: parent.top
+        }
+
+        text: qsTr("О программе")
+        color: darkFontColor
+        font {
+            pixelSize: 20
+            family: robotoMediumFont.name
+        }
+    }
 
     Button {
         id: doneButton
@@ -24,6 +45,8 @@ Popup {
         anchors {
             right: parent.right
             bottom: parent.bottom
+            bottomMargin: 2
+            rightMargin: 8
         }
 
         flat: true
