@@ -16,8 +16,8 @@
 
 Counter::Counter(QObject *parent) : QObject(parent)
 {
-    //signs = "!\"#$%^&*()+=-_'?.,|/`~№:;@[]{}«»";
-    signs = "!\"#$%^&*()+=_'?.,|/~№:;@[]{}«»";
+    //signs = "!\"#$%^&*()+=-_'?.,|\\/`~№:;@[]{}«»<>";
+    signs = "!\"#$%^&*()+=_'?.,|\\/~№:;@[]{}«»<>";
     alph  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz"
             "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"

@@ -7,5 +7,6 @@
         <file>images/palette-24.png</file>
         <file>images/language-24dp.png</file>
         <file>images/aboutProjectIconBlack-24dp.png</file>
+        <file>images/icon-100px.png</file>
     </qresource>
 </RCC>

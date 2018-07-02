@@ -37,7 +37,7 @@ ToolBar {
 
         Text {
             id: headerText
-            text: "Counter"/*+" v2.7.0"*/
+            text: "Counter"
             color: "white"
             font {
                 family: robotoMediumFont.name
