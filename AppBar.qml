@@ -217,7 +217,39 @@ ToolBar {
         height: 200
         modal: true
         focus: true
+        contentWidth: parent.width
+        contentHeight: parent.height
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+        Rectangle {
+            anchors.fill: parent
+            color: primaryColor
+
+        }
+
+        Button {
+            id: doneButton
+            text: qsTr("OK")
+            anchors {
+                right: parent.right
+                bottom: parent.bottom
+            }
+
+           flat: true
+
+        }
+
+        Button {
+            id: cancelButton
+            text: qsTr("Отмена"/*"Cancel"*/)
+            anchors {
+                right: doneButton.left
+                bottom: parent.bottom
+            }
+
+            flat: true
+            onClicked: popup.close()
+        }
     }
 }
 
