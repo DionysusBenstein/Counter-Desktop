@@ -30,13 +30,6 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     padding: 0
 
-    //    DEBUG
-    //
-    //    Rectangle {
-    //        anchors.fill: parent
-    //        color: primaryColor
-    //    }
-
     Rectangle {
         id: aboutWndRect
         width: aboutWndTitle.width + 50
@@ -84,7 +77,7 @@ Popup {
 
     Text {
         id: appName
-        text: "Counter"
+        text: "<b>Counter</b>"
         color: "white"
         wrapMode: Text.WordWrap
         font {
@@ -102,7 +95,7 @@ Popup {
 
     Text {
         id: version
-        text: "Версия: 2.7.0"
+        text: qsTr("Версия: 2.7.1")
         color: "white"
         wrapMode: Text.WordWrap
         font {
@@ -136,7 +129,16 @@ Popup {
         }
     }
 
-    ScrollView {
+    Text {
+        id: about
+        text: qsTr("<b>Counter</b> — настольное приложение, которое подсчитывает количество символов и слов в тексте.")
+        color: darkFontColor
+        wrapMode: Text.WordWrap
+        font {
+            pixelSize: 16
+            family: robotoMediumFont.name
+        }
+
         anchors {
             right: parent.right
             left: aboutWndRect.right
@@ -145,50 +147,28 @@ Popup {
             leftMargin: 19
             rightMargin: 19
         }
-        ScrollBar.vertical.interactive: true
-
-    Text {
-        id: about
-        text: "<b>Counter</b> — настольное приложение, которое подсчитывает количество символов и слов в тексте."
-        color: darkFontColor
-        wrapMode: Text.WordWrap
-        font {
-            pixelSize: 16
-            family: robotoMediumFont.name
-        }
-        anchors.fill: parent
-
-//        anchors {
-//            right: parent.right
-//            left: aboutWndRect.right
-//            top: parent.top
-//            topMargin: 25
-//            leftMargin: 19
-//            rightMargin: 19
-//        }
     }
 
     Text {
-        id: disclamer
-        text: "Программа предоставляется на условиях «как есть» (as is). Автор не даёт никаких гарантий в отношении бесперебойной работы Программы и в отсутствии ошибок в Программе. Автор не несет ответственности за прямой, косвенный или другие виды ущерба, в т.ч. потерю данных, повреждения или любые другие виды потерь, связанные с использованием Программы (правильным или неправильным)."
+        id: copyright
         color: darkFontColor
+        text: qsTr("Copyright © 2018 Dionysus Benstein. Все права защищены.")
         wrapMode: Text.WordWrap
         font {
             pixelSize: 15
             family: robotoMediumFont.name
         }
-        anchors.fill: parent
 
-//        anchors {
-//            right: parent.right
-//            left: aboutWndRect.right
-//            top: about.bottom
-//            topMargin: 5
-//            leftMargin: 19
-//            rightMargin: 19
-//        }
+        anchors {
+            right: parent.right
+            left: aboutWndRect.right
+            top: about.bottom
+            topMargin: 10
+            leftMargin: 19
+            rightMargin: 19
+        }
     }
-    }
+
 
     Button {
         id: doneButton
