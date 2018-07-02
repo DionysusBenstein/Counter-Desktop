@@ -6,5 +6,6 @@
         <file>TitleBar.qml</file>
         <file>ContextMenu.qml</file>
         <file>PopupMenu.qml</file>
+        <file>About.qml</file>
     </qresource>
 </RCC>

@@ -27,9 +27,8 @@ ToolBar {
         right: parent.right
     }
 
-    PopupMenu {
-        id: popupMenu
-    }
+    PopupMenu { id: popupMenu }
+    About { id: aboutWnd }
 
     Rectangle {
         id: appBarRect
@@ -138,7 +137,10 @@ ToolBar {
         Menu {
             id: moreButtonContextMenu
             Action { text: qsTr("Язык"); icon.source: "images/language-24dp.png"; }
-            Action { text: qsTr("О программе"); icon.source: "images/aboutProjectIconBlack-24dp.png" }
+            Action {
+                text: qsTr("О программе"); icon.source: "images/aboutProjectIconBlack-24dp.png"
+                onTriggered: aboutWnd.open()
+            }
         }
     }
 

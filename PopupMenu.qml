@@ -18,11 +18,6 @@ Popup {
     topPadding: 25
     leftPadding: 25
 
-    //        Rectangle {
-    //            anchors.fill: parent
-    //            color: lightColor
-    //        }
-
     Text {
         id: popupTitle
         anchors {

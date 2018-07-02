@@ -31,6 +31,7 @@ ApplicationWindow {
     flags: Qt.FramelessWindowHint | Qt.Window
 
     Material.accent: primaryColor
+    //Material.theme:
 
     property color closeButtonColor: "#e81123"
     property color darkFontColor: "#404040"
