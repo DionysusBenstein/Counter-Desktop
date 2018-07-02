@@ -19,6 +19,8 @@ Popup {
     leftPadding: 25
     rightPadding: 0
 
+//    DEBUG
+//
 //    Rectangle {
 //        anchors.fill: parent
 //        color: primaryColor
@@ -37,6 +39,10 @@ Popup {
             pixelSize: 20
             family: robotoMediumFont.name
         }
+    }
+
+    Label {
+
     }
 
     Button {
