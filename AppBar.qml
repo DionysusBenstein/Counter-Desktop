@@ -199,11 +199,25 @@ ToolBar {
             verticalCenter: parent.verticalCenter
         }
 
+        onClicked: popup.open()
+
         Image {
             id: paletteButtonIcon
             anchors.centerIn: parent
             source: "images/palette-24.png"
         }
+    }
+
+    Popup {
+        id: popup
+        x: Math.round((parent.width - width) / 2)
+        y: Math.round((parent.height - height) / 2)
+        parent: Overlay.overlay
+        width: 300
+        height: 200
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     }
 }
 

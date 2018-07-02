@@ -29,6 +29,7 @@ ApplicationWindow {
     minimumWidth: 550
     minimumHeight: 350
     flags: Qt.FramelessWindowHint | Qt.Window
+
     Material.accent: primaryColor
 
     property color closeButtonColor: "#e81123"
@@ -39,6 +40,8 @@ ApplicationWindow {
     property int cornerSize: 5
     property int previousX
     property int previousY
+
+
 
     function isMaximize() {
         return mainWindow.visibility === ApplicationWindow.Maximized
@@ -226,7 +229,6 @@ ApplicationWindow {
             selectByMouse: true
             wrapMode: Text.WrapAnywhere
             placeholderText: qsTr("Введите текст...")
-
             ContextMenu { id: contextMenu; anchors.fill: parent }
         }
     }
@@ -293,7 +295,7 @@ ApplicationWindow {
         }
     }
 
-    Rectangle {
+    Item {
         anchors {
             right: rightArea.left
             left: cbGrid.right
@@ -302,7 +304,7 @@ ApplicationWindow {
             margins: 19
         }
 
-        color: parent.color
+        //color: parent.color
         width: 100
         height: 100
 
