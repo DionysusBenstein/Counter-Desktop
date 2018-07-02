@@ -33,6 +33,8 @@ ApplicationWindow {
     Material.accent: primaryColor
 
     property color closeButtonColor: "#e81123"
+    property color darkFontColor: "#404040"
+    property color lightFontColor: "#9a9a9a"
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"
