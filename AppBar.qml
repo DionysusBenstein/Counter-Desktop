@@ -136,8 +136,12 @@ ToolBar {
 
         Menu {
             id: moreButtonContextMenu
-            Action { text: qsTr("Язык"); icon.source: "images/language-24dp.png"; }
-            Action {
+            MenuItem {
+                text: qsTr("Язык");
+                icon.source: "images/language-24dp.png";
+            }
+
+            MenuItem {
                 text: qsTr("О программе")
                 icon.source: "images/aboutProjectIconBlack-24dp.png"
                 onTriggered: aboutWnd.open()

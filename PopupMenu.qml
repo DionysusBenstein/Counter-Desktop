@@ -206,7 +206,6 @@ Popup {
         }
     }
 
-
     Button {
         id: doneButton
         text: qsTr("OK")
