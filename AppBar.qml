@@ -14,6 +14,7 @@
 
 import QtQuick 2.11
 import QtQuick.Layouts 1.3
+import QtQuick.Dialogs 1.3
 import QtQuick.Controls 2.3
 
 ToolBar {
@@ -32,7 +33,7 @@ ToolBar {
 
         Text {
             id: headerText
-            text: "Counter"/*+" v2.6.0"*/
+            text: "Counter"/*+" v2.6.1"*/
             color: "white"
             font {
                 family: robotoMediumFont.name
@@ -136,65 +137,65 @@ ToolBar {
         }
     }
 
-    ToolButton {
-        id: settingsButton
-        anchors {
-            right: moreButton.left
-            verticalCenter: parent.verticalCenter
-        }
+    //    ToolButton {
+    //        id: settingsButton
+    //        anchors {
+    //            right: moreButton.left
+    //            verticalCenter: parent.verticalCenter
+    //        }
 
-        state: "hovered"
-        onClicked: state = (state === "hovered") ? "notHovered" : "hovered"
+    //        state: "hovered"
+    //        onClicked: state = (state === "hovered") ? "notHovered" : "hovered"
 
-        Image {
-            id: settingsButtonIcon
-            anchors.centerIn: parent
-            source: "images/settings-24dp.png"
-        }
+    //        Image {
+    //            id: settingsButtonIcon
+    //            anchors.centerIn: parent
+    //            source: "images/settings-24dp.png"
+    //        }
 
-        states: State {
-            name: "notHovered"
+    //        states: State {
+    //            name: "notHovered"
 
-            PropertyChanges {
-                target: settingsButtonIcon
-                rotation: 45
-            }
-        }
+    //            PropertyChanges {
+    //                target: settingsButtonIcon
+    //                rotation: 45
+    //            }
+    //        }
 
-        State {
-            name: "hovered"
+    //        State {
+    //            name: "hovered"
 
-            PropertyChanges {
-                target: settingsButtonIcon
-                rotation: -45
-            }
-        }
+    //            PropertyChanges {
+    //                target: settingsButtonIcon
+    //                rotation: -45
+    //            }
+    //        }
 
-        transitions: [
-            Transition {
-                from: "notHovered"; to: "hovered"
+    //        transitions: [
+    //            Transition {
+    //                from: "notHovered"; to: "hovered"
 
-                RotationAnimator {
-                    target: settingsButton
-                    duration: 100
-                }
-            },
+    //                RotationAnimator {
+    //                    target: settingsButton
+    //                    duration: 100
+    //                }
+    //            },
 
-            Transition {
-                from: "hovered"; to: "notHovered"
+    //            Transition {
+    //                from: "hovered"; to: "notHovered"
 
-                RotationAnimator {
-                    target: settingsButton
-                    duration: 100
-                }
-            }
-        ]
-    }
+    //                RotationAnimator {
+    //                    target: settingsButton
+    //                    duration: 100
+    //                }
+    //            }
+    //        ]
+    //    }
 
     ToolButton {
         id: paletteButton
         anchors {
-            right: settingsButton.left
+            right: moreButton.left
             verticalCenter: parent.verticalCenter
         }
 

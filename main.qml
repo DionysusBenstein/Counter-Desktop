@@ -344,6 +344,7 @@ ApplicationWindow {
         id: textOpacityAnim
         easing.type: Easing.OutCubic
         target: counter
+        from: 0; to: 1
         running: false
         duration: 100
     }
