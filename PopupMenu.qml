@@ -40,8 +40,8 @@ Popup {
 
     ComboBox {
         id: popupComboBox
-        width: 150
-        model: ["Light Theme", "Dark Theme"]
+        width: 160
+        model: [qsTr("Светлая тема"), qsTr("Тёмная тема")]
         anchors {
             left: parent.left
             top: popupTitle.bottom
