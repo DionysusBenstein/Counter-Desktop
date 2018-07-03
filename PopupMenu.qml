@@ -112,8 +112,9 @@ Popup {
             radius: width / 2
             //clip: true
 
-            MouseArea {
-                anchors.fill: parent
+            RoundButton {
+                anchors.centerIn: parent
+                flat: true
                 onClicked: {
                     primaryColor = customPrimaryColor
                     lightColor = customLightColor
@@ -150,9 +151,6 @@ Popup {
 
         flat: true
         Material.foreground: primaryColor
-        onClicked: {
-
-            popup.close()
-        }
+        onClicked: popup.close()
     }
 }
