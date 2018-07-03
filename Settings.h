@@ -13,7 +13,7 @@ public:
     QString getKey();
 
 private:
-    Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY nameChanged)
+    Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY keyChanged)
     QString key;
     QSettings settings;
 
