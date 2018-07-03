@@ -2,6 +2,7 @@
 #define SETTINGS_H
 
 #include <QObject>
+#include <QSettings>
 
 class Settings : public QObject
 {
@@ -9,9 +10,8 @@ class Settings : public QObject
 public:
     explicit Settings(QObject *parent = nullptr);
 
-signals:
-
-public slots:
+private:
+    QSettings settings;
 };
 
 #endif //SETTINGS_H
