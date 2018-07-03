@@ -64,12 +64,16 @@ Popup {
 
     GridView {
         id: colorsView
+        cellWidth: 36
+        cellHeight: 36
+        clip: true
         anchors {
             left: parent.left
             right: parent.right
             top: popupComboBox.bottom
             bottom: doneButton.top
             topMargin: 16
+            rightMargin: 23
         }
         delegate: colorsViewDelegate
         model: colorsViewModel
@@ -109,32 +113,32 @@ Popup {
         }
     }
 
-    //    Grid {
-    //        anchors {
-    //            left: parent.left
-    //            right: parent.right
-    //            top: popupComboBox.bottom
-    //            bottom: doneButton.top
-    //            topMargin: 16
-    //        }
+//        Grid {
+//            anchors {
+//                left: parent.left
+//                right: parent.right
+//                top: popupComboBox.bottom
+//                bottom: doneButton.top
+//                topMargin: 16
+//            }
 
-    //        spacing: 4
-    //        columns: 7
-    //        rows: 3
-    //        //row 1
-    //        Rectangle {
-    //            width: 32
-    //            height: 32
-    //            color: "#e91e63"
-    //            radius: width / 2
-    //        }
+//            spacing: 4
+//            columns: 7
+//            rows: 3
+//            //row 1
+//            Rectangle {
+//                width: 32
+//                height: 32
+//                color: "#e91e63"
+//                radius: width / 2
+//            }
 
-    //        Rectangle {
-    //            width: 32
-    //            height: 32
-    //            color: "#F44336"
-    //            radius: width / 2
-    //        }
+//            Rectangle {
+//                width: 32
+//                height: 32
+//                color: "#F44336"
+//                radius: width / 2
+//            }
 
     //        Rectangle {
     //            width: 32
