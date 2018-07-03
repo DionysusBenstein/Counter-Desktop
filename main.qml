@@ -228,8 +228,10 @@ ApplicationWindow {
 
         TextArea {
             id: input
+            focus: true
             anchors.fill: input
             selectByMouse: true
+            persistentSelection: true
             wrapMode: Text.WrapAnywhere
             placeholderText: qsTr("Введите текст...")
             ContextMenu { id: contextMenu; anchors.fill: parent }
