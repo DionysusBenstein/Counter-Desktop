@@ -18,7 +18,7 @@ private:
     QSettings settings;
 
 signals:
-    void keyChanged();
+    void keyChanged(QString);
 };
 
 #endif //SETTINGS_H
