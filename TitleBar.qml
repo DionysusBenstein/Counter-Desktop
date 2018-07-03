@@ -117,7 +117,7 @@ Rectangle {
         anchors.right: minMaxButton.left
         width: 24
         height: 24
-        color: parent.color
+        color: darkColor
 
         Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter

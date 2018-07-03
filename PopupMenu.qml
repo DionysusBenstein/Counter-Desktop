@@ -80,35 +80,45 @@ Popup {
 
     ListModel {
         id: colorsViewModel
-        ListElement { interfaceColor: "#e91e63" } // 1
-        ListElement { interfaceColor: "#F44336" } // 2
-        ListElement { interfaceColor: "#9C27B0" } // 3
-        ListElement { interfaceColor: "#673AB7" } // 4
-        ListElement { interfaceColor: "#3F51B5" } // 5
-        ListElement { interfaceColor: "#2196F3" } // 6
-        ListElement { interfaceColor: "#009688" } // 7
-        ListElement { interfaceColor: "#4CAF50" } // 8
-        ListElement { interfaceColor: "#FF9800" } // 9
-        ListElement { interfaceColor: "#FF5722" } // 10
-        ListElement { interfaceColor: "#795548" } // 11
-        ListElement { interfaceColor: "#9E9E9E" } // 12
-        ListElement { interfaceColor: "#607D8B" } // 13
-        ListElement { interfaceColor: "#EF9A9A" } // 14
-        ListElement { interfaceColor: "#F48FB1" } // 15
-        ListElement { interfaceColor: "#CE93D8" } // 16
-        ListElement { interfaceColor: "#B39DDB" } // 17
-        ListElement { interfaceColor: "#616161" } // 18
-        ListElement { interfaceColor: "#282E33" } // 19
-        ListElement { interfaceColor: "#263238" } // 20
-        ListElement { interfaceColor: "#757575" } // 21
+        ListElement { customPrimaryColor: "#e91e63"; customLightColor: "#ff6090"; customDarkColor: "#b0003a" } // 1
+        ListElement { customPrimaryColor: "#F44336"; customLightColor: "#ff7961"; customDarkColor: "#ba000d" } // 2
+        ListElement { customPrimaryColor: "#9C27B0"; customLightColor: "#d05ce3"; customDarkColor: "#6a0080" } // 3
+        ListElement { customPrimaryColor: "#673AB7" } // 4
+        ListElement { customPrimaryColor: "#3F51B5" } // 5
+        ListElement { customPrimaryColor: "#2196F3" } // 6
+        ListElement { customPrimaryColor: "#009688" } // 7
+        ListElement { customPrimaryColor: "#4CAF50" } // 8
+        ListElement { customPrimaryColor: "#FF9800" } // 9
+        ListElement { customPrimaryColor: "#FF5722" } // 10
+        ListElement { customPrimaryColor: "#795548" } // 11
+        ListElement { customPrimaryColor: "#9E9E9E" } // 12
+        ListElement { customPrimaryColor: "#607D8B" } // 13
+        ListElement { customPrimaryColor: "#EF9A9A" } // 14
+        ListElement { customPrimaryColor: "#F48FB1" } // 15
+        ListElement { customPrimaryColor: "#CE93D8" } // 16
+        ListElement { customPrimaryColor: "#B39DDB" } // 17
+        ListElement { customPrimaryColor: "#616161" } // 18
+        ListElement { customPrimaryColor: "#282E33" } // 19
+        ListElement { customPrimaryColor: "#263238" } // 20
+        ListElement { customPrimaryColor: "#757575" } // 21
     }
 
     Component  {
         id: colorsViewDelegate
         Rectangle {
             width: 32; height: 32
-            color: interfaceColor
+            color: customPrimaryColor
             radius: width / 2
+            //clip: true
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    primaryColor = customPrimaryColor
+                    lightColor = customLightColor
+                    darkColor = customDarkColor
+                }
+            }
         }
     }
 
