@@ -34,7 +34,6 @@ Popup {
     rightPadding: 0
 
     property alias currentTheme: popupComboBox.currentIndex
-
     Text {
         id: popupTitle
         anchors {
@@ -105,14 +104,14 @@ Popup {
 
     Component  {
         id: colorsViewDelegate
+
         Rectangle {
             id: colorsViewDelegateMouseArea
             width: 32; height: 32
             color: customPrimaryColor
             radius: width / 2
-            //clip: true
 
-            RoundButton {
+            ToolButton {
                 anchors.centerIn: parent
                 flat: true
                 onClicked: {
@@ -151,6 +150,8 @@ Popup {
 
         flat: true
         Material.foreground: primaryColor
-        onClicked: popup.close()
+        onClicked: {
+            popup.close()
+        }
     }
 }

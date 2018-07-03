@@ -35,7 +35,7 @@ Rectangle {
         anchors.right: parent.right
         width: 24
         height: 24
-        color: titleBar.color
+        color: darkColor
 
         Rectangle {
             anchors.centerIn: parent
