@@ -1,3 +1,17 @@
+/*******************************************************************/
+
+/* Original File Name: PopupMenu.qml                               */
+
+/* Date: 21-06-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Всплывающее окно с кастомизацией интерфейса.       */
+
+/*******************************************************************/
+
 import QtQuick 2.11
 import QtQuick.Layouts 1.3
 import QtQuick.Dialogs 1.3
