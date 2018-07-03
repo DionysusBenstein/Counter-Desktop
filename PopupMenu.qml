@@ -71,30 +71,40 @@ Popup {
             bottom: doneButton.top
             topMargin: 16
         }
+        delegate: colorsViewDelegate
         model: colorsViewModel
-        //delegate: colorsViewDelegate
     }
 
     ListModel {
         id: colorsViewModel
-
-        ListElement { color: "#e91e63" } // 1
-        ListElement { color: "#e91e63" } // 2
-        ListElement { color: "#e91e63" } // 3
-        ListElement { color: "#e91e63" } // 4
-        ListElement { color: "#e91e63" } // 5
-        ListElement { color: "#e91e63" } // 6
-        ListElement { color: "#e91e63" } // 7
-        ListElement { color: "#e91e63" } // 8
-        ListElement { color: "#e91e63" } // 9
-        ListElement { color: "#e91e63" } // 10
+        ListElement { interfaceColor: "#e91e63" } // 1
+        ListElement { interfaceColor: "#F44336" } // 2
+        ListElement { interfaceColor: "#9C27B0" } // 3
+        ListElement { interfaceColor: "#673AB7" } // 4
+        ListElement { interfaceColor: "#3F51B5" } // 5
+        ListElement { interfaceColor: "#2196F3" } // 6
+        ListElement { interfaceColor: "#009688" } // 7
+        ListElement { interfaceColor: "#4CAF50" } // 8
+        ListElement { interfaceColor: "#FF9800" } // 9
+        ListElement { interfaceColor: "#FF5722" } // 10
+        ListElement { interfaceColor: "#795548" } // 11
+        ListElement { interfaceColor: "#9E9E9E" } // 12
+        ListElement { interfaceColor: "#607D8B" } // 13
+        ListElement { interfaceColor: "#EF9A9A" } // 14
+        ListElement { interfaceColor: "#F48FB1" } // 15
+        ListElement { interfaceColor: "#CE93D8" } // 16
+        ListElement { interfaceColor: "#B39DDB" } // 17
+        ListElement { interfaceColor: "#616161" } // 18
+        ListElement { interfaceColor: "#282E33" } // 19
+        ListElement { interfaceColor: "#263238" } // 20
+        ListElement { interfaceColor: "#757575" } // 21
     }
 
-    ItemDelegate {
+    Component  {
         id: colorsViewDelegate
-
         Rectangle {
-            color: color
+            width: 32; height: 32
+            color: interfaceColor
             radius: width / 2
         }
     }

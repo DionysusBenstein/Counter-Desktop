@@ -20,6 +20,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
+import com.benstein.settings 1.0
 
 ApplicationWindow {
     id: mainWindow
@@ -214,6 +215,7 @@ ApplicationWindow {
     TitleBar { id: titleBar }
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
+    Settings { id: setting  }
 
     ScrollView {
         anchors {
