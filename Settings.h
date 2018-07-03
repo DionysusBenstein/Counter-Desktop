@@ -9,8 +9,8 @@ class Settings : public QObject
     Q_OBJECT
 public:
     explicit Settings(QObject *parent = nullptr);
-    void setKey(QString key);
-    QString getKey();
+    void setKey(const QString &key);
+    QString getKey() const;
 
 private:
     Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY keyChanged)
