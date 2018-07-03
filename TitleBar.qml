@@ -58,7 +58,7 @@ Rectangle {
             anchors.fill: parent
             hoverEnabled: true
             onEntered: parent.color = closeButtonColor
-            onExited: parent.color = titleBar.color
+            onExited: parent.color = darkColor
             onClicked: close()
         }
 
@@ -93,7 +93,7 @@ Rectangle {
         anchors.right: closeButton.left
         width: 24
         height: 24
-        color: parent.color
+        color: darkColor
 
         Image {
             id: minMaxButtonIcon
