@@ -19,6 +19,8 @@ Popup {
     leftPadding: 25
     rightPadding: 0
 
+    property alias currentTheme: popupComboBox.currentIndex
+
     Text {
         id: popupTitle
         anchors {
@@ -27,7 +29,7 @@ Popup {
         }
 
         text: qsTr("Выбрать цвет")
-        color: darkFontColor
+        color: Material.theme === Material.Dark ? "white" : darkFontColor
         font {
             pixelSize: 20
             family: robotoMediumFont.name
@@ -57,7 +59,7 @@ Popup {
         spacing: 4
         columns: 7
         rows: 3
-
+        //row 1
         Rectangle {
             width: 32
             height: 32
@@ -106,7 +108,7 @@ Popup {
             color: "#009688"
             radius: width / 2
         }
-        //
+        //row 2
         Rectangle {
             width: 32
             height: 32
@@ -155,7 +157,7 @@ Popup {
             color: "#EF9A9A"
             radius: width / 2
         }
-        //
+        //row3
         Rectangle {
             width: 32
             height: 32
@@ -187,7 +189,7 @@ Popup {
         Rectangle {
             width: 32
             height: 32
-            color: "#424242"
+            color: "#282E33"
             radius: width / 2
         }
 
@@ -233,6 +235,9 @@ Popup {
 
         flat: true
         Material.foreground: primaryColor
-        onClicked: popup.close()
+        onClicked: {
+
+            popup.close()
+        }
     }
 }

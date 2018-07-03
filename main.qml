@@ -31,7 +31,7 @@ ApplicationWindow {
     flags: Qt.FramelessWindowHint | Qt.Window
 
     Material.accent: primaryColor
-    //Material.theme:
+    Material.theme: appBar.popupMenu.currentTheme === 1 ? Material.Dark : Material.Light
 
     property color closeButtonColor: "#e81123"
     property color darkFontColor: "#404040"
@@ -312,6 +312,7 @@ ApplicationWindow {
         Text {
             id: counter
             anchors.centerIn: parent
+            color: Material.theme === Material.Dark ? "white" : darkFontColor
             text: {
                 if (spacesCounter.checked) {
                     backEnd.lengthWithoutSpaces(input.text)

@@ -133,7 +133,7 @@ Popup {
         id: about
         text: qsTr("<b>Counter</b> — бесплатное настольное кроссплатформенное приложение,
                     которое подсчитывает количество символов и слов в тексте.")
-        color: darkFontColor
+        color: Material.theme === Material.Dark ? "white" : darkFontColor
         wrapMode: Text.WordWrap
         font {
             pixelSize: 16

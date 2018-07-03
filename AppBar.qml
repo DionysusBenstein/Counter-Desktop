@@ -27,6 +27,8 @@ ToolBar {
         right: parent.right
     }
 
+    property alias popupMenu: popupMenu
+
     PopupMenu { id: popupMenu }
     About { id: aboutWnd }
 
@@ -70,6 +72,8 @@ ToolBar {
             var dy = mouseY - previousY
             mainWindow.setY(mainWindow.y + dy)
         }
+
+
     }
 
     MouseArea {
