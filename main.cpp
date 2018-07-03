@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 
 #include "Counter.h"
+#include "Settings.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
+    qmlRegisterType<Settings>("com.benstein.settings", 1, 0, "Settings");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
