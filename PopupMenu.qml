@@ -34,6 +34,7 @@ Popup {
     rightPadding: 0
 
     property alias currentTheme: popupComboBox.currentIndex
+    //property color currentColor
 
     Text {
         id: popupTitle
@@ -61,7 +62,8 @@ Popup {
         }
     }
 
-    Grid {
+    GridView {
+        id: colorsView
         anchors {
             left: parent.left
             right: parent.right
@@ -69,158 +71,194 @@ Popup {
             bottom: doneButton.top
             topMargin: 16
         }
+        model: colorsViewModel
+        //delegate: colorsViewDelegate
+    }
 
-        spacing: 4
-        columns: 7
-        rows: 3
-        //row 1
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#e91e63"
-            radius: width / 2
-        }
+    ListModel {
+        id: colorsViewModel
 
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#F44336"
-            radius: width / 2
-        }
+        ListElement { color: "#e91e63" } // 1
+        ListElement { color: "#e91e63" } // 2
+        ListElement { color: "#e91e63" } // 3
+        ListElement { color: "#e91e63" } // 4
+        ListElement { color: "#e91e63" } // 5
+        ListElement { color: "#e91e63" } // 6
+        ListElement { color: "#e91e63" } // 7
+        ListElement { color: "#e91e63" } // 8
+        ListElement { color: "#e91e63" } // 9
+        ListElement { color: "#e91e63" } // 10
+    }
 
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#9C27B0"
-            radius: width / 2
-        }
+    ItemDelegate {
+        id: colorsViewDelegate
 
         Rectangle {
-            width: 32
-            height: 32
-            color: "#673AB7"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#3F51B5"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#2196F3"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#009688"
-            radius: width / 2
-        }
-        //row 2
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#4CAF50"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#FF9800"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#FF5722"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#795548"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#9E9E9E"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#607D8B"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#EF9A9A"
-            radius: width / 2
-        }
-        //row3
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#F48FB1"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#CE93D8"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#B39DDB"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#616161"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#282E33"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#263238"
-            radius: width / 2
-        }
-
-        Rectangle {
-            width: 32
-            height: 32
-            color: "#757575"
+            color: color
             radius: width / 2
         }
     }
+
+    //    Grid {
+    //        anchors {
+    //            left: parent.left
+    //            right: parent.right
+    //            top: popupComboBox.bottom
+    //            bottom: doneButton.top
+    //            topMargin: 16
+    //        }
+
+    //        spacing: 4
+    //        columns: 7
+    //        rows: 3
+    //        //row 1
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#e91e63"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#F44336"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#9C27B0"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#673AB7"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#3F51B5"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#2196F3"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#009688"
+    //            radius: width / 2
+    //        }
+    //        //row 2
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#4CAF50"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#FF9800"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#FF5722"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#795548"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#9E9E9E"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#607D8B"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#EF9A9A"
+    //            radius: width / 2
+    //        }
+    //        //row3
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#F48FB1"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#CE93D8"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#B39DDB"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#616161"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#282E33"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#263238"
+    //            radius: width / 2
+    //        }
+
+    //        Rectangle {
+    //            width: 32
+    //            height: 32
+    //            color: "#757575"
+    //            radius: width / 2
+    //        }
+    //    }
 
     Button {
         id: doneButton
