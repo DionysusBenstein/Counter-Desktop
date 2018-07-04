@@ -95,7 +95,7 @@ Popup {
 
     Text {
         id: version
-        text: qsTr("Версия: 2.7.1")
+        text: qsTr("Версия: 2.8.0")
         color: "white"
         wrapMode: Text.WordWrap
         font {
