@@ -12,6 +12,7 @@ public:
 
     void setKey(const QString &key);
     void setValue(const QString &value);
+
     void writeSettings();
     void readSettings();
 
