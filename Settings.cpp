@@ -1,9 +1,6 @@
 #include "Settings.h"
 
-Settings::Settings(QObject *parent) : QObject(parent)
-{
-
-}
+Settings::Settings(QObject *parent) : QObject(parent) {}
 
 void Settings::setKey(const QString &key)
 {
@@ -15,6 +12,18 @@ void Settings::setValue(const QString &value)
 {
     this->value = value;
     emit valueChanged(key);
+}
+
+void Settings::writeSettings()
+{
+    settings.beginGroup("/Settings");
+    settings.setValue("/color", getKey());
+}
+
+void Settings::readSettings()
+{
+    settings.beginGroup("/Settings");
+    value = settings.value("/color", "").toString();
 }
 
 QString Settings::getKey() const

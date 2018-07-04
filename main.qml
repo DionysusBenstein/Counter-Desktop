@@ -215,7 +215,11 @@ ApplicationWindow {
     TitleBar { id: titleBar }
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
-    Settings { id: setting; }
+    Settings {
+        id: setting
+        key: "Hello"
+
+    }
 
     ScrollView {
         anchors {
@@ -228,6 +232,7 @@ ApplicationWindow {
 
         TextArea {
             id: input
+            text: setting.value
             focus: true
             anchors.fill: input
             selectByMouse: true

@@ -9,8 +9,12 @@ class Settings : public QObject
     Q_OBJECT
 public:
     explicit Settings(QObject *parent = nullptr);
+
     void setKey(const QString &key);
     void setValue(const QString &value);
+    void writeSettings();
+    void readSettings();
+
     QString getKey() const;
     QString getValue() const;
 
