@@ -142,6 +142,18 @@ ToolBar {
             MenuItem {
                 text: qsTr("Язык");
                 icon.source: "images/language-24dp.png";
+                onTriggered: submenu.open
+
+                Menu {
+                    id: submenu
+                    MenuItem {
+                        text: qsTr("Русский");
+                    }
+
+                    MenuItem {
+                        text: qsTr("Английский");
+                    }
+                }
             }
 
             MenuItem {

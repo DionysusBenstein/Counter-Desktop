@@ -16,7 +16,7 @@ import QtQuick 2.11
 import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4
-//import QtGraphicalEffects 1.0
+import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
