@@ -31,7 +31,6 @@ ToolBar {
 
     PopupMenu { id: popupMenu }
     About { id: aboutWnd }
-
     Rectangle {
         id: appBarRect
         anchors.fill: parent

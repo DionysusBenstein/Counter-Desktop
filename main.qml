@@ -189,7 +189,6 @@ ApplicationWindow {
 
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
         onDoubleClicked: {
-
             previousX = mouseX
             previousY = mouseY
             isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
@@ -256,7 +255,7 @@ ApplicationWindow {
 
         CheckBox {
             id: spacesCounter
-            text: qsTr("Не считать пробелы")
+            text: qsTr("Не учитывать пробелы")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
@@ -268,7 +267,7 @@ ApplicationWindow {
 
         CheckBox {
             id: signsCounter
-            text: qsTr("Не считать знаки")
+            text: qsTr("Не учитывать знаки")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
