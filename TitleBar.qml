@@ -207,7 +207,7 @@ Rectangle {
         }
 
         onMouseXChanged: {
-            var dx = ЧmouseX - previousX
+            var dx = mouseX - previousX
             if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
                 mainWindow.setX(mainWindow.x + dx)
                 mainWindow.setWidth(mainWindow.width - dx)

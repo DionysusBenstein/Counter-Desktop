@@ -16,7 +16,7 @@ public:
 
 private:
     Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY keyChanged)
-    Q_PROPERTY(auto value READ getValue WRITE setValue NOTIFY valueChanged)
+    //Q_PROPERTY(int value READ getValue WRITE setValue NOTIFY valueChanged)
 
     QString key;
     QSettings settings;
