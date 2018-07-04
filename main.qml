@@ -215,7 +215,7 @@ ApplicationWindow {
     TitleBar { id: titleBar }
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
-    Settings { id: setting  }
+    Settings { id: setting; }
 
     ScrollView {
         anchors {
