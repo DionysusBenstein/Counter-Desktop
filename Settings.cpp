@@ -17,7 +17,7 @@ void Settings::setValue(const QString &value)
 void Settings::writeSettings()
 {
     settings.beginGroup("/Settings");
-    settings.setValue("/color", getKey());
+    settings.setValue("/color", key);
 }
 
 void Settings::readSettings()

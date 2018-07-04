@@ -157,10 +157,10 @@ Popup {
 
     Text {
         id: copyright
-        color: darkFontColor
+        linkColor: primaryColor
+        wrapMode: Text.WordWrap
         onLinkActivated: Qt.openUrlExternally("https://github.com/DionysusBenstein")
         text: qsTr("<a href=\"https://github.com/DionysusBenstein\">Copyright © 2018 Dionysus Benstein. Все права защищены.</a>")
-        wrapMode: Text.WordWrap
         font {
             pixelSize: 15
             family: robotoMediumFont.name
