@@ -8,5 +8,7 @@
         <file>images/language-24dp.png</file>
         <file>images/aboutProjectIconBlack-24dp.png</file>
         <file>images/icon-100px.png</file>
+        <file>images/english-24px.png</file>
+        <file>images/russia-24px.png</file>
     </qresource>
 </RCC>

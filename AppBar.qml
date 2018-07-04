@@ -139,19 +139,23 @@ ToolBar {
 
         Menu {
             id: moreButtonContextMenu
+
             MenuItem {
-                text: qsTr("Язык");
+                text: qsTr("Язык")
                 icon.source: "images/language-24dp.png";
-                onTriggered: submenu.open
+                onTriggered: submenu.open()
 
                 Menu {
                     id: submenu
+
                     MenuItem {
-                        text: qsTr("Русский");
+                        text: qsTr("Русский")
+                        //icon.source: "images/russia-24px.png"
                     }
 
                     MenuItem {
-                        text: qsTr("Английский");
+                        text: qsTr("Английский")
+                        //icon.source: "images/english-24px.png"
                     }
                 }
             }
