@@ -102,6 +102,7 @@ ToolBar {
     MouseArea {
         id: rightArea
         width: borderSize
+        cursorShape:  Qt.SizeHorCursor
         anchors {
             right: parent.right
             top: parent.top
@@ -109,7 +110,7 @@ ToolBar {
             bottom: parent.bottom
             bottomMargin: cornerSize
         }
-        cursorShape:  Qt.SizeHorCursor
+
         onPressed: {
             previousX = mouseX
         }
@@ -129,7 +130,7 @@ ToolBar {
             verticalCenter: parent.verticalCenter
         }
 
-        onClicked: moreButtonContextMenu.open()
+        onClicked: moreButtonMenu.open()
 
         Image {
             id: moreButtonIcon
@@ -138,7 +139,7 @@ ToolBar {
         }
 
         Menu {
-            id: moreButtonContextMenu
+            id: moreButtonMenu
 
             //            MenuItem {
             //                text: qsTr("Язык")

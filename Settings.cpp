@@ -15,7 +15,10 @@
 
 #include "Settings.h"
 
-Settings::Settings(QObject *parent) : QObject(parent) {}
+Settings::Settings(QObject *parent) : QObject(parent)
+{
+    writeSettings();
+}
 
 void Settings::setKey(const QString &key)
 {

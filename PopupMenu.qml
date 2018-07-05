@@ -34,6 +34,7 @@ Popup {
     rightPadding: 0
 
     property alias currentTheme: popupComboBox.currentIndex
+
     Text {
         id: popupTitle
         anchors {
@@ -87,7 +88,7 @@ Popup {
         ListElement { customPrimaryColor: "#3F51B5"; customLightColor: "#757de8"; customDarkColor: "#002984" } // 5
         ListElement { customPrimaryColor: "#4285f4"; customLightColor: "#80b4ff"; customDarkColor: "#0059c1" } // 6
         ListElement { customPrimaryColor: "#009688"; customLightColor: "#52c7b8"; customDarkColor: "#00675b" } // 7
-        // row 2
+        //row 2
         ListElement { customPrimaryColor: "#4CAF50"; customLightColor: "#80e27e"; customDarkColor: "#087f23" } // 8
         ListElement { customPrimaryColor: "#FF9800"; customLightColor: "#ffc947"; customDarkColor: "#c66900" } // 9
         ListElement { customPrimaryColor: "#d7ccc8"; customLightColor: "#fffffb"; customDarkColor: "#a69b97" } // 10 //need change
@@ -95,7 +96,7 @@ Popup {
         ListElement { customPrimaryColor: "#9E9E9E"; customLightColor: "#cfcfcf"; customDarkColor: "#707070" } // 12
         ListElement { customPrimaryColor: "#607D8B"; customLightColor: "#8eacbb"; customDarkColor: "#34515e" } // 13
         ListElement { customPrimaryColor: "#EF9A9A"; customLightColor: "#ffcccb"; customDarkColor: "#ba6b6c" } // 14
-        // row 3
+        //row 3
         ListElement { customPrimaryColor: "#F48FB1"; customLightColor: "#ffc1e3"; customDarkColor: "#bf5f82" } // 15
         ListElement { customPrimaryColor: "#CE93D8"; customLightColor: "#ffc4ff"; customDarkColor: "#9c64a6" } // 16
         ListElement { customPrimaryColor: "#B39DDB"; customLightColor: "#e6ceff"; customDarkColor: "#836fa9" } // 17
@@ -130,32 +131,28 @@ Popup {
     Button {
         id: doneButton
         text: qsTr("OK")
+        Material.foreground: primaryColor
+        onClicked: popup.close()
+        flat: true
         anchors {
             right: parent.right
             bottom: parent.bottom
             bottomMargin: 2
             rightMargin: 8
         }
-
-        flat: true
-        Material.foreground: primaryColor
-        onClicked: popup.close()
     }
 
     Button {
         id: cancelButton
         text: qsTr("Отмена"/*"Cancel"*/)
+        Material.foreground: primaryColor
+        onClicked: popup.close()
+        flat: true
         anchors {
             right: doneButton.left
             bottom: parent.bottom
             rightMargin: 8
             bottomMargin: 2
-        }
-
-        flat: true
-        Material.foreground: primaryColor
-        onClicked: {
-            popup.close()
         }
     }
 }
