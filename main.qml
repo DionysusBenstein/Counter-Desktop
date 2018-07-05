@@ -309,7 +309,6 @@ ApplicationWindow {
             margins: 19
         }
 
-        //color: parent.color
         width: 100
         height: 100
 

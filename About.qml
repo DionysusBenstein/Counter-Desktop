@@ -96,7 +96,7 @@ Popup {
 
     Text {
         id: version
-        text: qsTr("Версия: 2.8.0")
+        text: qsTr("Версия: 2.8.1")
         color: "white"
         wrapMode: Text.WordWrap
         font {
@@ -181,6 +181,9 @@ Popup {
     Button {
         id: doneButton
         text: qsTr("OK")
+        Material.foreground: primaryColor
+        onClicked: popup.close()
+        flat: true
         anchors {
             right: parent.right
             bottom: parent.bottom
@@ -188,8 +191,5 @@ Popup {
             rightMargin: 8
         }
 
-        flat: true
-        Material.foreground: primaryColor
-        onClicked: popup.close()
     }
 }

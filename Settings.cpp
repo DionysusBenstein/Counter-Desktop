@@ -20,38 +20,27 @@ Settings::Settings(QObject *parent) : QObject(parent)
     writeSettings();
 }
 
-void Settings::setKey(const QString &key)
+void Settings::setColor(const QString &color)
 {
-    this->key = key;
-    emit keyChanged(key);
+    this->color = color;
+    emit colorChanged(color);
 }
 
-void Settings::setValue(const QString &value)
+QString Settings::getColor() const
 {
-    this->value = value;
-    emit valueChanged(key);
+    return this->color;
 }
 
 void Settings::writeSettings()
 {
     settings.beginGroup("/Settings");
-    settings.setValue("/color", key);
+    settings.setValue("/color", color);
     settings.endGroup();
 }
 
 void Settings::readSettings()
 {
     settings.beginGroup("/Settings");
-    value = settings.value("/color", "").toString();
-}
-
-QString Settings::getKey() const
-{
-    return this->key;
-}
-
-QString Settings::getValue() const
-{
-    return this->value;
+    color = settings.value("/color", "").toString();
 }
 

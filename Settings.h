@@ -25,25 +25,21 @@ class Settings : public QObject
 public:
     explicit Settings(QObject *parent = nullptr);
 
-    void setKey(const QString &key);
-    void setValue(const QString &value);
+    void setColor(const QString &color);
+    QString getColor() const;
 
     void writeSettings();
     void readSettings();
 
-    QString getKey() const;
-    QString getValue() const;
 
 private:
-    Q_PROPERTY(QString key READ getKey WRITE setKey NOTIFY keyChanged)
-    Q_PROPERTY(QString value READ getValue WRITE setValue NOTIFY valueChanged)
+    Q_PROPERTY(QString color READ getColor WRITE setColor NOTIFY colorChanged)
 
-    QString key;
-    QString value;
+    QString color;
     QSettings settings;
 
 signals:
-    void keyChanged(QString);
+    void colorChanged(QString);
     void valueChanged(QString);
 };
 
