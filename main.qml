@@ -20,7 +20,7 @@ import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
-import com.benstein.settings 1.0
+import com.benstein.settings 1.1
 
 ApplicationWindow {
     id: mainWindow
@@ -214,11 +214,7 @@ ApplicationWindow {
     TitleBar { id: titleBar }
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
-    Settings {
-        id: setting
-        key: "Hello"
-
-    }
+    Settings { id: setting  }
 
     ScrollView {
         anchors {
@@ -255,7 +251,7 @@ ApplicationWindow {
 
         CheckBox {
             id: spacesCounter
-            text: qsTr("Не учитывать пробелы")
+            text: qsTr(" Не учитывать пробелы")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
@@ -267,7 +263,7 @@ ApplicationWindow {
 
         CheckBox {
             id: signsCounter
-            text: qsTr("Не учитывать знаки")
+            text: qsTr(" Не учитывать знаки")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
                     wordsCounter.checked = false
@@ -279,7 +275,7 @@ ApplicationWindow {
 
         CheckBox {
             id: linesCounter
-            text: qsTr("Посчитать количество строк")
+            text: qsTr(" Посчитать количество строк")
             onClicked: {
                 if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
                     wordsCounter.checked = false
@@ -292,7 +288,7 @@ ApplicationWindow {
 
         CheckBox {
             id: wordsCounter;
-            text: qsTr("Посчитать количество слов")
+            text: qsTr(" Посчитать количество слов")
             onClicked: {
                 if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
                     linesCounter.checked = false

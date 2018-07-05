@@ -30,7 +30,8 @@ ToolBar {
     property alias popupMenu: popupMenu
 
     PopupMenu { id: popupMenu }
-    About { id: aboutWnd }
+    About     { id: aboutWnd  }
+
     Rectangle {
         id: appBarRect
         anchors.fill: parent

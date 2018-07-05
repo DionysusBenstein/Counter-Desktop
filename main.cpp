@@ -1,4 +1,3 @@
-#include <QTranslator>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
@@ -15,10 +14,9 @@ int main(int argc, char *argv[])
     QGuiApplication::setOrganizationName("Benstein Industries");
 
     QQmlApplicationEngine engine;
-    QTranslator translator;
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
-    qmlRegisterType<Settings>("com.benstein.settings", 1, 0, "Settings");
+    qmlRegisterType<Settings>("com.benstein.settings", 1, 1, "Settings");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
