@@ -23,6 +23,7 @@ Popup {
     x: Math.round((parent.width - width) / 2)
     y: Math.round((parent.height - height) / 2)
     parent: Overlay.overlay
+    clip: true
     width: 426
     height: 320
     modal: true

@@ -24,9 +24,9 @@ import com.benstein.settings 1.0
 
 ApplicationWindow {
     id: mainWindow
-    visible: true
     width: 640
     height: 480
+    visible: true
     minimumWidth: 550
     minimumHeight: 350
     flags: Qt.FramelessWindowHint | Qt.Window
