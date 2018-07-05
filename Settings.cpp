@@ -1,3 +1,18 @@
+/*******************************************************************/
+
+/* Original File Name: Settings.cpp                                */
+
+/* Date: 03-07-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Реализация класса, сохраняющего настройки
+                приложения.                                        */
+
+/*******************************************************************/
+
 #include "Settings.h"
 
 Settings::Settings(QObject *parent) : QObject(parent) {}

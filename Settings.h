@@ -1,3 +1,18 @@
+/*******************************************************************/
+
+/* Original File Name: Settings.cpp                                */
+
+/* Date: 03-07-2018                                                */
+
+/* Developer: Dionysus Benstein                                    */
+
+/* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
+
+/* Description: Объявление класса, сохраняющего настройки
+                приложения.                                        */
+
+/*******************************************************************/
+
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
