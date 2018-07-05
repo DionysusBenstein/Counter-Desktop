@@ -36,6 +36,7 @@ void Settings::writeSettings()
 {
     settings.beginGroup("/Settings");
     settings.setValue("/color", key);
+    settings.endGroup();
 }
 
 void Settings::readSettings()
