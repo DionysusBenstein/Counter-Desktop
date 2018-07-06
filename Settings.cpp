@@ -63,10 +63,10 @@ QString Settings::getDarkColor() const
 
 void Settings::writeSettings()
 {
-    settings.beginGroup("/settings");
-    settings.setValue("/primaryColor", primaryColor);
-    settings.setValue("/lightColor", lightColor);
-    settings.setValue("/darkColor", darkColor);
+    settings.beginGroup("/settings/color");
+    settings.setValue("/primary", primaryColor);
+    settings.setValue("/light", lightColor);
+    settings.setValue("/dark", darkColor);
     settings.endGroup();
 }
 
