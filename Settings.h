@@ -40,7 +40,7 @@ private:
 
 signals:
     void colorChanged(QString);
-    void valueChanged(QString);
+
 };
 
 #endif //SETTINGS_H
