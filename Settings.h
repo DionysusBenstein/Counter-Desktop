@@ -1,6 +1,6 @@
 /*******************************************************************/
 
-/* Original File Name: Settings.cpp                                */
+/* Original File Name: Settings.h                                  */
 
 /* Date: 03-07-2018                                                */
 

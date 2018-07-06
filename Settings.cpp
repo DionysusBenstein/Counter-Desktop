@@ -33,7 +33,7 @@ QString Settings::getColor() const
 
 void Settings::writeSettings()
 {
-    settings.beginGroup("/Settings");
+    settings.beginGroup("/settings");
     settings.setValue("/color", color);
     settings.endGroup();
 }
