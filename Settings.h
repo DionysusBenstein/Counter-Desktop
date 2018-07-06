@@ -25,8 +25,14 @@ class Settings : public QObject
 public:
     explicit Settings(QObject *parent = nullptr);
 
-    void setColor(const QString &color);
-    QString getColor() const;
+    void setPrimaryColor(const QString &primaryColor);
+    QString getPrimaryColor() const;
+
+    void setLightColor(const QString &lightColor);
+    QString getLightColor() const;
+
+    void setDarkColor(const QString &darkColor);
+    QString getDarkColor() const;
 
     void writeSettings();
     Q_INVOKABLE void readSettings();

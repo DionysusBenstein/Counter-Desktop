@@ -20,27 +20,61 @@ Settings::Settings(QObject *parent) : QObject(parent)
     writeSettings();
 }
 
-void Settings::setColor(const QString &color)
+//---------------------------------------------------------
+
+void Settings::setPrimaryColor(const QString &primaryColor)
 {
-    this->color = color;
-    emit colorChanged(color);
+    this->primaryColor = primaryColor;
+    emit primaryColorChanged(primaryColor);
 }
 
-QString Settings::getColor() const
+QString Settings::getPrimaryColor() const
 {
-    return this->color;
+    return this->primaryColor;
 }
+
+//---------------------------------------------------------
+
+void Settings::setLightColor(const QString &lightColor)
+{
+    this->lightColor = lightColor;
+    emit lightColorChanged(lightColor);
+}
+
+QString Settings::getLightColor() const
+{
+    return this->lightColor;
+}
+
+//---------------------------------------------------------
+
+void Settings::setDarkColor(const QString &darkColor)
+{
+    this->darkColor = darkColor;
+    emit darkColorChanged(darkColor);
+}
+
+QString Settings::getDarkColor() const
+{
+    return this->darkColor;
+}
+
+//---------------------------------------------------------
 
 void Settings::writeSettings()
 {
     settings.beginGroup("/settings");
-    settings.setValue("/color", color);
+    settings.setValue("/primaryColor", primaryColor);
+    settings.setValue("/lightColor", lightColor);
+    settings.setValue("/darkColor", darkColor);
     settings.endGroup();
 }
 
 void Settings::readSettings()
 {
     settings.beginGroup("/Settings");
-    color = settings.value("/color", "").toString();
+    primaryColor = settings.value("/primaryColor", "").toString();
+    lightColor = settings.value("/lightColor", "").toString();
+    darkColor = settings.value("/darkColor", "").toString();
 }
 
