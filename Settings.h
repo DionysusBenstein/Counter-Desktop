@@ -34,8 +34,8 @@ public:
 
 private:
     Q_PROPERTY(QString primaryColor READ getPrimaryColor WRITE setPrimaryColor NOTIFY primaryColorChanged)
-    Q_PROPERTY(QString lightColor READ getColor WRITE setColor NOTIFY colorChanged)
-    Q_PROPERTY(QString darkColor READ getColor WRITE setColor NOTIFY colorChanged)
+    Q_PROPERTY(QString lightColor READ getLightColor WRITE setLightColor NOTIFY lightColorChanged)
+    Q_PROPERTY(QString darkColor READ getDarkColor WRITE setDarkColor NOTIFY darkColorChanged)
 
     QSettings settings;
     QString primaryColor;
