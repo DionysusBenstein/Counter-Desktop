@@ -211,6 +211,25 @@ ApplicationWindow {
         }
     }
 
+    ScaleAnimator {
+        id: textScaleAnim
+        easing.type: Easing.OutCubic
+        target: counter
+        from: 0; to: 1
+        running: false
+        duration: 100
+    }
+
+    OpacityAnimator {
+        id: textOpacityAnim
+        easing.type: Easing.OutCubic
+        target: counter
+        from: 0; to: 1
+        running: false
+        duration: 100
+    }
+
+    //content
     TitleBar { id: titleBar }
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
@@ -335,23 +354,5 @@ ApplicationWindow {
                 textScaleAnim.running = true
             }
         }
-    }
-
-    ScaleAnimator {
-        id: textScaleAnim
-        easing.type: Easing.OutCubic
-        target: counter
-        from: 0; to: 1
-        running: false
-        duration: 100
-    }
-
-    OpacityAnimator {
-        id: textOpacityAnim
-        easing.type: Easing.OutCubic
-        target: counter
-        from: 0; to: 1
-        running: false
-        duration: 100
     }
 }
