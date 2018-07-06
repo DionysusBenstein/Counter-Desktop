@@ -117,7 +117,6 @@ Popup {
 
             ToolButton {
                 anchors.centerIn: parent
-                flat: true
                 onClicked: {
                     primaryColor = customPrimaryColor
                     lightColor = customLightColor
