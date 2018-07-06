@@ -29,17 +29,23 @@ public:
     QString getColor() const;
 
     void writeSettings();
-    void readSettings();
+    Q_INVOKABLE void readSettings();
 
 
 private:
-    Q_PROPERTY(QString color READ getColor WRITE setColor NOTIFY colorChanged)
+    Q_PROPERTY(QString primaryColor READ getPrimaryColor WRITE setPrimaryColor NOTIFY primaryColorChanged)
+    Q_PROPERTY(QString lightColor READ getColor WRITE setColor NOTIFY colorChanged)
+    Q_PROPERTY(QString darkColor READ getColor WRITE setColor NOTIFY colorChanged)
 
-    QString color;
     QSettings settings;
+    QString primaryColor;
+    QString lightColor;
+    QString darkColor;
 
 signals:
-    void colorChanged(QString);
+    void primaryColorChanged(QString);
+    void lightColorChanged(QString);
+    void darkColorChanged(QString);
 
 };
 
