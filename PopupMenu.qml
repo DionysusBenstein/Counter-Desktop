@@ -22,16 +22,15 @@ Popup {
     id: popup
     x: Math.round((parent.width - width) / 2)
     y: Math.round((parent.height - height) / 2)
+    width: 300; height: 300
+    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     parent: Overlay.overlay
-    width: 300
-    height: 300
     modal: true
     focus: true
-    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     bottomPadding: 0
+    rightPadding: 0
     topPadding: 25
     leftPadding: 25
-    rightPadding: 0
 
     property alias currentTheme: popupComboBox.currentIndex
 

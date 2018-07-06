@@ -227,7 +227,6 @@ ApplicationWindow {
 
         TextArea {
             id: input
-            text: setting.value
             focus: true
             anchors.fill: input
             selectByMouse: true
