@@ -35,46 +35,46 @@ QString Settings::getSavedPrimaryColor() const
 
 //-------------------------------------------------------------------
 
-void Settings::setLightColor(const QString &lightColor)
+void Settings::setSavedLightColor(const QString &savedLightColor)
 {
-    this->lightColor = lightColor;
-    emit lightColorChanged(lightColor);
+    this->savedLightColor = savedLightColor;
+    emit savedLightColorChanged(savedLightColor);
 }
 
-QString Settings::getLightColor() const
+QString Settings::getSavedLightColor() const
 {
-    return this->lightColor;
+    return this->savedLightColor;
 }
 
 //-------------------------------------------------------------------
 
-void Settings::setDarkColor(const QString &darkColor)
+void Settings::setSavedDarkColor(const QString &savedDarkColor)
 {
-    this->darkColor = darkColor;
-    emit darkColorChanged(darkColor);
+    this->savedDarkColor = savedDarkColor;
+    emit savedDarkColorChanged(savedDarkColor);
 }
 
-QString Settings::getDarkColor() const
+QString Settings::getSavedDarkColor() const
 {
-    return this->darkColor;
+    return this->savedDarkColor;
 }
 
 //-------------------------------------------------------------------
 
 void Settings::writeSettings()
 {
-    settings.beginGroup("/settings/color");
+    settings.beginGroup("/settings/saved/color");
     settings.setValue("/primary", savedPrimaryColor);
-    settings.setValue("/light", lightColor);
-    settings.setValue("/dark", darkColor);
+    settings.setValue("/light", savedLightColor);
+    settings.setValue("/dark", savedDarkColor);
     settings.endGroup();
 }
 
 void Settings::readSettings()
 {
     settings.beginGroup("/Settings");
-    savedPrimaryColor = settings.value("/primaryColor", "").toString();
-    lightColor = settings.value("/lightColor", "").toString();
-    darkColor = settings.value("/darkColor", "").toString();
+    savedPrimaryColor = settings.value("/savedPrimaryColor", "").toString();
+    savedLightColor = settings.value("/savedLightColor", "").toString();
+    savedDarkColor = settings.value("/savedDarkColor", "").toString();
 }
 

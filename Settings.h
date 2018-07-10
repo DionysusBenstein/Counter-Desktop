@@ -28,11 +28,11 @@ public:
     void setSavedPrimaryColor(const QString &savedPrimaryColor);
     QString getSavedPrimaryColor() const;
 
-    void setLightColor(const QString &lightColor);
-    QString getLightColor() const;
+    void setSavedLightColor(const QString &savedLightColor);
+    QString getSavedLightColor() const;
 
-    void setDarkColor(const QString &darkColor);
-    QString getDarkColor() const;
+    void setSavedDarkColor(const QString &savedDarkColor);
+    QString getSavedDarkColor() const;
 
     void writeSettings();
     Q_INVOKABLE void readSettings();
@@ -40,18 +40,18 @@ public:
 
 private:
     Q_PROPERTY(QString savedPrimaryColor READ getSavedPrimaryColor WRITE setSavedPrimaryColor NOTIFY savedPrimaryColorChanged)
-    Q_PROPERTY(QString lightColor READ getLightColor WRITE setLightColor NOTIFY lightColorChanged)
-    Q_PROPERTY(QString darkColor READ getDarkColor WRITE setDarkColor NOTIFY darkColorChanged)
+    Q_PROPERTY(QString savedLightColor READ getSavedLightColor WRITE setSavedLightColor NOTIFY savedLightColorChanged)
+    Q_PROPERTY(QString savedDarkColor READ getSavedDarkColor WRITE setSavedDarkColor NOTIFY savedDarkColorChanged)
 
     QSettings settings;
     QString savedPrimaryColor;
-    QString lightColor;
-    QString darkColor;
+    QString savedLightColor;
+    QString savedDarkColor;
 
 signals:
     void savedPrimaryColorChanged(QString);
-    void lightColorChanged(QString);
-    void darkColorChanged(QString);
+    void savedLightColorChanged(QString);
+    void savedDarkColorChanged(QString);
 
 };
 
