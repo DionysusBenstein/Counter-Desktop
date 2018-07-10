@@ -25,8 +25,8 @@ class Settings : public QObject
 public:
     explicit Settings(QObject *parent = nullptr);
 
-    void setPrimaryColor(const QString &primaryColor);
-    QString getPrimaryColor() const;
+    void setSavedPrimaryColor(const QString &savedPrimaryColor);
+    QString getSavedPrimaryColor() const;
 
     void setLightColor(const QString &lightColor);
     QString getLightColor() const;
@@ -39,17 +39,17 @@ public:
 
 
 private:
-    Q_PROPERTY(QString primaryColor READ getPrimaryColor WRITE setPrimaryColor NOTIFY primaryColorChanged)
+    Q_PROPERTY(QString savedPrimaryColor READ getSavedPrimaryColor WRITE setSavedPrimaryColor NOTIFY savedPrimaryColorChanged)
     Q_PROPERTY(QString lightColor READ getLightColor WRITE setLightColor NOTIFY lightColorChanged)
     Q_PROPERTY(QString darkColor READ getDarkColor WRITE setDarkColor NOTIFY darkColorChanged)
 
     QSettings settings;
-    QString primaryColor;
+    QString savedPrimaryColor;
     QString lightColor;
     QString darkColor;
 
 signals:
-    void primaryColorChanged(QString);
+    void savedPrimaryColorChanged(QString);
     void lightColorChanged(QString);
     void darkColorChanged(QString);
 

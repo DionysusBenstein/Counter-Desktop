@@ -220,6 +220,9 @@ ApplicationWindow {
         //primaryColor: primaryColor
         //lightColor: lightColor
         //darkColor: darkColor
+        savedPrimaryColor: primaryColor
+        //savedLightColor: lightColor
+        //savedDarkColor: darkColor
     }
 
     ScrollView {
@@ -233,7 +236,7 @@ ApplicationWindow {
 
         TextArea {
             id: input
-            text: settings.primaryColor //DEBUG
+            text: settings.savedPrimaryColor //DEBUG
             focus: true
             anchors.fill: input
             selectByMouse: true
