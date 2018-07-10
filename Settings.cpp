@@ -72,9 +72,10 @@ void Settings::writeSettings()
 
 void Settings::readSettings()
 {
-    settings.beginGroup("/Settings");
-    savedPrimaryColor = settings.value("/savedPrimaryColor", "").toString();
-    savedLightColor = settings.value("/savedLightColor", "").toString();
-    savedDarkColor = settings.value("/savedDarkColor", "").toString();
+    settings.beginGroup("/settings/saved/color");
+    savedPrimaryColor = settings.value("/primary", "").toString();
+    savedLightColor = settings.value("/light", "").toString();
+    savedDarkColor = settings.value("/dark", "").toString();
+    settings.endGroup();
 }
 
