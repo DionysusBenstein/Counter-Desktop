@@ -26,7 +26,9 @@ Settings::Settings(QObject *parent) : QObject(parent)
 void Settings::setSavedPrimaryColor(const QString &savedPrimaryColor)
 {
     this->savedPrimaryColor = savedPrimaryColor;
-    emit savedPrimaryColorChanged(savedPrimaryColor);
+
+    if (this->savedPrimaryColor != savedPrimaryColor)
+        emit savedPrimaryColorChanged(savedPrimaryColor);
 }
 
 QString Settings::getSavedPrimaryColor() const
@@ -40,7 +42,9 @@ QString Settings::getSavedPrimaryColor() const
 void Settings::setSavedLightColor(const QString &savedLightColor)
 {
     this->savedLightColor = savedLightColor;
-    emit savedLightColorChanged(savedLightColor);
+
+    if (this->savedLightColor != savedLightColor)
+        emit savedLightColorChanged(savedLightColor);
 }
 
 QString Settings::getSavedLightColor() const
@@ -54,7 +58,9 @@ QString Settings::getSavedLightColor() const
 void Settings::setSavedDarkColor(const QString &savedDarkColor)
 {
     this->savedDarkColor = savedDarkColor;
-    emit savedDarkColorChanged(savedDarkColor);
+
+    if (this->savedDarkColor != savedDarkColor)
+        emit savedDarkColorChanged(savedDarkColor);
 }
 
 QString Settings::getSavedDarkColor() const
