@@ -34,7 +34,7 @@ public:
     void setSavedDarkColor(const QString &savedDarkColor);
     QString getSavedDarkColor() const;
 
-    void writeSettings();
+    Q_INVOKABLE void writeSettings();
     Q_INVOKABLE void readSettings();
 
 

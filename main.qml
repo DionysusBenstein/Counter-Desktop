@@ -19,8 +19,8 @@ import QtQuick.Controls 2.4
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
+import com.benstein.settings 1.2
 import com.benstein.counter 1.4
-import com.benstein.settings 1.1
 
 ApplicationWindow {
     id: mainWindow
@@ -32,7 +32,7 @@ ApplicationWindow {
     flags: Qt.FramelessWindowHint | Qt.Window
 
     Material.accent: primaryColor
-    Material.theme: appBar.popupMenu.currentTheme === 1 ? Material.Dark : Material.Light
+    Material.theme: appBar.popupMenu.currentItem === 1 ? Material.Dark : Material.Light
 
     property color closeButtonColor: "#e81123"
     property color lightFontColor: "#9a9a9a"
@@ -49,10 +49,10 @@ ApplicationWindow {
         return mainWindow.visibility === ApplicationWindow.Maximized
     }
 
+    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
     FontLoader { id: robotoLightFont; source: "fonts/Roboto-Light.ttf"       }
     FontLoader { id: robotoMediumFont; source: "fonts/Roboto-Medium.ttf"     }
     FontLoader { id: robotoRegularFont; source: "fonts/Roboto-Regular_0.ttf" }
-    FontLoader { id: robotoThinFont; source: "fonts/Roboto-Thin_0.ttf"       }
 
     MouseArea {
         id: bottomArea
@@ -233,8 +233,8 @@ ApplicationWindow {
 
         TextArea {
             id: input
-            focus: true
             anchors.fill: input
+            focus: true
             selectByMouse: true
             persistentSelection: true
             wrapMode: Text.WrapAnywhere
@@ -259,8 +259,8 @@ ApplicationWindow {
             text: qsTr(" Не учитывать пробелы")
             onClicked: {
                 if (linesCounter.checked || wordsCounter.checked) {
-                    wordsCounter.checked = false
-                    linesCounter.checked = false
+                    wordsCounter.checked  = false
+                    linesCounter.checked  = false
                     spacesCounter.checked = true
                 }
             }
@@ -283,10 +283,10 @@ ApplicationWindow {
             text: qsTr(" Посчитать количество строк")
             onClicked: {
                 if (wordsCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    wordsCounter.checked = false
-                    signsCounter.checked = false
+                    wordsCounter.checked  = false
+                    signsCounter.checked  = false
                     spacesCounter.checked = false
-                    linesCounter.checked = true
+                    linesCounter.checked  = true
                 }
             }
         }
@@ -296,10 +296,10 @@ ApplicationWindow {
             text: qsTr(" Посчитать количество слов")
             onClicked: {
                 if (linesCounter.checked || signsCounter.checked || spacesCounter.checked) {
-                    linesCounter.checked = false
-                    signsCounter.checked = false
+                    linesCounter.checked  = false
+                    signsCounter.checked  = false
                     spacesCounter.checked = false
-                    wordsCounter.checked = true
+                    wordsCounter.checked  = true
                 }
             }
         }

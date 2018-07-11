@@ -32,7 +32,7 @@ Popup {
     topPadding: 25
     leftPadding: 25
 
-    property alias currentTheme: popupComboBox.currentIndex
+    property alias currentItem: popupComboBox.currentIndex
 
     Text {
         id: popupTitle

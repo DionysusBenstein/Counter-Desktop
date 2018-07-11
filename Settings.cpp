@@ -17,9 +17,10 @@
 
 Settings::Settings(QObject *parent) : QObject(parent)
 {
-    writeSettings();
+    readSettings();
 }
 
+//Primary color
 //-------------------------------------------------------------------
 
 void Settings::setSavedPrimaryColor(const QString &savedPrimaryColor)
@@ -33,6 +34,7 @@ QString Settings::getSavedPrimaryColor() const
     return this->savedPrimaryColor;
 }
 
+//Light color
 //-------------------------------------------------------------------
 
 void Settings::setSavedLightColor(const QString &savedLightColor)
@@ -46,6 +48,7 @@ QString Settings::getSavedLightColor() const
     return this->savedLightColor;
 }
 
+//Dark color
 //-------------------------------------------------------------------
 
 void Settings::setSavedDarkColor(const QString &savedDarkColor)
@@ -58,8 +61,6 @@ QString Settings::getSavedDarkColor() const
 {
     return this->savedDarkColor;
 }
-
-//-------------------------------------------------------------------
 
 void Settings::writeSettings()
 {
