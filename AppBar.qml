@@ -35,7 +35,7 @@ ToolBar {
     Rectangle {
         id: appBarRect
         anchors.fill: parent
-        color: settings.savedPrimaryColor
+        color: primaryColor
 
         Text {
             id: headerText
