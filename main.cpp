@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
     QGuiApplication::setOrganizationName("Benstein Industries"); //ЧСВ Mode: true
 
     QQmlApplicationEngine engine;
+    Settings settings;
+    settings.readSettings();
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
     qmlRegisterType<Settings>("com.benstein.settings", 1, 2, "Settings");

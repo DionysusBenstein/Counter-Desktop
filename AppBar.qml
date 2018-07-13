@@ -142,25 +142,25 @@ ToolBar {
         Menu {
             id: moreButtonMenu
 
-            //            MenuItem {
-            //                text: qsTr("Язык")
-            //                icon.source: "images/language-24dp.png";
-            //                onTriggered: submenu.open()
+            MenuItem {
+                text: qsTr("Язык")
+                icon.source: "images/language-24dp.png";
+                onTriggered: submenu.open()
 
-            //                Menu {
-            //                    id: submenu
+                Menu {
+                    id: submenu
 
-            //                    MenuItem {
-            //                        text: qsTr("Русский")
-            //                        //icon.source: "images/russia-24px.png"
-            //                    }
+                    MenuItem {
+                        text: qsTr("Русский")
+                        //icon.source: "images/russia-24px.png"
+                    }
 
-            //                    MenuItem {
-            //                        text: qsTr("Английский")
-            //                        //icon.source: "images/english-24px.png"
-            //                    }
-            //                }
-            //            }
+                    MenuItem {
+                        text: qsTr("Английский")
+                        //icon.source: "images/english-24px.png"
+                    }
+                }
+            }
 
             MenuItem {
                 text: qsTr("О программе")
