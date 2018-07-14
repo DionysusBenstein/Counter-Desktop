@@ -39,17 +39,18 @@ ToolBar {
 
         Text {
             id: headerText
-            text: "Counter"
-            color: "white"
-            font {
-                family: robotoMediumFont.name
-                pointSize: 15
-            }
 
             anchors {
                 verticalCenter: parent.verticalCenter
                 left: parent.left
                 margins: 19
+            }
+
+            text: "Counter"
+            color: "white"
+            font {
+                family: robotoMediumFont.name
+                pointSize: 15
             }
         }
     }
@@ -103,7 +104,6 @@ ToolBar {
     MouseArea {
         id: rightArea
         width: borderSize
-        cursorShape:  Qt.SizeHorCursor
         anchors {
             right: parent.right
             top: parent.top
@@ -111,6 +111,8 @@ ToolBar {
             bottom: parent.bottom
             bottomMargin: cornerSize
         }
+
+        cursorShape:  Qt.SizeHorCursor
 
         onPressed: {
             previousX = mouseX
