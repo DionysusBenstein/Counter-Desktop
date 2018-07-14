@@ -16,6 +16,7 @@ import QtQuick 2.11
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
+//import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 Popup {
@@ -113,7 +114,7 @@ Popup {
         }
 
         color: "white"
-        text: qsTr("Версия: 2.8.3")
+        text: qsTr("Версия: " + appVersion)
         wrapMode: Text.WordWrap
         font {
             pixelSize: 16

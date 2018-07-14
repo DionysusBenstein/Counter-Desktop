@@ -40,6 +40,7 @@ ApplicationWindow {
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"
+    property string appVersion: "2.8.3"
     property int borderSize: 3
     property int cornerSize: 5
     property int previousX
