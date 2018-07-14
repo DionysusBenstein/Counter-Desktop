@@ -8,7 +8,7 @@
 
 /* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
 
-/* Description: Реализация AppBar.                                 */
+/* Description: Реализация верхней панели приложения.              */
 
 /*******************************************************************/
 
