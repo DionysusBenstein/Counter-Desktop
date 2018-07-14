@@ -113,7 +113,7 @@ Popup {
         }
 
         color: "white"
-        text: qsTr("Версия: 2.8.2")
+        text: qsTr("Версия: 2.8.3")
         wrapMode: Text.WordWrap
         font {
             pixelSize: 16
