@@ -30,16 +30,16 @@ ApplicationWindow {
     minimumWidth: 550
     minimumHeight: 350
     flags: Qt.FramelessWindowHint | Qt.Window
-    Material.theme: appBar.popupMenu.currentItem === 1 ? Material.Dark : Material.Light
+    Material.theme: settings.currentItem === 1 ? Material.Dark : Material.Light
     Material.accent: primaryColor
 
-    property color closeButtonColor: "#e81123"
-    property color lightFontColor: "#9a9a9a"
-    property color darkFontColor: "#404040"
+    readonly property color closeButtonColor: "#e81123"
+    readonly property color lightFontColor: "#9a9a9a"
+    readonly property color darkFontColor: "#404040"
+    readonly property string appVersion: "2.8.3"
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"
-    property string appVersion: "2.8.3"
     property int borderSize: 3
     property int cornerSize: 5
     property int previousX
@@ -215,13 +215,6 @@ ApplicationWindow {
     AppBar   { id: appBar   }
     Counter  { id: backEnd  }
 
-    Settings {
-        id: settings
-        property alias lightFontColor: mainWindow.lightFontColor
-        property alias primaryColor: mainWindow.primaryColor
-        property alias darkColor: mainWindow.darkColor
-    }
-
     ScrollView {
         anchors {
             left: parent.left
@@ -341,6 +334,14 @@ ApplicationWindow {
                 textScaleAnim.running = true
             }
         }
+    }
+
+    Settings {
+        id: settings
+        property int currentItem: appBar.popupMenu.currentItem
+        property alias primaryColor: mainWindow.primaryColor
+        property alias lightColor: mainWindow.lightColor
+        property alias darkColor: mainWindow.darkColor
     }
 
     ScaleAnimator {
