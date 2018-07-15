@@ -53,12 +53,12 @@ Popup {
     ComboBox {
         id: popupComboBox
         width: 160
-        model: [qsTr("Светлая тема"), qsTr("Тёмная тема")]
         anchors {
             left: parent.left
             top: popupTitle.bottom
             topMargin: 25
         }
+        model: [qsTr("Светлая тема"), qsTr("Тёмная тема")]
     }
 
     GridView {

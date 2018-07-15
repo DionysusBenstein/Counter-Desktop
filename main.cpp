@@ -12,10 +12,9 @@ int main(int argc, char *argv[])
     QGuiApplication::setApplicationName("Counter");
     QGuiApplication::setOrganizationName("Benstein Industries"); //ЧСВ Mode: true
 
-    QQmlApplicationEngine engine;
-
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
 
+    QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
