@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
     settings.readSettings();
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
-    qmlRegisterType<Settings>("com.benstein.settings", 1, 2, "Settings");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
