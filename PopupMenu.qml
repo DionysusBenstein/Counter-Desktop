@@ -65,7 +65,6 @@ Popup {
         id: colorsView
         cellWidth: 36
         cellHeight: 36
-        clip: true
         anchors {
             left: parent.left
             right: parent.right
@@ -74,6 +73,8 @@ Popup {
             topMargin: 16
             rightMargin: 23
         }
+
+        clip: true
         delegate: colorsViewDelegate
         model: colorsViewModel
     }
@@ -129,29 +130,31 @@ Popup {
 
     Button {
         id: doneButton
-        text: qsTr("OK")
-        Material.foreground: primaryColor
-        onClicked: popup.close()
-        flat: true
         anchors {
             right: parent.right
             bottom: parent.bottom
             bottomMargin: 2
             rightMargin: 8
         }
+
+        text: qsTr("OK")
+        Material.foreground: primaryColor
+        onClicked: popup.close()
+        flat: true
     }
 
     Button {
         id: cancelButton
-        text: qsTr("Отмена"/*"Cancel"*/)
-        Material.foreground: primaryColor
-        onClicked: popup.close()
-        flat: true
         anchors {
             right: doneButton.left
             bottom: parent.bottom
             rightMargin: 8
             bottomMargin: 2
         }
+
+        text: qsTr("Отмена"/*"Cancel"*/)
+        Material.foreground: primaryColor
+        onClicked: popup.close()
+        flat: true
     }
 }

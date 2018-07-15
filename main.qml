@@ -299,6 +299,8 @@ ApplicationWindow {
     }
 
     Item {
+        width: 100
+        height: 100
         anchors {
             right: rightArea.left
             left: cbGrid.right
@@ -306,9 +308,6 @@ ApplicationWindow {
             bottom: bottomArea.top
             margins: 19
         }
-
-        width: 100
-        height: 100
 
         Text {
             id: counter
