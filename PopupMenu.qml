@@ -90,7 +90,7 @@ Popup {
         //row 2
         ListElement { customPrimaryColor: "#4CAF50"; customLightColor: "#80e27e"; customDarkColor: "#087f23" } // 8
         ListElement { customPrimaryColor: "#FF9800"; customLightColor: "#ffc947"; customDarkColor: "#c66900" } // 9
-        ListElement { customPrimaryColor: "#d7ccc8"; customLightColor: "#fffffb"; customDarkColor: "#a69b97" } // 10 //need change
+        ListElement { customPrimaryColor: "#fa5770"; customLightColor: "#ffa5b9"; customDarkColor: "#ca7589" } // 10
         ListElement { customPrimaryColor: "#795548"; customLightColor: "#a98274"; customDarkColor: "#4b2c20" } // 11
         ListElement { customPrimaryColor: "#9E9E9E"; customLightColor: "#cfcfcf"; customDarkColor: "#707070" } // 12
         ListElement { customPrimaryColor: "#607D8B"; customLightColor: "#8eacbb"; customDarkColor: "#34515e" } // 13

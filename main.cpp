@@ -2,7 +2,6 @@
 #include <QQmlApplicationEngine>
 
 #include "Counter.h"
-#include "Settings.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,8 +13,6 @@ int main(int argc, char *argv[])
     QGuiApplication::setOrganizationName("Benstein Industries"); //ЧСВ Mode: true
 
     QQmlApplicationEngine engine;
-    Settings settings;
-    settings.readSettings();
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
 
