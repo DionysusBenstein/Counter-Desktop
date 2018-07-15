@@ -8,7 +8,7 @@
 
 /* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
 
-/* Description: Реализация контекстного меню для Text Area.        */
+/* Description: Контекстное меню для Text Area.                    */
 
 /*******************************************************************/
 

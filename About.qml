@@ -13,10 +13,7 @@
 /*******************************************************************/
 
 import QtQuick 2.11
-import QtQuick.Dialogs 1.3
-import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
-//import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 Popup {
@@ -25,11 +22,10 @@ Popup {
     y: Math.round((parent.height - height) / 2)
     width: 426; height: 320
     parent: Overlay.overlay
-    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
-    padding: 0
     modal: true
     focus: true
     clip:  true
+    padding: 0
 
     Rectangle {
         id: aboutWndRect
@@ -79,9 +75,9 @@ Popup {
     Image {
         id: icon
         anchors {
+            horizontalCenter: aboutWndRect.horizontalCenter
             top: aboutWndTitle.bottom
             topMargin: 25
-            horizontalCenter: aboutWndRect.horizontalCenter
         }
         source: "images/icon-100px.png"
     }
@@ -89,10 +85,10 @@ Popup {
     Text {
         id: appName
         anchors {
-            top: icon.bottom
             left: parent.left
-            topMargin: 25
+            top: icon.bottom
             leftMargin: 25
+            topMargin: 25
         }
 
         color: "white"
@@ -107,10 +103,10 @@ Popup {
     Text {
         id: version
         anchors {
-            top: appName.bottom
             left: parent.left
-            topMargin: 5
+            top: appName.bottom
             leftMargin: 25
+            topMargin: 5
         }
 
         color: "white"
@@ -125,10 +121,10 @@ Popup {
     Text {
         id: author
         anchors {
-            top: version.bottom
             left: parent.left
-            topMargin: 5
+            top: version.bottom
             leftMargin: 25
+            topMargin: 5
         }
 
         color: "white"
@@ -143,12 +139,12 @@ Popup {
     Text {
         id: about
         anchors {
-            right: parent.right
             left: aboutWndRect.right
+            right: parent.right
             top: parent.top
-            topMargin: 25
             leftMargin: 19
             rightMargin: 19
+            topMargin: 25
         }
 
         color: Material.theme === Material.Dark ? "white" : darkFontColor
@@ -170,17 +166,21 @@ Popup {
     Text {
         id: copyright
         anchors {
-            right: parent.right
             left: aboutWndRect.right
+            right: parent.right
             top: about.bottom
-            topMargin: 25
             leftMargin: 19
             rightMargin: 19
+            topMargin: 25
         }
 
-        linkColor: primaryColor
         text: qsTr("<a href=\"https://github.com/DionysusBenstein\">Copyright © 2018 Dionysus Benstein. Все права защищены.</a>")
-        onLinkActivated: Qt.openUrlExternally("https://github.com/DionysusBenstein")
+        linkColor: primaryColor
+        onLinkActivated: {
+            Qt.openUrlExternally("https://github.com/DionysusBenstein")
+            popup.close()
+        }
+
         wrapMode: Text.WordWrap
         font {
             pixelSize: 15
@@ -193,13 +193,13 @@ Popup {
         anchors {
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: 2
             rightMargin: 8
+            bottomMargin: 2
         }
 
         flat: true
-        Material.foreground: primaryColor
         text: qsTr("OK")
+        Material.foreground: primaryColor
         onClicked: popup.close()
     }
 }

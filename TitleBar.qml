@@ -14,43 +14,41 @@
 /*******************************************************************/
 
 import QtQuick 2.11
-import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4
 
 Rectangle {
     id: titleBar
     height: 24
-    anchors.left: parent.left
-    anchors.right: parent.right
-    anchors.top: parent.top
-    color: darkColor
-
-    function isMaximize() {
-        return mainWindow.visibility === ApplicationWindow.Maximized
+    anchors {
+        left: parent.left
+        right: parent.right
+        top: parent.top
     }
+
+    color: darkColor
 
     //close
     Rectangle {
         id: closeButton
-        anchors.right: parent.right
         width: 24
         height: 24
+        anchors.right: parent.right
         color: darkColor
 
         Rectangle {
-            anchors.centerIn: parent
             width: 2
             height: 12
-            rotation: 45
+            anchors.centerIn: parent
             antialiasing: true
+            rotation: 45
         }
 
         Rectangle {
-            anchors.centerIn: parent
             width: 2
             height: 12
-            rotation: 135
+            anchors.centerIn: parent
             antialiasing: true
+            rotation: 135
         }
 
         MouseArea {
@@ -64,10 +62,10 @@ Rectangle {
 
         MouseArea {
             anchors {
+                right: rightArea.left
+                left: leftArea.right
                 top: topArea.bottom
                 bottom: bottomArea.top
-                left: leftArea.right
-                right: rightArea.left
             }
 
             onPressed: {
@@ -90,41 +88,43 @@ Rectangle {
     //min max
     Rectangle {
         id: minMaxButton
-        anchors.right: closeButton.left
         width: 24
         height: 24
+        anchors.right: closeButton.left
         color: darkColor
 
         Image {
             id: minMaxButtonIcon
-            source: isMaximize() ? "images/minimizeWindow.png" : "images/maximizeWindow.png"
             anchors.centerIn: parent
+            source: isMaximize() ? "images/minimizeWindow.png" : "images/maximizeWindow.png"
         }
 
         MouseArea {
             id: minMaxButtonMoseArea
             anchors.fill: parent
             hoverEnabled: true
+            onClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
             onEntered: parent.color = lightColor
             onExited: parent.color = darkColor
-            onClicked: isMaximize() ? mainWindow.showNormal() : mainWindow.showMaximized()
         }
     }
 
     //hide
     Rectangle {
         id: hideButton
-        anchors.right: minMaxButton.left
         width: 24
         height: 24
+        anchors.right: minMaxButton.left
         color: darkColor
 
         Rectangle {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 8
             width: 10
             height: 2
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                bottomMargin: 8
+            }
         }
 
         MouseArea {
@@ -168,7 +168,6 @@ Rectangle {
     MouseArea {
         id: topArea
         height: borderSize
-
         anchors {
             top: parent.top
             left: parent.left
@@ -178,10 +177,7 @@ Rectangle {
         }
 
         cursorShape: Qt.SizeVerCursor
-        onPressed: {
-            previousY = mouseY
-        }
-
+        onPressed: previousY = mouseY
         onMouseYChanged: {
             var dy = mouseY - previousY
             if ((mainWindow.height - dy) >= mainWindow.minimumHeight) {
@@ -232,7 +228,7 @@ Rectangle {
             right: parent.right
         }
 
-        cursorShape:  Qt.SizeBDiagCursor
+        cursorShape: Qt.SizeBDiagCursor
         onPressed: {
             previousX = mouseX
             previousY = mouseY
@@ -266,10 +262,7 @@ Rectangle {
         }
 
         cursorShape: Qt.SizeHorCursor
-        onPressed: {
-            previousX = mouseX
-        }
-
+        onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if ((mainWindow.width - dx) >= mainWindow.minimumWidth) {
@@ -291,10 +284,7 @@ Rectangle {
         }
 
         cursorShape:  Qt.SizeHorCursor
-        onPressed: {
-            previousX = mouseX
-        }
-
+        onPressed: previousX = mouseX
         onMouseXChanged: {
             var dx = mouseX - previousX
             if ((mainWindow.width + dx) >= mainWindow.minimumWidth) {

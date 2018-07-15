@@ -17,7 +17,6 @@ import QtQuick.Window 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4
 import Qt.labs.settings 1.0
-import QtGraphicalEffects 1.0
 import QtQuick.Controls.Material 2.3
 
 import com.benstein.counter 1.4
@@ -30,14 +29,13 @@ ApplicationWindow {
     minimumWidth: 550
     minimumHeight: 350
     flags: Qt.FramelessWindowHint | Qt.Window
-    Material.theme: settings.currentIndex === 1 ? Material.Dark : Material.Light
+    Material.theme: appBar.popupMenu.currentIndex === 0 ? Material.Light : Material.Dark
     Material.accent: primaryColor
 
-    property int currentIndex: appBar.popupMenu.currentIndex
     readonly property color closeButtonColor: "#e81123"
     readonly property color lightFontColor: "#9a9a9a"
     readonly property color darkFontColor: "#404040"
-    readonly property string appVersion: "2.9.0"
+    readonly property string appVersion: "2.9.1"
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"
@@ -60,10 +58,10 @@ ApplicationWindow {
         height: borderSize
 
         anchors {
-            bottom: parent.bottom
             left: parent.left
-            leftMargin: cornerSize
             right: parent.right
+            bottom: parent.bottom
+            leftMargin: cornerSize
             rightMargin: cornerSize
         }
 
@@ -338,7 +336,6 @@ ApplicationWindow {
 
     Settings {
         id: settings
-        property alias currentIndex: mainWindow.currentIndex
         property alias primaryColor: mainWindow.primaryColor
         property alias lightColor: mainWindow.lightColor
         property alias darkColor: mainWindow.darkColor

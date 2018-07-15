@@ -8,13 +8,11 @@
 
 /* Copyright © 2018 Dionysus Benstein. All rights reserved.        */
 
-/* Description: Реализация верхней панели приложения.              */
+/* Description: Верхняя панель приложения.                         */
 
 /*******************************************************************/
 
 import QtQuick 2.11
-import QtQuick.Layouts 1.3
-import QtQuick.Dialogs 1.3
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.3
 
@@ -40,7 +38,6 @@ ToolBar {
 
         Text {
             id: headerText
-
             anchors {
                 verticalCenter: parent.verticalCenter
                 left: parent.left
@@ -154,13 +151,13 @@ ToolBar {
                     id: submenu
 
                     MenuItem {
-                        text: qsTr("Русский")
-                        //icon.source: "images/russia-24px.png"
+                        text: qsTr("English")
+                        //icon.source: "images/english-24px.png"english
                     }
 
                     MenuItem {
-                        text: qsTr("Английский")
-                        //icon.source: "images/english-24px.png"
+                        text: qsTr("Русский")
+                        //icon.source: "images/russia-24px.png"
                     }
                 }
             }

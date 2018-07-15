@@ -14,9 +14,7 @@
 
 import QtQuick 2.11
 import QtQuick.Layouts 1.3
-import QtQuick.Dialogs 1.3
 import QtQuick.Controls 2.3
-import Qt.labs.settings 1.0
 import QtQuick.Controls.Material 2.3
 
 Popup {
@@ -28,10 +26,10 @@ Popup {
     parent: Overlay.overlay
     modal: true
     focus: true
-    bottomPadding: 0
-    rightPadding: 0
     topPadding: 25
     leftPadding: 25
+    rightPadding: 0
+    bottomPadding: 0
 
     property alias currentIndex: popupComboBox.currentIndex
 
@@ -58,6 +56,7 @@ Popup {
             top: popupTitle.bottom
             topMargin: 25
         }
+        currentIndex: 0
         model: [qsTr("Светлая тема"), qsTr("Тёмная тема")]
     }
 
@@ -74,9 +73,9 @@ Popup {
             rightMargin: 23
         }
 
-        clip: true
         delegate: colorsViewDelegate
         model: colorsViewModel
+        clip: true
     }
 
     ListModel {
