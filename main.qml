@@ -30,9 +30,10 @@ ApplicationWindow {
     minimumWidth: 550
     minimumHeight: 350
     flags: Qt.FramelessWindowHint | Qt.Window
-    Material.theme: appBar.popupMenu.currentItem === 1 ? Material.Dark : Material.Light
+    Material.theme: settings.currentIndex === 1 ? Material.Dark : Material.Light
     Material.accent: primaryColor
 
+    property int currentIndex: appBar.popupMenu.currentIndex
     readonly property color closeButtonColor: "#e81123"
     readonly property color lightFontColor: "#9a9a9a"
     readonly property color darkFontColor: "#404040"
@@ -337,6 +338,7 @@ ApplicationWindow {
 
     Settings {
         id: settings
+        property alias currentIndex: mainWindow.currentIndex
         property alias primaryColor: mainWindow.primaryColor
         property alias lightColor: mainWindow.lightColor
         property alias darkColor: mainWindow.darkColor
