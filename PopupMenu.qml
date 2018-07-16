@@ -15,6 +15,7 @@
 import QtQuick 2.11
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.3
+import Qt.labs.settings 1.0
 import QtQuick.Controls.Material 2.3
 
 Popup {
@@ -31,7 +32,12 @@ Popup {
     rightPadding: 0
     bottomPadding: 0
 
-    property alias currentIndex: popupComboBox.currentIndex
+    property alias currentIndex: settings.currentIndex
+
+    Settings {
+        id: settings
+        property alias currentIndex: popupComboBox.currentIndex
+    }
 
     Text {
         id: popupTitle
@@ -56,7 +62,6 @@ Popup {
             top: popupTitle.bottom
             topMargin: 25
         }
-        currentIndex: 0
         model: [qsTr("Светлая тема"), qsTr("Тёмная тема")]
     }
 

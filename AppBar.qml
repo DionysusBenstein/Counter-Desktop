@@ -20,9 +20,9 @@ ToolBar {
     id: appBar
     height: 56
     anchors {
-        top: titleBar.bottom
         left: parent.left
         right: parent.right
+        top: titleBar.bottom
     }
 
 
@@ -71,8 +71,6 @@ ToolBar {
             var dy = mouseY - previousY
             mainWindow.setY(mainWindow.y + dy)
         }
-
-
     }
 
     MouseArea {
