@@ -118,7 +118,6 @@ ApplicationWindow {
         id: bottomLeftArea
         height: cornerSize
         width: cornerSize
-
         anchors {
             bottom: parent.bottom
             left: parent.left
@@ -150,7 +149,6 @@ ApplicationWindow {
         id: bottomRightArea
         height: cornerSize
         width: cornerSize
-
         anchors {
             bottom: parent.bottom
             right: parent.right
