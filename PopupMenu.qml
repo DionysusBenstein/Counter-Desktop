@@ -109,7 +109,6 @@ Popup {
         ListElement { customPrimaryColor: "#363640"; customLightColor: "#60606b"; customDarkColor: "#27272F" } // 19
         ListElement { customPrimaryColor: "#616161"; customLightColor: "#8e8e8e"; customDarkColor: "#373737" } // 20
         ListElement { customPrimaryColor: "#757575"; customLightColor: "#a4a4a4"; customDarkColor: "#494949" } // 21
-
     }
 
     Component  {

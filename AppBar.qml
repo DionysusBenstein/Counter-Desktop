@@ -79,8 +79,8 @@ ToolBar {
         anchors {
             left: parent.left
             top: parent.top
-            topMargin: cornerSize
             bottom: parent.bottom
+            topMargin: cornerSize
             bottomMargin: cornerSize
         }
         cursorShape: Qt.SizeHorCursor
@@ -103,8 +103,8 @@ ToolBar {
         anchors {
             right: parent.right
             top: parent.top
-            topMargin: cornerSize
             bottom: parent.bottom
+            topMargin: cornerSize
             bottomMargin: cornerSize
         }
 
@@ -142,20 +142,77 @@ ToolBar {
 
             MenuItem {
                 text: qsTr("Язык")
-                icon.source: "images/language-24dp.png";
-                onTriggered: submenu.open()
+                icon.source: "images/language-24dp.png"
+                onTriggered: popupLang.open()
 
-                Menu {
-                    id: submenu
+                Popup {
+                    id: popupLang
+                    x: Math.round((parent.width - width) / 2)
+                    y: Math.round((parent.height - height) / 2)
+                    width: 300; height: 200
+                    //closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+                    parent: Overlay.overlay
+                    modal: true
+                    focus: true
+                    topPadding: 25
+                    leftPadding: 25
+                    rightPadding: 0
+                    bottomPadding: 0
 
-                    MenuItem {
-                        text: qsTr("English")
-                        //icon.source: "images/english-24px.png"english
+                    Text {
+                        id: popupLangTitle
+                        anchors {
+                            left: parent.left
+                            top: parent.top
+                        }
+
+                        text: qsTr("Выбрать язык")
+                        color: Material.theme === Material.Dark ? "white" : darkFontColor
+                        font {
+                            pixelSize: 20
+                            family: robotoMediumFont.name
+                        }
                     }
 
-                    MenuItem {
-                        text: qsTr("Русский")
-                        //icon.source: "images/russia-24px.png"
+                    ComboBox {
+                        id: popupLangComboBox
+                        width: 160
+                        anchors {
+                            left: parent.left
+                            top: popupLangTitle.bottom
+                            topMargin: 25
+                        }
+                        model: [qsTr("English"), qsTr("Русский")]
+                    }
+
+                    Button {
+                        id: doneButton
+                        anchors {
+                            right: parent.right
+                            bottom: parent.bottom
+                            bottomMargin: 2
+                            rightMargin: 8
+                        }
+
+                        text: qsTr("OK")
+                        Material.foreground: primaryColor
+                        onClicked: popupLang.close()
+                        flat: true
+                    }
+
+                    Button {
+                        id: cancelButton
+                        anchors {
+                            right: doneButton.left
+                            bottom: parent.bottom
+                            rightMargin: 8
+                            bottomMargin: 2
+                        }
+
+                        text: qsTr("Отмена"/*"Cancel"*/)
+                        Material.foreground: primaryColor
+                        onClicked: popupLang.close()
+                        flat: true
                     }
                 }
             }
