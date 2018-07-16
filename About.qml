@@ -75,9 +75,9 @@ Popup {
     Image {
         id: icon
         anchors {
-            horizontalCenter: aboutWndRect.horizontalCenter
             top: aboutWndTitle.bottom
             topMargin: 25
+            horizontalCenter: aboutWndRect.horizontalCenter
         }
         source: "images/icon-100px.png"
     }

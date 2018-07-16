@@ -166,7 +166,7 @@ ToolBar {
                             top: parent.top
                         }
 
-                        text: qsTr("Выбрать язык")
+                        text: qsTr("Язык"/*"Language"*/)
                         color: Material.theme === Material.Dark ? "white" : darkFontColor
                         font {
                             pixelSize: 20

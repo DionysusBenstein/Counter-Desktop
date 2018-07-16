@@ -46,7 +46,7 @@ Popup {
             top: parent.top
         }
 
-        text: qsTr("Выбрать цвет")
+        text: qsTr("Внешний вид"/*"Appearance"*/)
         color: Material.theme === Material.Dark ? "white" : darkFontColor
         font {
             pixelSize: 20
