@@ -333,6 +333,7 @@ ApplicationWindow {
 
     Settings {
         id: settings
+        property alias currentLanguage: appBar.currentLanguage
         property alias primaryColor: mainWindow.primaryColor
         property alias lightColor: mainWindow.lightColor
         property alias darkColor: mainWindow.darkColor

@@ -25,7 +25,7 @@ ToolBar {
         top: titleBar.bottom
     }
 
-
+    property alias currentLanguage: popupLangComboBox.currentIndex
     property alias popupMenu: popupMenu
 
     PopupMenu { id: popupMenu }
