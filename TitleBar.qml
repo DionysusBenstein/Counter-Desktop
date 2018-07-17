@@ -30,22 +30,19 @@ Rectangle {
     //close
     Rectangle {
         id: closeButton
-        width: 24
-        height: 24
+        width: 24; height: 24
         anchors.right: parent.right
         color: darkColor
 
         Rectangle {
-            width: 2
-            height: 12
+            width: 2; height: 12
             anchors.centerIn: parent
             antialiasing: true
             rotation: 45
         }
 
         Rectangle {
-            width: 2
-            height: 12
+            width: 2; height: 12
             anchors.centerIn: parent
             antialiasing: true
             rotation: 135
