@@ -118,8 +118,8 @@ ApplicationWindow {
         height: cornerSize
         width: cornerSize
         anchors {
-            bottom: parent.bottom
             left: parent.left
+            bottom: parent.bottom
         }
 
         cursorShape:  Qt.SizeBDiagCursor
@@ -149,8 +149,8 @@ ApplicationWindow {
         height: cornerSize
         width: cornerSize
         anchors {
-            bottom: parent.bottom
             right: parent.right
+            bottom: parent.bottom
         }
 
         cursorShape:  Qt.SizeFDiagCursor
@@ -177,10 +177,10 @@ ApplicationWindow {
     MouseArea {
         id: posChangedMouseArea
         anchors {
-            top: appBar.bottom
-            bottom: bottomArea.top
             left: leftArea.right
             right: rightArea.left
+            top: appBar.bottom
+            bottom: bottomArea.top
         }
 
         onPositionChanged: if (isMaximize()) mainWindow.showNormal()
@@ -298,8 +298,8 @@ ApplicationWindow {
         width: 100
         height: 100
         anchors {
-            right: rightArea.left
             left: cbGrid.right
+            right: rightArea.left
             top: input.bottom
             bottom: bottomArea.top
             margins: 19

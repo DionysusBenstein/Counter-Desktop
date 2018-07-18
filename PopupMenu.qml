@@ -33,6 +33,9 @@ Popup {
     bottomPadding: 0
 
     property alias currentIndex: settings.currentIndex
+    property color currentPrimaryColor: "#e91e63"
+    property color currentLightColor: "#ff6090"
+    property color currentDarkColor: "#b0003a"
 
     Settings {
         id: settings
@@ -142,8 +145,8 @@ Popup {
 
         text: qsTr("OK")
         Material.foreground: primaryColor
-        onClicked: popup.close()
         flat: true
+        onClicked: popup.close()
     }
 
     Button {
@@ -157,7 +160,12 @@ Popup {
 
         text: qsTr("Отмена"/*"Cancel"*/)
         Material.foreground: primaryColor
-        onClicked: popup.close()
         flat: true
+        onClicked: {
+            primaryColor =
+            lightColor = currentLightColor
+            darkColor = currentDarkColor
+            popup.close()
+        }
     }
 }
