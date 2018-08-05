@@ -212,6 +212,7 @@ ApplicationWindow {
     Counter  { id: backEnd  }
 
     ScrollView {
+        id: scrollView
         anchors {
             left: parent.left
             right: parent.right
@@ -226,7 +227,7 @@ ApplicationWindow {
             focus: true
             selectByMouse: true
             persistentSelection: true
-            wrapMode: Text.WrapAnywhere
+            wrapMode: Text.Wrap
             placeholderText: qsTr("Введите текст...")
             ContextMenu { id: contextMenu; anchors.fill: parent }
         }
@@ -300,7 +301,7 @@ ApplicationWindow {
         anchors {
             left: cbGrid.right
             right: rightArea.left
-            top: input.bottom
+            top: scrollView.bottom
             bottom: bottomArea.top
             margins: 19
         }
