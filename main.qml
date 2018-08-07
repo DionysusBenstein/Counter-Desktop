@@ -35,7 +35,7 @@ ApplicationWindow {
     readonly property color closeButtonColor: "#e81123"
     readonly property color lightFontColor: "#9a9a9a"
     readonly property color darkFontColor: "#404040"
-    readonly property string appVersion: "2.9.2"
+    readonly property string appVersion: "2.9.3"
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"

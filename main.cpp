@@ -5,11 +5,12 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     QGuiApplication app(argc, argv);
     QGuiApplication::setApplicationName("Counter");
+    QGuiApplication::setApplicationVersion("2.9.3");
     QGuiApplication::setOrganizationName("Benstein Industries"); //ЧСВ Mode: true
 
     qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
