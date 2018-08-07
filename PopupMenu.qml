@@ -23,7 +23,6 @@ Popup {
     x: Math.round((parent.width - width) / 2)
     y: Math.round((parent.height - height) / 2)
     width: 300; height: 300
-    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     parent: Overlay.overlay
     modal: true
     focus: true
@@ -83,12 +82,12 @@ Popup {
 
         delegate: colorsViewDelegate
         model: colorsViewModel
-        clip: true
+        interactive: false
     }
 
     ListModel {
         id: colorsViewModel
-        //row 1
+        //Row 1
         ListElement { customPrimaryColor: "#e91e63"; customLightColor: "#ff6090"; customDarkColor: "#b0003a" } // 1
         ListElement { customPrimaryColor: "#F44336"; customLightColor: "#ff7961"; customDarkColor: "#ba000d" } // 2
         ListElement { customPrimaryColor: "#9C27B0"; customLightColor: "#d05ce3"; customDarkColor: "#6a0080" } // 3
@@ -96,7 +95,7 @@ Popup {
         ListElement { customPrimaryColor: "#3F51B5"; customLightColor: "#757de8"; customDarkColor: "#002984" } // 5
         ListElement { customPrimaryColor: "#4285f4"; customLightColor: "#80b4ff"; customDarkColor: "#0059c1" } // 6
         ListElement { customPrimaryColor: "#009688"; customLightColor: "#52c7b8"; customDarkColor: "#00675b" } // 7
-        //row 2
+        //Row 2
         ListElement { customPrimaryColor: "#4CAF50"; customLightColor: "#80e27e"; customDarkColor: "#087f23" } // 8
         ListElement { customPrimaryColor: "#FF9800"; customLightColor: "#ffc947"; customDarkColor: "#c66900" } // 9
         ListElement { customPrimaryColor: "#fa5770"; customLightColor: "#ff8b9e"; customDarkColor: "#c21a45" } // 10
@@ -104,7 +103,7 @@ Popup {
         ListElement { customPrimaryColor: "#9E9E9E"; customLightColor: "#cfcfcf"; customDarkColor: "#707070" } // 12
         ListElement { customPrimaryColor: "#607D8B"; customLightColor: "#8eacbb"; customDarkColor: "#34515e" } // 13
         ListElement { customPrimaryColor: "#EF9A9A"; customLightColor: "#ffcccb"; customDarkColor: "#ba6b6c" } // 14
-        //row 3
+        //Row 3
         ListElement { customPrimaryColor: "#F48FB1"; customLightColor: "#ffc1e3"; customDarkColor: "#bf5f82" } // 15
         ListElement { customPrimaryColor: "#CE93D8"; customLightColor: "#ffc4ff"; customDarkColor: "#9c64a6" } // 16
         ListElement { customPrimaryColor: "#B39DDB"; customLightColor: "#e6ceff"; customDarkColor: "#836fa9" } // 17
