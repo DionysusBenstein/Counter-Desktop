@@ -6,11 +6,11 @@
 
 💻<b>Counter</b> is desktop application that counts the number of characters and words in the text.
 
-![Screenshot#1](https://github.com/DionysusBenstein/Counter/raw/master/images/screenshots/Screenshot#1.png)
+![Screenshot#1](https://github.com/DionysusBenstein/Counter-Desktop/raw/master/images/screenshots/Screenshot#1.png)
 
-![Screenshot#2](https://github.com/DionysusBenstein/Counter/raw/master/images/screenshots/Screenshot#2.png) 
+![Screenshot#2](https://github.com/DionysusBenstein/Counter-Desktop/raw/master/images/screenshots/Screenshot#2.png) 
 
-![Screenshot#3](https://github.com/DionysusBenstein/Counter/raw/master/images/screenshots/Screenshot#3.png) 
+![Screenshot#3](https://github.com/DionysusBenstein/Counter-Desktop/raw/master/images/screenshots/Screenshot#3.png) 
  
  ## License
 
