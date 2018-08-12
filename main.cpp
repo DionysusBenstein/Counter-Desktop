@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QGuiApplication::setApplicationName("Counter");
     QGuiApplication::setApplicationVersion("2.9.3");
-    QGuiApplication::setOrganizationName("Benstein Industries"); //ЧСВ Mode: true
+    QGuiApplication::setOrganizationName("Enclave Software");
 
-    qmlRegisterType<Counter>("com.benstein.counter", 1, 4, "Counter");
+    qmlRegisterType<Counter>("com.enclave.counter", 1, 4, "Counter");
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

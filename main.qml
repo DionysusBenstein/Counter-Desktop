@@ -19,7 +19,7 @@ import QtQuick.Controls 2.4
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Material 2.3
 
-import com.benstein.counter 1.4
+import com.enclave.counter 1.4
 
 ApplicationWindow {
     id: mainWindow
