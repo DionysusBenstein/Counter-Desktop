@@ -19,7 +19,7 @@ import QtQuick.Controls 2.4
 import Qt.labs.settings 1.0
 import QtQuick.Controls.Material 2.3
 
-import com.benstein.counter 1.4
+import com.enclave.counter 1.4
 
 ApplicationWindow {
     id: mainWindow
@@ -35,7 +35,7 @@ ApplicationWindow {
     readonly property color closeButtonColor: "#e81123"
     readonly property color lightFontColor: "#9a9a9a"
     readonly property color darkFontColor: "#404040"
-    readonly property string appVersion: "2.9.3"
+    readonly property string appVersion: "2.9.4"
     property color primaryColor: "#e91e63"
     property color lightColor: "#ff6090"
     property color darkColor: "#b0003a"
