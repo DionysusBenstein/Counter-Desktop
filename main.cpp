@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     QGuiApplication::setApplicationName("Counter");
-    QGuiApplication::setApplicationVersion("2.9.3");
+    QGuiApplication::setApplicationVersion("2.9.4");
     QGuiApplication::setOrganizationName("Enclave Software");
 
     qmlRegisterType<Counter>("com.enclave.counter", 1, 4, "Counter");
