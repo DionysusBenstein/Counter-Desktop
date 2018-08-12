@@ -76,8 +76,8 @@ Popup {
             right: parent.right
             top: popupComboBox.bottom
             bottom: doneButton.top
-            topMargin: 16
             rightMargin: 23
+            topMargin: 16
         }
 
         delegate: colorsViewDelegate
