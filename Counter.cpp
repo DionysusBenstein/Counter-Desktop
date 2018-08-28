@@ -16,7 +16,6 @@
 
 Counter::Counter(QObject *parent) : QObject(parent)
 {
-    //signs = "!\"#$%^&*()+=-_'?.,|\\/`~№:;@[]{}«»<>©";
     signs = "!\"#$%^&*()+=_'?.,|\\/~№:;@[]{}«»<>©";
     alph  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz"
@@ -32,19 +31,14 @@ int Counter::lengthWithoutSpaces(const QString str) const
     for (int i = 0; i < str.length(); i++)
     {
         if (str[i] == ' ')
-        {
             counter--;
-        }
     }
 
     for (int i = 0; i < str.length(); i++)
     {
         if (str[i] == '\n')
-        {
             counter--;
-        }
     }
-
     return counter;
 }
 
@@ -58,20 +52,15 @@ int Counter::lengthWithoutSigns(const QString str) const
         for (int j = 0; j < signs.length(); j++)
         {
             if (str[i] == signs[j])
-            {
                 counter--;
-            }
         }
     }
 
     for (int i = 0; i < str.length(); i++)
     {
         if (str[i] == '\n')
-        {
             counter--;
-        }
     }
-
     return counter;
 }
 
@@ -83,9 +72,7 @@ int Counter::wordsCounter(const QString str) const
     for (int i = 0; i < alph.length(); ++i)
     {
         if (str[0] == alph[i])
-        {
             counter = 1;
-        }
     }
 
     for (int i = 0; i < str.length(); ++i)
@@ -118,6 +105,5 @@ int Counter::wordsCounter(const QString str) const
             }
         }
     }
-
     return counter;
 }
