@@ -34,6 +34,6 @@ Item {
         MenuItem { text: qsTr("Вставить"/*"Paste"*/); enabled: input.canPaste; onTriggered: input.paste()              }
         MenuItem { text: qsTr("Удалить"/*"Delete"*/); enabled: input.selectedText; onTriggered: input.clear()          }
         MenuSeparator { contentItem: Rectangle { implicitHeight: 1; color: "#1E000000" }                               }
-        MenuItem { text: qsTr("Выделить всё"/*"Select All"*/); enabled: input.canPaste; onTriggered: input.selectAll() }
+        MenuItem { text: qsTr("Выделить всё"/*"Select All"*/); onTriggered: input.selectAll()                          }
     }
 }
